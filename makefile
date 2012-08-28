@@ -56,10 +56,10 @@ myota: target_files
 # To define any local-target
 local-zip-misc:
 	@echo Update boot image
-	cp other1/boot.img $(ZIP_DIR)/boot.img
+	cp other/boot.img $(ZIP_DIR)/boot.img
 
 	@echo Update build.prop
-	cp other1/build.prop $(ZIP_DIR)/system/build.prop
+	cp other/build.prop $(ZIP_DIR)/system/build.prop
 
 	@echo add liblbesec.so
 	cp other/liblbesec.so $(ZIP_DIR)/system/lib/liblbesec.so
@@ -77,7 +77,7 @@ local-zip-misc:
 	@echo add spn-conf.xml
 	cp other/spn-conf.xml $(ZIP_DIR)/system/etc/spn-conf.xml
 
-	cp -rf other1/system $(ZIP_DIR)/
+	cp -rf other/system $(ZIP_DIR)/
 
 	rm -f $(ZIP_DIR)/system/etc/AIC3254_REG_DualMic.*
 	rm -f $(ZIP_DIR)/system/etc/AIC3254_REG_DualMic_XB.csv
