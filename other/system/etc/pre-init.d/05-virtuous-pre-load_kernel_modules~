@@ -1,0 +1,18 @@
+#!/system/bin/sh
+
+# ===========================================================================
+#  Virtuous ROM Tools (chrisch)
+#
+#  $LastChangedDate: 2012-07-11 21:04:32 +0200 (Wed, 11 Jul 2012) $
+# ===========================================================================
+
+. /system/virtuous/scripts/virtuous-functions.sh
+
+$LOG -p i "Executing pre-init load kernel modules script"
+
+# ===========================================================================
+#  Run this section on every boot.
+# ===========================================================================
+
+# Loading bcmdhd wlan driver
+$SYSBIN_DIR/insmod $SYSLIB_DIR/modules/bcmdhd.ko

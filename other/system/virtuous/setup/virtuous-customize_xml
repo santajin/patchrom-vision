@@ -1,0 +1,69 @@
+#!/sbin/sh
+
+# ===========================================================================
+#  Virtuous ROM Tools (rmk, chrisch)
+#
+#  $LastChangedDate: 2011-07-18 12:24:11 +0200 (lun. 18 juil. 2011) $
+# ===========================================================================
+
+. /system/virtuous/scripts/virtuous-functions.sh
+
+# Change config files according phone device
+
+DEVICE=`$GETPROP ro.product.device`
+
+if [ "$DEVICE" = "ace" ] ; then
+  if ! $TEST $( $GREP -c "androidboot.mid=PD9812000" "/proc/cmdline" ) -eq 0; then
+    DEVICE=inspire
+  fi
+fi
+
+case "$DEVICE" in
+  ace)
+    STRING1="HTC\_DesireHD\_A9191"
+    STRING2="HTC\ Desire\ HD\ A9191"
+    STRING3="HTC\ Desire\ HD" ;;
+  doubleshot)
+    STRING1="myTouch\_4G\_Slide"
+    STRING2="myTouch\ 4G\ Slide"
+    STRING3="myTouch\ 4G\ Slide" ;;
+  flyer)
+    STRING1="HTC\_Flyer\_P510e"
+    STRING2="HTC\ Flyer\ P510e"
+    STRING3="HTC\ Flyer" ;;
+  glacier)
+    STRING1="myTouch4G"
+    STRING2="T-Mobile\ myTouch\ 4G"
+    STRING3="T-Mobile\ myTouch\ 4G" ;;
+  inc)
+    STRING1="HTC\-IncredibleC"
+    STRING2="HTC\ Incredible\ C"
+    STRING3="HTC\ Incredible\ C" ;;
+  incs)
+    STRING1="HTC\_IncredibleS\_S710e"
+    STRING2="HTC\ Incredible\ S\ S710e"
+    STRING3="HTC\ Incredible\ S" ;;
+  inspire)
+    STRING1="HTC\-A9192"
+    STRING2="HTC\ Inspire\ 4G\ A9192"
+    STRING3="HTC\ Inspire\ 4G" ;;
+  saga)
+    STRING1="HTC\_DesireS\_S510e"
+    STRING2="HTC\ Desire\ S\ S510e"
+    STRING3="HTC\ Desire\ S" ;;
+  vision)
+    STRING1="HTC\_DesireZ\_A7272"
+    STRING2="HTC\ Desire\ Z\ A7272"
+    STRING3="HTC\ Desire\ Z" ;;
+  *)
+    STRING1="HTC\_Sensation\_Z710e"
+    STRING2="HTC\ Sensation\ Z710e"
+    STRING3="HTC\ Sensation" ;;
+esac
+
+
+for XMLFILE in $($LS /system/customize/CID/*.xml) \
+               $($LS /system/customize/MNS/*.xml) ; do
+
+  $SED -i "s/\%ModelName\%/$STRING1/g;s/\%DeviceName\%/$STRING2/g;s/\%MarketName\%/$STRING3/g" $XMLFILE
+done
