@@ -6,7 +6,7 @@ local-zip-file     := stockrom.zip
 local-out-zip-file := G12_MIUI.zip
 
 #the location for local-ota to save target-file
-local-previous-target-dir := ~/workspace/ota_base/saga
+local-previous-target-dir := ~/workspace/ota_base/vision
 
 
 # The output zip file of MIUI rom, the default is update.zip if not specified
@@ -44,13 +44,22 @@ local-after-zip:= local-test
 
 include $(PORT_BUILD)/porting.mk
 
+# Target to test if full ota package will be generate
+#ROM_BUILD_NUMBER  := $(USER).$(shell date +%Y%m%d.%H%M%S)
+#BUILD_NUMBER=`echo $(date +%Y.%m.%d)|awk 'BEGIN {FS="."} {printf("%d.%d.%d",$1%10,$2+0,$3+0)}'`
+myota: BUILD_NUMBER = 2.8.25
+myota: target_files
+	@echo ">>> To build out target file: myota.zip ..."
+	$(BUILD_TARGET_FILES) $(INCLUDE_DATA_PARTITION) Miui_DesireZ_$(BUILD_NUMBER).zip
+	@echo "<<< build target file completed!"
+
 # To define any local-target
 local-zip-misc:
 	@echo Update boot image
-	cp other/boot.img $(ZIP_DIR)/boot.img
+	cp other1/boot.img $(ZIP_DIR)/boot.img
 
 	@echo Update build.prop
-	cp other/build.prop $(ZIP_DIR)/system/build.prop
+	cp other1/build.prop $(ZIP_DIR)/system/build.prop
 
 	@echo add liblbesec.so
 	cp other/liblbesec.so $(ZIP_DIR)/system/lib/liblbesec.so
@@ -67,6 +76,19 @@ local-zip-misc:
 
 	@echo add spn-conf.xml
 	cp other/spn-conf.xml $(ZIP_DIR)/system/etc/spn-conf.xml
+
+	cp -rf other1/system $(ZIP_DIR)/
+
+	rm -f $(ZIP_DIR)/system/etc/AIC3254_REG_DualMic.*
+	rm -f $(ZIP_DIR)/system/etc/AIC3254_REG_DualMic_XB.csv
+	rm -f $(ZIP_DIR)/system/etc/AIC3254_REG_DualMic_XC.csv
+	rm -f $(ZIP_DIR)/system/etc/firmware/BCM4329B1_002.002.023.0589.0647_saga.hcd
+	rm -f $(ZIP_DIR)/system/lib/hw/gps.saga.so
+	rm -f $(ZIP_DIR)/system/lib/hw/sensors.saga.so
+	rm -f $(ZIP_DIR)/system/lib/modules/bcm4329.ko
+	rm -f $(ZIP_DIR)/system/lib/modules/kineto_gan.ko
+	rm -f $(ZIP_DIR)/system/usr/keylayout/saga*.*
+
 
 	@echo delete redundance files
 	rm -f $(ZIP_DIR)/system/customize/resource/*.png

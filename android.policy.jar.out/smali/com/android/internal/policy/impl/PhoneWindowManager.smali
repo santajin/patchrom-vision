@@ -78,9 +78,9 @@
 
 .field private static final LID_ABSENT:I = -0x1
 
-.field private static final LID_CLOSED:I = 0x0
+.field private static final LID_CLOSED:I = 0x1
 
-.field private static final LID_OPEN:I = 0x1
+.field private static final LID_OPEN:I = 0x0
 
 .field static final LONG_PRESS_HOME_NOTHING:I = 0x0
 
@@ -13557,7 +13557,7 @@
     if-lez v0, :cond_0
 
     .line 1465
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
     iput v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mLidOpen:I
 
@@ -13572,7 +13572,7 @@
     if-nez v0, :cond_1
 
     .line 1467
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
     iput v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mLidOpen:I
 

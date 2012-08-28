@@ -618,47 +618,83 @@
         <item>10</item>
     </integer-array>
     <integer-array name="config_autoBrightnessLevels">
-        <item>11</item>
-        <item>41</item>
-        <item>91</item>
-        <item>161</item>
-        <item>226</item>
-        <item>321</item>
-        <item>641</item>
-        <item>1281</item>
-        <item>2601</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+        <item>60</item>
+        <item>80</item>
+        <item>100</item>
+        <item>130</item>
+        <item>160</item>
+        <item>200</item>
+        <item>300</item>
+        <item>400</item>
+        <item>500</item>
+        <item>650</item>
+        <item>800</item>
+        <item>1023</item>
     </integer-array>
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>54</item>
-        <item>54</item>
-        <item>54</item>
-        <item>83</item>
-        <item>116</item>
-        <item>142</item>
+        <item>95</item>
+        <item>100</item>
+        <item>110</item>
+        <item>120</item>
+        <item>125</item>
+        <item>130</item>
+        <item>135</item>
+        <item>140</item>
+        <item>145</item>
+        <item>150</item>
+        <item>155</item>
+        <item>160</item>
         <item>170</item>
-        <item>198</item>
-        <item>227</item>
+        <item>180</item>
+        <item>190</item>
+        <item>200</item>
+        <item>210</item>
+        <item>220</item>
+        <item>230</item>
         <item>255</item>
     </integer-array>
     <integer-array name="config_autoBrightnessLcdBacklightValuesUp">
-        <item>54</item>
-        <item>54</item>
-        <item>54</item>
-        <item>83</item>
-        <item>116</item>
-        <item>142</item>
+        <item>95</item>
+        <item>100</item>
+        <item>110</item>
+        <item>120</item>
+        <item>125</item>
+        <item>130</item>
+        <item>135</item>
+        <item>140</item>
+        <item>145</item>
+        <item>150</item>
+        <item>155</item>
+        <item>160</item>
         <item>170</item>
-        <item>198</item>
-        <item>227</item>
+        <item>180</item>
+        <item>190</item>
+        <item>200</item>
+        <item>210</item>
+        <item>220</item>
+        <item>230</item>
         <item>255</item>
     </integer-array>
     <integer-array name="config_autoBrightnessLcdBacklightValuesDown">
-        <item>54</item>
-        <item>54</item>
-        <item>54</item>
-        <item>83</item>
-        <item>116</item>
-        <item>142</item>
+        <item>95</item>
+        <item>100</item>
+        <item>110</item>
+        <item>120</item>
+        <item>125</item>
+        <item>130</item>
+        <item>135</item>
+        <item>140</item>
+        <item>145</item>
+        <item>150</item>
+        <item>155</item>
+        <item>160</item>
         <item>170</item>
         <item>198</item>
         <item>227</item>
@@ -666,11 +702,21 @@
     </integer-array>
     <array name="config_autoBrightnessButtonBacklightValues_white" />
     <integer-array name="config_autoBrightnessButtonBacklightValues">
-        <item>255</item>
-        <item>255</item>
-        <item>255</item>
-        <item>255</item>
-        <item>-1</item>
+        <item>30</item>
+        <item>30</item>
+        <item>30</item>
+        <item>30</item>
+        <item>30</item>
+        <item>30</item>
+        <item>30</item>
+        <item>30</item>
+        <item>30</item>
+        <item>30</item>
+        <item>30</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
         <item>0</item>
         <item>0</item>
         <item>0</item>
@@ -682,7 +728,17 @@
         <item>255</item>
         <item>255</item>
         <item>255</item>
-        <item>-1</item>
+        <item>255</item>
+        <item>255</item>
+        <item>255</item>
+        <item>255</item>
+        <item>255</item>
+        <item>255</item>
+        <item>255</item>
+        <item>255</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
         <item>0</item>
         <item>0</item>
         <item>0</item>

@@ -3853,7 +3853,7 @@
     return v0
 
     :cond_0
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method
@@ -4139,7 +4139,7 @@
     return v0
 
     :cond_1
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method
@@ -4287,7 +4287,7 @@
     return v0
 
     :cond_1
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method
