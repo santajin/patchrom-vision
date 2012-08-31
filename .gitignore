@@ -1,0 +1,4 @@
+out/
+*.zip
+*.pyc
+*delete-zip-file-when-clean

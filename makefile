@@ -47,7 +47,7 @@ include $(PORT_BUILD)/porting.mk
 # Target to test if full ota package will be generate
 #ROM_BUILD_NUMBER  := $(USER).$(shell date +%Y%m%d.%H%M%S)
 #BUILD_NUMBER=`echo $(date +%Y.%m.%d)|awk 'BEGIN {FS="."} {printf("%d.%d.%d",$1%10,$2+0,$3+0)}'`
-myota: BUILD_NUMBER = 2.8.25
+#myota: BUILD_NUMBER = 2.8.25
 myota: target_files
 	@echo ">>> To build out target file: myota.zip ..."
 	$(BUILD_TARGET_FILES) $(INCLUDE_DATA_PARTITION) Miui_DesireZ_$(BUILD_NUMBER).zip
@@ -61,9 +61,6 @@ local-zip-misc:
 	@echo Update build.prop
 	cp other/build.prop $(ZIP_DIR)/system/build.prop
 
-	@echo add liblbesec.so
-	cp other/liblbesec.so $(ZIP_DIR)/system/lib/liblbesec.so
-
 	@echo update bootanimation
 	rm $(ZIP_DIR)/system/bin/bootanimation
 	cp other/bootanimation $(ZIP_DIR)/system/bin/bootanimation
@@ -73,6 +70,9 @@ local-zip-misc:
 
 	@echo add system config
 	cp other/system_etc/* $(ZIP_DIR)/system/etc/
+
+	@echo add system lib
+	cp other/system_lib/* $(ZIP_DIR)/system/lib/
 
 	@echo add spn-conf.xml
 	cp other/spn-conf.xml $(ZIP_DIR)/system/etc/spn-conf.xml
