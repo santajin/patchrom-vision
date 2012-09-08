@@ -50,7 +50,7 @@ include $(PORT_BUILD)/porting.mk
 #myota: BUILD_NUMBER = 2.8.25
 myota: target_files
 	@echo ">>> To build out target file: myota.zip ..."
-	$(BUILD_TARGET_FILES) $(INCLUDE_DATA_PARTITION) Miui_DesireZ_$(BUILD_NUMBER).zip
+	$(BUILD_TARGET_FILES) $(INCLUDE_THIRDPART_APP) Miui_DesireZ_$(BUILD_NUMBER).zip
 	@echo "<<< build target file completed!"
 
 # To define any local-target
