@@ -1,5 +1,6 @@
 type ALPHA
 # keycode      Display   Number    Base      Shift     Alt       Shift+Alt
+
 key 0              {
 	label:'0'       
 	base:'0'       
