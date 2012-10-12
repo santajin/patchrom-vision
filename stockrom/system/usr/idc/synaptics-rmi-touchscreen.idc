@@ -54,8 +54,19 @@ touch.pressure.source = default
 touch.pressure.scale = 0.01
 
 # Size
-touch.size.calibration = normalized
+#touch.size.calibration = normalized
+touch.size.calibration = area
 
 # Orientation
 touch.orientation.calibration = none
+
+# Set Gesture Mode to disable pointer
+touch.gestureMode = spots 
+
+# Set DeviceType 
+touch.deviceType = touchScreen
+
+# Set orientation awareness
+# Thanks to SGS2 team
+touch.orientationAware = 1
 

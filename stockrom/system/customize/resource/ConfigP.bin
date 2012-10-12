@@ -88,9 +88,7 @@
     <item name="SMC406" netcode="45406">-</item>
     <item name="SMC415" netcode="45415">-</item>
     <item name="SMC417" netcode="45417">-</item>
-    <item name="PCCW419" netcode="45419">-</item>
     <item name="CMHK412" netcode="45412">-</item>
-    <item name="StarHub505" netcode="52505">-</item>
     <item name="M1503" netcode="52503">-</item>
     <item name="Maxis212" netcode="50212">-</item>
     <item name="Digi216" netcode="50216">-</item>
@@ -109,6 +107,7 @@
     <item name="TMO_DE201" netcode="26201">-</item>
     <item name="TMO_NL416" netcode="20416">-</item>
     <item name="TMO_AT203" netcode="23203">-</item>
+    <item name="TMO_PL202" netcode="26002">-</item>
     <item name="TMO_CZ001" netcode="23001">-</item>
     <item name="O2DE207" netcode="26207">-</item>
     <item name="OrangeFR801" netcode="20801">-</item>
@@ -145,11 +144,7 @@
     <item name="TMUS800" netcode="310800">-</item>
     <item name="Canada720" netcode="302720">-</item>
     <item name="China001" netcode="46001">-</item>
-    <item name="MTS25001" netcode="25001">-</item>
-    <item name="MegaFon25002" netcode="25002">-</item>
     <item name="TDC23801" netcode="23801">-</item>
-    <item name="Telenor23802" netcode="23802">-</item>
-    <item name="Telenor24201" netcode="24201">-</item>
     <item name="NetCom24202" netcode="24202">-</item>
     <item name="TMOUS31016" netcode="31016">-</item>
     <item name="TMOUS31026" netcode="31026">-</item>

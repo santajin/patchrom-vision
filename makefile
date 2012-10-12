@@ -25,12 +25,11 @@ local-miui-removed-apps  := LatinIME SettingsProvider Stk Bluetooth MediaProvide
 #local-remove-apps := Twitter  
 # All apps need to be reserved from original ZIP file
 local-phone-apps := ApplicationsProvider BackupRestoreConfirmation Bluetooth BrcmBluetoothServices \
-	CertInstaller DefaultContainerService DFPI DrmProvider FilePicker \
-	HTC_IME HTCCamera HtcFMRadio com.htc.FMRadioWidget  HTMLViewer KeyChain LMW  \
-	NoiseField PluginManager SDCardWizard SharedStorageBackup BlueSky Stk \
-	TrimIt UploadProvider Usage UserDictionaryProvider WifiRouter \
-	CustomizationSettingsProvider SettingsProvider HTCAlbum MediaProvider \
-	PhaseBeam
+	CertInstaller DefaultContainerService DrmProvider \
+	HTCCamera HtcFMRadio com.htc.FMRadioWidget  HTMLViewer KeyChain LMW  \
+	NoiseField PluginManager SDCardWizard SharedStorageBackup Stk \
+	TrimIt UploadProvider Usage UserDictionaryProvider \
+	CustomizationSettingsProvider SettingsProvider HTCAlbum MediaProvider
 
 # To include the local targets before and after zip the final ZIP file, 
 # and the local-targets should:
@@ -55,8 +54,8 @@ myota: target_files
 
 # To define any local-target
 local-zip-misc:
-	@echo Update boot image
-	cp other/boot.img $(ZIP_DIR)/boot.img
+	#@echo Update boot image
+	#cp other/boot.img $(ZIP_DIR)/boot.img
 
 	@echo Update build.prop
 	cp other/build.prop $(ZIP_DIR)/system/build.prop
@@ -72,25 +71,16 @@ local-zip-misc:
 	cp other/system_etc/* $(ZIP_DIR)/system/etc/
 
 	@echo add system lib
-	cp other/system_lib/* $(ZIP_DIR)/system/lib/
+	cp -rf other/system_lib/* $(ZIP_DIR)/system/lib/
 
 	@echo add spn-conf.xml
 	cp other/spn-conf.xml $(ZIP_DIR)/system/etc/spn-conf.xml
 
-	cp -rf other/system $(ZIP_DIR)/
-
-	rm -f $(ZIP_DIR)/system/etc/AIC3254_REG_DualMic.*
-	rm -f $(ZIP_DIR)/system/etc/AIC3254_REG_DualMic_XB.csv
-	rm -f $(ZIP_DIR)/system/etc/AIC3254_REG_DualMic_XC.csv
-	rm -f $(ZIP_DIR)/system/etc/firmware/BCM4329B1_002.002.023.0589.0647_saga.hcd
-	rm -f $(ZIP_DIR)/system/lib/hw/gps.saga.so
-	rm -f $(ZIP_DIR)/system/lib/hw/sensors.saga.so
-	rm -f $(ZIP_DIR)/system/lib/modules/bcm4329.ko
-	rm -f $(ZIP_DIR)/system/lib/modules/kineto_gan.ko
-	rm -f $(ZIP_DIR)/system/usr/keylayout/saga*.*
 
 
 	@echo delete redundance files
+	rm -f $(ZIP_DIR)/system/etc/AIC3254_REG*.*
+	rm -f $(ZIP_DIR)/system/etc/*.epub
 	rm -f $(ZIP_DIR)/system/customize/resource/*.png
 	rm -rf $(ZIP_DIR)/system/media/weather
 	rm -rf $(ZIP_DIR)/system/media/video

@@ -1,0 +1,6 @@
+#!/system/bin/sh
+#VIBRATION_VOLTAGE_CONFIG
+#BY_KILLERSLOTH
+#Modified by Lms24 (3000 for vision!)
+
+echo "3000" > /sys/devices/virtual/timed_output/vibrator/voltage_level
