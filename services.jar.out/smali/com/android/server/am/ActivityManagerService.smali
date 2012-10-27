@@ -10057,7 +10057,7 @@
     if-le v10, v2, :cond_8
 
     .line 14438
-    const/4 v10, 0x1
+    const/4 v10, 0x3
 
     .line 14439
     const-string v2, "visible"
@@ -10135,7 +10135,7 @@
     if-ne v0, v2, :cond_b
 
     .line 14477
-    const/4 v10, 0x3
+    const/4 v10, 0x4
 
     .line 14478
     const/16 v27, 0x1
@@ -10176,7 +10176,7 @@
 
     .line 14486
     :cond_c
-    const/4 v10, 0x5
+    const/4 v10, 0x1
 
     .line 14487
     const/16 v27, 0x1
@@ -10220,7 +10220,7 @@
     if-lez v2, :cond_e
 
     .line 14497
-    const/4 v10, 0x7
+    const/4 v10, 0x5
 
     .line 14498
     const/16 v27, 0x1
@@ -10277,7 +10277,7 @@
     if-le v10, v2, :cond_f
 
     .line 14517
-    const/4 v10, 0x4
+    const/4 v10, 0x7
 
     .line 14518
     const-string v2, "backup"
