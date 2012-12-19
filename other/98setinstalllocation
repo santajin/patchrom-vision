@@ -1,0 +1,18 @@
+#!/system/bin/sh
+# setInstallLocation script
+# made by seo for Android Revolution Team
+# set 0 = auto, 1 = internal, 2 = SD-Card
+(
+while : ; do
+        COMPLETED=$(logcat -d *:I *:D | grep -c android.intent.action.BOOT_COMPLETED)
+        if [ $COMPLETED -ne 0 ] ; then
+                echo "BOOT_COMPLETED: setting setInstallLocation"
+                pm set-install-location 1
+                sysrw
+                rm /system/etc/init.d/98setinstalllocation
+                sysro
+                exit 0
+        fi
+        sleep 1
+done
+) &

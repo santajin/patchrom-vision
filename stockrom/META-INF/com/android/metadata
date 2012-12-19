@@ -1,0 +1,3 @@
+post-build=htc_wwe/htc_vision/vision:4.1.1/JRO03C/87995:user/release-keys
+post-timestamp=1353465781
+pre-device=vision
