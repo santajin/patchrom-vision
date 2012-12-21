@@ -6,7 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/hardware/SensorManager$SensorEventPool;
+        Landroid/hardware/SensorManager$SensorEventPool;,
+        Landroid/hardware/SensorManager$Injector;
     }
 .end annotation
 
@@ -239,6 +240,9 @@
     .locals 7
     .parameter "p0"
     .parameter "p"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
 
     .prologue
     .line 1119
@@ -246,6 +250,10 @@
 
     .line 1120
     .local v0, coef:F
+    invoke-static {p0}, Landroid/hardware/SensorManager$Injector;->getSeaLevelPressure(F)F
+
+    move-result p0
+
     const v1, 0x472d2a00
 
     const/high16 v2, 0x3f80
