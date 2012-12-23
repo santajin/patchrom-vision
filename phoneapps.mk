@@ -2,6 +2,7 @@ local-phone-apps = $(private-phone-apps)
 
 private-phone-apps := ApplicationsProvider \
 					  BackupRestoreConfirmation \
+					  Camera \
 					  CertInstaller \
 					  DefaultContainerService \
 					  DrmProvider \
@@ -21,4 +22,4 @@ private-phone-apps := ApplicationsProvider \
 private-lockscreen-apps := 
 
 private-phone-apps2 :=  
-#DreyeforVision
+#forVision

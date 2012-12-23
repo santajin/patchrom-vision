@@ -48,9 +48,13 @@ local-pre-zip-misc:
 	cp other/spn-conf.xml $(ZIP_DIR)/system/etc/spn-conf.xml
 	#cp other/98setinstalllocation $(ZIP_DIR)/system/etc/init.d/98setinstalllocation
 	cp other/build.prop $(ZIP_DIR)/system/build.prop
+	#cp other/Camera.apk $(ZIP_DIR)/system/app/Camera.apk
+	cp other/module/*.* -rf $(ZIP_DIR)/system/lib/modules/
+	cp other/boot.img $(ZIP_DIR)/
 	rm -rf $(ZIP_DIR)/system/addon.d
 	rm -rf $(ZIP_DIR)/system/media/video
 	rm -rf $(ZIP_DIR)/system/bin/*_test
+	rm -rf $(ZIP_DIR)/system/xbin/*test
 	rm -rf $(pre_install_data_packages)
 	for apk in $(ZIP_DIR)/data/media/preinstall_apps/*.apk; do\
 		$(AAPT) d --values resources $$apk | grep 'id=127 packageCount' | sed -e "s/^.*name=//" >> $(pre_install_data_packages);\
