@@ -26,7 +26,7 @@ local-miui-removed-apps  := LatinIME SettingsProvider Stk Bluetooth MediaProvide
 # All apps need to be reserved from original ZIP file
 local-phone-apps := ApplicationsProvider BackupRestoreConfirmation Bluetooth BrcmBluetoothServices \
 	CertInstaller DefaultContainerService DrmProvider \
-	HTCCamera HtcFMRadio com.htc.FMRadioWidget  HTMLViewer KeyChain LMW  \
+	HTC_IME HTCCamera HtcFMRadio com.htc.FMRadioWidget  HTMLViewer KeyChain LMW  \
 	NoiseField PluginManager SDCardWizard SharedStorageBackup Stk \
 	TrimIt UploadProvider Usage UserDictionaryProvider \
 	CustomizationSettingsProvider SettingsProvider HTCAlbum MediaProvider

@@ -21,6 +21,7 @@ if [ $1 = "Phone" ];then
 fi
 
 if [ $1 = "Mms" ];then
+    patch $2/AndroidManifest.xml < $1/AndroidManifest.xml.diff
     $XMLMERGYTOOL $1/res/values $2/res/values
 fi
 
