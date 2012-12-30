@@ -33,11 +33,11 @@
 
 .field static final ANIMATION_STATE_STARTED:I = 0x1
 
-.field protected static final COOKIE:Ljava/lang/String; = "Cookie"
+.field private static final COOKIE:Ljava/lang/String; = "Cookie"
 
-.field protected static final HIDE_URL_LOGS:Ljava/lang/String; = "x-hide-urls-from-log"
+.field private static final HIDE_URL_LOGS:Ljava/lang/String; = "x-hide-urls-from-log"
 
-.field protected static final LOGTAG:Ljava/lang/String; = "HTML5VideoView"
+.field private static final LOGTAG:Ljava/lang/String; = "HTML5VideoView"
 
 .field static final STATE_BUFFERING:I = 0x4
 
@@ -79,7 +79,7 @@
 
 .field private mFullscreenWidth:I
 
-.field protected mHeaders:Ljava/util/Map;
+.field private mHeaders:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map",
@@ -111,13 +111,13 @@
 
 .field private mPlayer:Landroid/media/MediaPlayer;
 
-.field public mPlayerBuffering:Z
+.field private mPlayerBuffering:Z
 
 .field private mProgressView:Landroid/view/View;
 
-.field protected mProxy:Landroid/webkit/HTML5VideoViewProxy;
+.field private mProxy:Landroid/webkit/HTML5VideoViewProxy;
 
-.field protected mSaveSeekTime:I
+.field private mSaveSeekTime:I
 
 .field private mStartWhenPrepared:Z
 
@@ -129,7 +129,7 @@
 
 .field private mTimer:Ljava/util/Timer;
 
-.field protected mUri:Landroid/net/Uri;
+.field private mUri:Landroid/net/Uri;
 
 .field private mVideoHeight:I
 
@@ -165,7 +165,7 @@
     goto :goto_0
 .end method
 
-.method protected constructor <init>(Landroid/webkit/HTML5VideoViewProxy;I)V
+.method constructor <init>(Landroid/webkit/HTML5VideoViewProxy;I)V
     .locals 2
     .parameter "proxy"
     .parameter "position"
@@ -1690,15 +1690,6 @@
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->translationY(F)Landroid/view/ViewPropertyAnimator;
 
     goto :goto_0
-.end method
-
-.method public fullScreenExited()Z
-    .locals 1
-
-    .prologue
-    const/4 v0, 0x0
-
-    return v0
 .end method
 
 .method public fullscreenExited()Z

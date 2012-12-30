@@ -79,16 +79,7 @@
     .parameter "url"
 
     .prologue
-    return-void
-.end method
-
-.method public onMainFrameFinishParsing(Landroid/webkit/WebView;)V
-    .locals 0
-    .parameter "view"
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
-    .prologue
+    .line 79
     return-void
 .end method
 
@@ -119,20 +110,7 @@
     .parameter "error"
 
     .prologue
-    return-void
-.end method
-
-.method public onReadModeDataReady(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/WebView;)V
-    .locals 0
-    .parameter "title"
-    .parameter "content"
-    .parameter "nextUrl"
-    .parameter "wv"
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
-
-    .prologue
+    .line 213
     return-void
 .end method
 

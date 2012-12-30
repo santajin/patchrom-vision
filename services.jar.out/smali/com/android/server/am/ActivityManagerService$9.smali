@@ -17,6 +17,10 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/server/am/ActivityManagerService;
 
+.field final synthetic val$doneReceivers:Ljava/util/ArrayList;
+
+.field final synthetic val$goingCallback:Ljava/lang/Runnable;
+
 
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActivityManagerService;)V

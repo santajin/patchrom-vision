@@ -109,27 +109,6 @@
 
 .field private mNativeClass:I
 
-.field private mReadModeString:[Ljava/lang/String;
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_FIELD:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
-.end field
-
-.field private mReadModeTemplateVector:Ljava/util/Vector;
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_FIELD:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Vector",
-            "<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 .field private mRestoredScale:F
 
 .field private mRestoredTextWrapScale:F
@@ -570,18 +549,7 @@
     .line 157
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v5, 0x3
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    iput-object v5, p0, Landroid/webkit/WebViewCore;->mReadModeString:[Ljava/lang/String;
-
-    new-instance v5, Ljava/util/Vector;
-
-    invoke-direct {v5}, Ljava/util/Vector;-><init>()V
-
-    iput-object v5, p0, Landroid/webkit/WebViewCore;->mReadModeTemplateVector:Ljava/util/Vector;
-
+    .line 95
     iput v6, p0, Landroid/webkit/WebViewCore;->mViewportWidth:I
 
     .line 101
@@ -1387,42 +1355,7 @@
     return-void
 .end method
 
-.method static synthetic access$4500(Landroid/webkit/WebViewCore;)Ljava/util/Vector;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    iget-object v0, p0, Landroid/webkit/WebViewCore;->mReadModeTemplateVector:Ljava/util/Vector;
-
-    return-object v0
-.end method
-
-.method static synthetic access$4600(Landroid/webkit/WebViewCore;IZLjava/util/Vector;)[Ljava/lang/String;
-    .locals 1
-    .parameter "x0"
-    .parameter "x1"
-    .parameter "x2"
-    .parameter "x3"
-
-    .prologue
-    invoke-direct {p0, p1, p2, p3}, Landroid/webkit/WebViewCore;->nativeSwitchReadMode(IZLjava/util/Vector;)[Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static synthetic access$4700(Landroid/webkit/WebViewCore;)[Ljava/lang/String;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    iget-object v0, p0, Landroid/webkit/WebViewCore;->mReadModeString:[Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic access$4800(Landroid/webkit/WebViewCore;IZ)V
+.method static synthetic access$4500(Landroid/webkit/WebViewCore;IZ)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -1435,7 +1368,7 @@
     return-void
 .end method
 
-.method static synthetic access$4900(Landroid/webkit/WebViewCore;IZ)V
+.method static synthetic access$4600(Landroid/webkit/WebViewCore;IZ)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -1448,16 +1381,7 @@
     return-void
 .end method
 
-.method static synthetic access$500()Landroid/os/Handler;
-    .locals 1
-
-    .prologue
-    sget-object v0, Landroid/webkit/WebViewCore;->sWebCoreHandler:Landroid/os/Handler;
-
-    return-object v0
-.end method
-
-.method static synthetic access$5000(Landroid/webkit/WebViewCore;ILjava/lang/String;)V
+.method static synthetic access$4700(Landroid/webkit/WebViewCore;ILjava/lang/String;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -1470,17 +1394,7 @@
     return-void
 .end method
 
-.method static synthetic access$502(Landroid/os/Handler;)Landroid/os/Handler;
-    .locals 0
-    .parameter "x0"
-
-    .prologue
-    sput-object p0, Landroid/webkit/WebViewCore;->sWebCoreHandler:Landroid/os/Handler;
-
-    return-object p0
-.end method
-
-.method static synthetic access$5100(Landroid/webkit/WebViewCore;Ljava/lang/String;Z)Ljava/lang/String;
+.method static synthetic access$4800(Landroid/webkit/WebViewCore;Ljava/lang/String;Z)Ljava/lang/String;
     .locals 1
     .parameter "x0"
     .parameter "x1"
@@ -1495,7 +1409,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$5200(Landroid/webkit/WebViewCore;ILjava/lang/String;ZZ)V
+.method static synthetic access$4900(Landroid/webkit/WebViewCore;ILjava/lang/String;ZZ)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -1510,7 +1424,17 @@
     return-void
 .end method
 
-.method static synthetic access$5300(Landroid/webkit/WebViewCore;I[Ljava/lang/String;)V
+.method static synthetic access$500()Landroid/os/Handler;
+    .locals 1
+
+    .prologue
+    .line 57
+    sget-object v0, Landroid/webkit/WebViewCore;->sWebCoreHandler:Landroid/os/Handler;
+
+    return-object v0
+.end method
+
+.method static synthetic access$5000(Landroid/webkit/WebViewCore;I[Ljava/lang/String;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -1523,7 +1447,18 @@
     return-void
 .end method
 
-.method static synthetic access$5400(Landroid/webkit/WebViewCore;II)V
+.method static synthetic access$502(Landroid/os/Handler;)Landroid/os/Handler;
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 57
+    sput-object p0, Landroid/webkit/WebViewCore;->sWebCoreHandler:Landroid/os/Handler;
+
+    return-object p0
+.end method
+
+.method static synthetic access$5100(Landroid/webkit/WebViewCore;II)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -1536,7 +1471,7 @@
     return-void
 .end method
 
-.method static synthetic access$5500(Landroid/webkit/WebViewCore;I)V
+.method static synthetic access$5200(Landroid/webkit/WebViewCore;I)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -1548,7 +1483,7 @@
     return-void
 .end method
 
-.method static synthetic access$5600(Landroid/webkit/WebViewCore;I)V
+.method static synthetic access$5300(Landroid/webkit/WebViewCore;I)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -1560,7 +1495,7 @@
     return-void
 .end method
 
-.method static synthetic access$5700(Landroid/webkit/WebViewCore;)V
+.method static synthetic access$5400(Landroid/webkit/WebViewCore;)V
     .locals 0
     .parameter "x0"
 
@@ -1571,7 +1506,7 @@
     return-void
 .end method
 
-.method static synthetic access$5800(Landroid/webkit/WebViewCore;II)V
+.method static synthetic access$5500(Landroid/webkit/WebViewCore;II)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -1584,7 +1519,7 @@
     return-void
 .end method
 
-.method static synthetic access$5900(Landroid/webkit/WebViewCore;IILandroid/graphics/Rect;)V
+.method static synthetic access$5600(Landroid/webkit/WebViewCore;IILandroid/graphics/Rect;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -1598,17 +1533,7 @@
     return-void
 .end method
 
-.method static synthetic access$600(Landroid/webkit/WebViewCore;)V
-    .locals 0
-    .parameter "x0"
-
-    .prologue
-    invoke-direct {p0}, Landroid/webkit/WebViewCore;->initialize()V
-
-    return-void
-.end method
-
-.method static synthetic access$6000(Landroid/webkit/WebViewCore;IIIII)V
+.method static synthetic access$5700(Landroid/webkit/WebViewCore;IIIII)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -1624,7 +1549,7 @@
     return-void
 .end method
 
-.method static synthetic access$6100(Landroid/webkit/WebViewCore;IIIII)Ljava/lang/String;
+.method static synthetic access$5800(Landroid/webkit/WebViewCore;IIIII)Ljava/lang/String;
     .locals 1
     .parameter "x0"
     .parameter "x1"
@@ -1642,7 +1567,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$6200(Landroid/webkit/WebViewCore;ILjava/lang/String;)V
+.method static synthetic access$5900(Landroid/webkit/WebViewCore;ILjava/lang/String;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -1655,7 +1580,18 @@
     return-void
 .end method
 
-.method static synthetic access$6300(Landroid/webkit/WebViewCore;I)V
+.method static synthetic access$600(Landroid/webkit/WebViewCore;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 57
+    invoke-direct {p0}, Landroid/webkit/WebViewCore;->initialize()V
+
+    return-void
+.end method
+
+.method static synthetic access$6000(Landroid/webkit/WebViewCore;I)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -1667,7 +1603,7 @@
     return-void
 .end method
 
-.method static synthetic access$6400(Landroid/webkit/WebViewCore;IIIII)V
+.method static synthetic access$6100(Landroid/webkit/WebViewCore;IIIII)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -1683,7 +1619,7 @@
     return-void
 .end method
 
-.method static synthetic access$6500(Landroid/webkit/WebViewCore;III)Z
+.method static synthetic access$6200(Landroid/webkit/WebViewCore;III)Z
     .locals 1
     .parameter "x0"
     .parameter "x1"
@@ -1699,7 +1635,7 @@
     return v0
 .end method
 
-.method static synthetic access$6600(Landroid/webkit/WebViewCore;I)V
+.method static synthetic access$6300(Landroid/webkit/WebViewCore;I)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -1711,7 +1647,7 @@
     return-void
 .end method
 
-.method static synthetic access$6700(Landroid/webkit/WebViewCore;ILjava/lang/String;)I
+.method static synthetic access$6400(Landroid/webkit/WebViewCore;ILjava/lang/String;)I
     .locals 1
     .parameter "x0"
     .parameter "x1"
@@ -1726,7 +1662,7 @@
     return v0
 .end method
 
-.method static synthetic access$6800(Landroid/webkit/WebViewCore;IZ)I
+.method static synthetic access$6500(Landroid/webkit/WebViewCore;IZ)I
     .locals 1
     .parameter "x0"
     .parameter "x1"
@@ -1741,7 +1677,7 @@
     return v0
 .end method
 
-.method static synthetic access$6900(Landroid/webkit/WebViewCore;II)V
+.method static synthetic access$6600(Landroid/webkit/WebViewCore;II)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -1754,16 +1690,7 @@
     return-void
 .end method
 
-.method static synthetic access$700()V
-    .locals 0
-
-    .prologue
-    invoke-static {}, Landroid/webkit/WebViewCore;->nativeCertTrustChanged()V
-
-    return-void
-.end method
-
-.method static synthetic access$7000(Landroid/webkit/WebViewCore;Ljava/io/OutputStream;Landroid/webkit/ValueCallback;)V
+.method static synthetic access$6700(Landroid/webkit/WebViewCore;Ljava/io/OutputStream;Landroid/webkit/ValueCallback;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -1776,7 +1703,7 @@
     return-void
 .end method
 
-.method static synthetic access$7100(Landroid/webkit/WebViewCore;I)Z
+.method static synthetic access$6800(Landroid/webkit/WebViewCore;I)Z
     .locals 1
     .parameter "x0"
     .parameter "x1"
@@ -1790,7 +1717,7 @@
     return v0
 .end method
 
-.method static synthetic access$7200(Landroid/webkit/WebViewCore;II[I[I[IIII)I
+.method static synthetic access$6900(Landroid/webkit/WebViewCore;II[I[I[IIII)I
     .locals 1
     .parameter "x0"
     .parameter "x1"
@@ -1811,7 +1738,17 @@
     return v0
 .end method
 
-.method static synthetic access$7302(Landroid/webkit/WebViewCore;Z)Z
+.method static synthetic access$700()V
+    .locals 0
+
+    .prologue
+    .line 57
+    invoke-static {}, Landroid/webkit/WebViewCore;->nativeCertTrustChanged()V
+
+    return-void
+.end method
+
+.method static synthetic access$7002(Landroid/webkit/WebViewCore;Z)Z
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -2155,7 +2092,7 @@
     move-result-object v2
 
     #calls: Landroid/webkit/WebViewCore$EventHub;->sendMessage(Landroid/os/Message;)V
-    invoke-static {v1, v2}, Landroid/webkit/WebViewCore$EventHub;->access$7400(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
+    invoke-static {v1, v2}, Landroid/webkit/WebViewCore$EventHub;->access$7100(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
 
     goto :goto_0
 
@@ -3336,9 +3273,6 @@
 .method private native nativeSelectAll(I)V
 .end method
 
-.method private native nativeSelectText(IIIIII)[Ljava/lang/String;
-.end method
-
 .method private native nativeSelectText(IIIII)V
 .end method
 
@@ -3379,23 +3313,6 @@
 .end method
 
 .method private native nativeSetSize(IIIIFIIIIZ)V
-.end method
-
-.method private native nativeSwitchReadMode(IZLjava/util/Vector;)[Ljava/lang/String;
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(IZ",
-            "Ljava/util/Vector",
-            "<",
-            "Ljava/lang/String;",
-            ">;)[",
-            "Ljava/lang/String;"
-        }
-    .end annotation
 .end method
 
 .method private needTouchEvents(Z)V
@@ -4148,7 +4065,7 @@
     const/16 v4, 0x82
 
     #calls: Landroid/webkit/WebViewCore$EventHub;->removeMessages(I)V
-    invoke-static {v3, v4}, Landroid/webkit/WebViewCore$EventHub;->access$7700(Landroid/webkit/WebViewCore$EventHub;I)V
+    invoke-static {v3, v4}, Landroid/webkit/WebViewCore$EventHub;->access$7400(Landroid/webkit/WebViewCore$EventHub;I)V
 
     .line 2293
     :cond_0
@@ -5067,7 +4984,7 @@
     const/16 v10, 0x69
 
     #calls: Landroid/webkit/WebViewCore$EventHub;->removeMessages(I)V
-    invoke-static {v9, v10}, Landroid/webkit/WebViewCore$EventHub;->access$7700(Landroid/webkit/WebViewCore$EventHub;I)V
+    invoke-static {v9, v10}, Landroid/webkit/WebViewCore$EventHub;->access$7400(Landroid/webkit/WebViewCore$EventHub;I)V
 
     .line 2698
     iget-object v9, p0, Landroid/webkit/WebViewCore;->mEventHub:Landroid/webkit/WebViewCore$EventHub;
@@ -5081,7 +4998,7 @@
     move-result-object v10
 
     #calls: Landroid/webkit/WebViewCore$EventHub;->sendMessageAtFrontOfQueue(Landroid/os/Message;)V
-    invoke-static {v9, v10}, Landroid/webkit/WebViewCore$EventHub;->access$7500(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
+    invoke-static {v9, v10}, Landroid/webkit/WebViewCore$EventHub;->access$7200(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
 
     goto/16 :goto_0
 
@@ -5400,7 +5317,7 @@
     const/16 v10, 0x69
 
     #calls: Landroid/webkit/WebViewCore$EventHub;->removeMessages(I)V
-    invoke-static {v9, v10}, Landroid/webkit/WebViewCore$EventHub;->access$7700(Landroid/webkit/WebViewCore$EventHub;I)V
+    invoke-static {v9, v10}, Landroid/webkit/WebViewCore$EventHub;->access$7400(Landroid/webkit/WebViewCore$EventHub;I)V
 
     .line 2764
     invoke-direct {p0, v1}, Landroid/webkit/WebViewCore;->viewSizeChanged(Landroid/webkit/WebViewClassic$ViewSizeData;)V
@@ -5986,7 +5903,7 @@
     const-wide/16 v3, 0xa
 
     #calls: Landroid/webkit/WebViewCore$EventHub;->sendMessageDelayed(Landroid/os/Message;J)V
-    invoke-static {v1, v2, v3, v4}, Landroid/webkit/WebViewCore$EventHub;->access$7600(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;J)V
+    invoke-static {v1, v2, v3, v4}, Landroid/webkit/WebViewCore$EventHub;->access$7300(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;J)V
 
     goto :goto_0
 
@@ -6259,7 +6176,7 @@
     move-result-object v1
 
     #calls: Landroid/webkit/WebViewCore$EventHub;->sendMessage(Landroid/os/Message;)V
-    invoke-static {v0, v1}, Landroid/webkit/WebViewCore$EventHub;->access$7400(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
+    invoke-static {v0, v1}, Landroid/webkit/WebViewCore$EventHub;->access$7100(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
 
     .line 2396
     monitor-exit p0
@@ -6299,13 +6216,13 @@
     move-result-object v2
 
     #calls: Landroid/webkit/WebViewCore$EventHub;->sendMessageAtFrontOfQueue(Landroid/os/Message;)V
-    invoke-static {v0, v2}, Landroid/webkit/WebViewCore$EventHub;->access$7500(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
+    invoke-static {v0, v2}, Landroid/webkit/WebViewCore$EventHub;->access$7200(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
 
     .line 2002
     iget-object v0, p0, Landroid/webkit/WebViewCore;->mEventHub:Landroid/webkit/WebViewCore$EventHub;
 
     #calls: Landroid/webkit/WebViewCore$EventHub;->blockMessages()V
-    invoke-static {v0}, Landroid/webkit/WebViewCore$EventHub;->access$7900(Landroid/webkit/WebViewCore$EventHub;)V
+    invoke-static {v0}, Landroid/webkit/WebViewCore$EventHub;->access$7600(Landroid/webkit/WebViewCore$EventHub;)V
 
     .line 2003
     iget-object v0, p0, Landroid/webkit/WebViewCore;->mWebViewClassic:Landroid/webkit/WebViewClassic;
@@ -6562,18 +6479,6 @@
     return-object v0
 .end method
 
-.method getReadModeString()[Ljava/lang/String;
-    .locals 1
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
-
-    .prologue
-    iget-object v0, p0, Landroid/webkit/WebViewCore;->mReadModeString:[Ljava/lang/String;
-
-    return-object v0
-.end method
-
 .method public getSettings()Landroid/webkit/WebSettingsClassic;
     .locals 1
 
@@ -6590,28 +6495,6 @@
     .prologue
     .line 2454
     iget-object v0, p0, Landroid/webkit/WebViewCore;->mWebViewClassic:Landroid/webkit/WebViewClassic;
-
-    return-object v0
-.end method
-
-.method public getmReadModeTemplate()Ljava/util/Vector;
-    .locals 1
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Vector",
-            "<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    iget-object v0, p0, Landroid/webkit/WebViewCore;->mReadModeTemplateVector:Ljava/util/Vector;
 
     return-object v0
 .end method
@@ -6801,7 +6684,7 @@
     iget-object v0, p0, Landroid/webkit/WebViewCore;->mEventHub:Landroid/webkit/WebViewCore$EventHub;
 
     #calls: Landroid/webkit/WebViewCore$EventHub;->removeMessages()V
-    invoke-static {v0}, Landroid/webkit/WebViewCore$EventHub;->access$7800(Landroid/webkit/WebViewCore$EventHub;)V
+    invoke-static {v0}, Landroid/webkit/WebViewCore$EventHub;->access$7500(Landroid/webkit/WebViewCore$EventHub;)V
 
     .line 1989
     return-void
@@ -6816,7 +6699,7 @@
     iget-object v0, p0, Landroid/webkit/WebViewCore;->mEventHub:Landroid/webkit/WebViewCore$EventHub;
 
     #calls: Landroid/webkit/WebViewCore$EventHub;->removeMessages(I)V
-    invoke-static {v0, p1}, Landroid/webkit/WebViewCore$EventHub;->access$7700(Landroid/webkit/WebViewCore$EventHub;I)V
+    invoke-static {v0, p1}, Landroid/webkit/WebViewCore$EventHub;->access$7400(Landroid/webkit/WebViewCore$EventHub;I)V
 
     .line 1985
     return-void
@@ -6858,7 +6741,7 @@
     move-result-object v2
 
     #calls: Landroid/webkit/WebViewCore$EventHub;->sendMessage(Landroid/os/Message;)V
-    invoke-static {v0, v2}, Landroid/webkit/WebViewCore$EventHub;->access$7400(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
+    invoke-static {v0, v2}, Landroid/webkit/WebViewCore$EventHub;->access$7100(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
 
     .line 2219
     :cond_0
@@ -6898,7 +6781,7 @@
     move-result-object v1
 
     #calls: Landroid/webkit/WebViewCore$EventHub;->sendMessage(Landroid/os/Message;)V
-    invoke-static {v0, v1}, Landroid/webkit/WebViewCore$EventHub;->access$7400(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
+    invoke-static {v0, v1}, Landroid/webkit/WebViewCore$EventHub;->access$7100(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
 
     .line 1945
     return-void
@@ -6922,7 +6805,7 @@
     move-result-object v1
 
     #calls: Landroid/webkit/WebViewCore$EventHub;->sendMessage(Landroid/os/Message;)V
-    invoke-static {v0, v1}, Landroid/webkit/WebViewCore$EventHub;->access$7400(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
+    invoke-static {v0, v1}, Landroid/webkit/WebViewCore$EventHub;->access$7100(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
 
     .line 1959
     return-void
@@ -6945,7 +6828,7 @@
     move-result-object v1
 
     #calls: Landroid/webkit/WebViewCore$EventHub;->sendMessage(Landroid/os/Message;)V
-    invoke-static {v0, v1}, Landroid/webkit/WebViewCore$EventHub;->access$7400(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
+    invoke-static {v0, v1}, Landroid/webkit/WebViewCore$EventHub;->access$7100(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
 
     .line 1963
     return-void
@@ -6969,7 +6852,7 @@
     move-result-object v1
 
     #calls: Landroid/webkit/WebViewCore$EventHub;->sendMessage(Landroid/os/Message;)V
-    invoke-static {v0, v1}, Landroid/webkit/WebViewCore$EventHub;->access$7400(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
+    invoke-static {v0, v1}, Landroid/webkit/WebViewCore$EventHub;->access$7100(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
 
     .line 1972
     return-void
@@ -6994,7 +6877,7 @@
     move-result-object v1
 
     #calls: Landroid/webkit/WebViewCore$EventHub;->sendMessage(Landroid/os/Message;)V
-    invoke-static {v0, v1}, Landroid/webkit/WebViewCore$EventHub;->access$7400(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
+    invoke-static {v0, v1}, Landroid/webkit/WebViewCore$EventHub;->access$7100(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
 
     .line 1968
     return-void
@@ -7016,7 +6899,7 @@
     move-result-object v1
 
     #calls: Landroid/webkit/WebViewCore$EventHub;->sendMessage(Landroid/os/Message;)V
-    invoke-static {v0, v1}, Landroid/webkit/WebViewCore$EventHub;->access$7400(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
+    invoke-static {v0, v1}, Landroid/webkit/WebViewCore$EventHub;->access$7100(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
 
     .line 1954
     return-void
@@ -7031,7 +6914,7 @@
     iget-object v0, p0, Landroid/webkit/WebViewCore;->mEventHub:Landroid/webkit/WebViewCore$EventHub;
 
     #calls: Landroid/webkit/WebViewCore$EventHub;->sendMessage(Landroid/os/Message;)V
-    invoke-static {v0, p1}, Landroid/webkit/WebViewCore$EventHub;->access$7400(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
+    invoke-static {v0, p1}, Landroid/webkit/WebViewCore$EventHub;->access$7100(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
 
     .line 1933
     return-void
@@ -7055,7 +6938,7 @@
     move-result-object v1
 
     #calls: Landroid/webkit/WebViewCore$EventHub;->sendMessageAtFrontOfQueue(Landroid/os/Message;)V
-    invoke-static {v0, v1}, Landroid/webkit/WebViewCore$EventHub;->access$7500(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
+    invoke-static {v0, v1}, Landroid/webkit/WebViewCore$EventHub;->access$7200(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
 
     .line 1950
     return-void
@@ -7077,7 +6960,7 @@
     move-result-object v1
 
     #calls: Landroid/webkit/WebViewCore$EventHub;->sendMessageAtFrontOfQueue(Landroid/os/Message;)V
-    invoke-static {v0, v1}, Landroid/webkit/WebViewCore$EventHub;->access$7500(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
+    invoke-static {v0, v1}, Landroid/webkit/WebViewCore$EventHub;->access$7200(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
 
     .line 1977
     return-void
@@ -7100,7 +6983,7 @@
     move-result-object v1
 
     #calls: Landroid/webkit/WebViewCore$EventHub;->sendMessageDelayed(Landroid/os/Message;J)V
-    invoke-static {v0, v1, p3, p4}, Landroid/webkit/WebViewCore$EventHub;->access$7600(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;J)V
+    invoke-static {v0, v1, p3, p4}, Landroid/webkit/WebViewCore$EventHub;->access$7300(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;J)V
 
     .line 1981
     return-void
@@ -7148,7 +7031,7 @@
     check-cast v1, Landroid/os/Message;
 
     #calls: Landroid/webkit/WebViewCore$EventHub;->sendMessage(Landroid/os/Message;)V
-    invoke-static {v3, v1}, Landroid/webkit/WebViewCore$EventHub;->access$7400(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
+    invoke-static {v3, v1}, Landroid/webkit/WebViewCore$EventHub;->access$7100(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
 
     .line 1937
     add-int/lit8 v0, v0, 0x1
@@ -7213,30 +7096,7 @@
 
     invoke-virtual/range {v0 .. v9}, Landroid/webkit/DeviceMotionAndOrientationManager;->setMockOrientation(ZDZDZD)V
 
-    return-void
-.end method
-
-.method public setmReadModeTemplate(Ljava/util/Vector;)V
-    .locals 0
-    .parameter
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Vector",
-            "<",
-            "Ljava/lang/String;",
-            ">;)V"
-        }
-    .end annotation
-
-    .prologue
-    .local p1, readModeTemplate:Ljava/util/Vector;,"Ljava/util/Vector<Ljava/lang/String;>;"
-    iput-object p1, p0, Landroid/webkit/WebViewCore;->mReadModeTemplateVector:Ljava/util/Vector;
-
+    .line 3070
     return-void
 .end method
 

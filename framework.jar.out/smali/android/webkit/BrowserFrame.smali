@@ -1876,20 +1876,6 @@
     return-void
 .end method
 
-.method private mainFrameFinishParsing()V
-    .locals 1
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
-
-    .prologue
-    iget-object v0, p0, Landroid/webkit/BrowserFrame;->mCallbackProxy:Landroid/webkit/CallbackProxy;
-
-    invoke-virtual {v0}, Landroid/webkit/CallbackProxy;->onMainFrameFinishParsing()V
-
-    return-void
-.end method
-
 .method private maybeSavePassword([BLjava/lang/String;Ljava/lang/String;)V
     .locals 7
     .parameter "postData"

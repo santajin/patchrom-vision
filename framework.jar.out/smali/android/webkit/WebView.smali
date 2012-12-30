@@ -1629,11 +1629,8 @@
 .end method
 
 .method public loadUrl(Ljava/lang/String;)V
-    .locals 2
+    .locals 1
     .parameter "url"
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
 
     .prologue
     .line 767
@@ -1642,24 +1639,16 @@
     .line 768
     iget-object v0, p0, Landroid/webkit/WebView;->mProvider:Landroid/webkit/WebViewProvider;
 
-    invoke-static {p1}, Landroid/webkit/WebViewUtils;->processUrl(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Landroid/webkit/WebViewProvider;->loadUrl(Ljava/lang/String;)V
+    invoke-interface {v0, p1}, Landroid/webkit/WebViewProvider;->loadUrl(Ljava/lang/String;)V
 
     .line 769
     return-void
 .end method
 
 .method public loadUrl(Ljava/lang/String;Ljava/util/Map;)V
-    .locals 2
+    .locals 1
     .parameter "url"
     .parameter
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1680,11 +1669,7 @@
     .line 758
     iget-object v0, p0, Landroid/webkit/WebView;->mProvider:Landroid/webkit/WebViewProvider;
 
-    invoke-static {p1}, Landroid/webkit/WebViewUtils;->processUrl(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1, p2}, Landroid/webkit/WebViewProvider;->loadUrl(Ljava/lang/String;Ljava/util/Map;)V
+    invoke-interface {v0, p1, p2}, Landroid/webkit/WebViewProvider;->loadUrl(Ljava/lang/String;Ljava/util/Map;)V
 
     .line 759
     return-void

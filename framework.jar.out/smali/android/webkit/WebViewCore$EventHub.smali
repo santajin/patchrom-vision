@@ -26,12 +26,6 @@
 
 .field static final AUTOFILL_FORM:I = 0xc0
 
-.field static final CHECK_READ_MODE:I = 0x1392
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_FIELD:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
-.end field
-
 .field static final CLEAR_CACHE:I = 0x6f
 
 .field static final CLEAR_CONTENT:I = 0x86
@@ -276,7 +270,7 @@
     return-void
 .end method
 
-.method static synthetic access$7400(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
+.method static synthetic access$7100(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -288,7 +282,7 @@
     return-void
 .end method
 
-.method static synthetic access$7500(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
+.method static synthetic access$7200(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -300,7 +294,7 @@
     return-void
 .end method
 
-.method static synthetic access$7600(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;J)V
+.method static synthetic access$7300(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;J)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -313,7 +307,7 @@
     return-void
 .end method
 
-.method static synthetic access$7700(Landroid/webkit/WebViewCore$EventHub;I)V
+.method static synthetic access$7400(Landroid/webkit/WebViewCore$EventHub;I)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -325,7 +319,7 @@
     return-void
 .end method
 
-.method static synthetic access$7800(Landroid/webkit/WebViewCore$EventHub;)V
+.method static synthetic access$7500(Landroid/webkit/WebViewCore$EventHub;)V
     .locals 0
     .parameter "x0"
 
@@ -336,7 +330,7 @@
     return-void
 .end method
 
-.method static synthetic access$7900(Landroid/webkit/WebViewCore$EventHub;)V
+.method static synthetic access$7600(Landroid/webkit/WebViewCore$EventHub;)V
     .locals 0
     .parameter "x0"
 
@@ -422,7 +416,7 @@
     const/4 v1, 0x0
 
     #setter for: Landroid/webkit/WebViewCore;->mDrawIsScheduled:Z
-    invoke-static {v0, v1}, Landroid/webkit/WebViewCore;->access$7302(Landroid/webkit/WebViewCore;Z)Z
+    invoke-static {v0, v1}, Landroid/webkit/WebViewCore;->access$7002(Landroid/webkit/WebViewCore;Z)Z
 
     .line 1896
     iget-object v0, p0, Landroid/webkit/WebViewCore$EventHub;->mMessages:Ljava/util/LinkedList;
@@ -499,7 +493,7 @@
     const/4 v3, 0x0
 
     #setter for: Landroid/webkit/WebViewCore;->mDrawIsScheduled:Z
-    invoke-static {v2, v3}, Landroid/webkit/WebViewCore;->access$7302(Landroid/webkit/WebViewCore;Z)Z
+    invoke-static {v2, v3}, Landroid/webkit/WebViewCore;->access$7002(Landroid/webkit/WebViewCore;Z)Z
 
     .line 1856
     :cond_2
@@ -726,9 +720,6 @@
 
 .method private transferMessages()V
     .locals 4
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
 
     .prologue
     .line 1228
@@ -933,7 +924,7 @@
     move-result v2
 
     #calls: Landroid/webkit/WebViewCore;->nativeMouseClick(I)Z
-    invoke-static {v1, v2}, Landroid/webkit/WebViewCore;->access$7100(Landroid/webkit/WebViewCore;I)Z
+    invoke-static {v1, v2}, Landroid/webkit/WebViewCore;->access$6800(Landroid/webkit/WebViewCore;I)Z
 
     move-result v1
 
@@ -1025,7 +1016,7 @@
     move-result v9
 
     #calls: Landroid/webkit/WebViewCore;->nativeHandleTouchEvent(II[I[I[IIII)I
-    invoke-static/range {v1 .. v9}, Landroid/webkit/WebViewCore;->access$7200(Landroid/webkit/WebViewCore;II[I[I[IIII)I
+    invoke-static/range {v1 .. v9}, Landroid/webkit/WebViewCore;->access$6900(Landroid/webkit/WebViewCore;II[I[I[IIII)I
 
     move-result v12
 

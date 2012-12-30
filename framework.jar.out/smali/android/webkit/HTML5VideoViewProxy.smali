@@ -621,17 +621,6 @@
     return-void
 .end method
 
-.method public exitFullScreenVideo()V
-    .locals 1
-
-    .prologue
-    iget-object v0, p0, Landroid/webkit/HTML5VideoViewProxy;->mWebView:Landroid/webkit/WebViewClassic;
-
-    invoke-static {p0, v0}, Landroid/webkit/HTML5VideoViewProxy$VideoPlayer;->exitFullScreenVideo(Landroid/webkit/HTML5VideoViewProxy;Landroid/webkit/WebViewClassic;)V
-
-    return-void
-.end method
-
 .method public getContext()Landroid/content/Context;
     .locals 1
 

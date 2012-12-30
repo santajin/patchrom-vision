@@ -60,12 +60,6 @@
 
 .field private static final LOGTAG:Ljava/lang/String; = "CallbackProxy"
 
-.field private static final MAIN_FRAME_FINISH_PARSING:I = 0xd2
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_FIELD:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
-.end field
-
 .field private static final NOTIFY:I = 0xc8
 
 .field private static final NOTIFY_SEARCHBOX_LISTENERS:I = 0x8b
@@ -837,29 +831,6 @@
     :pswitch_3
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebViewClient:Landroid/webkit/WebViewClient;
-
-    if-eqz v4, :cond_0
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebViewClient:Landroid/webkit/WebViewClient;
-
-    move-object/from16 v0, p0
-
-    iget-object v9, v0, Landroid/webkit/CallbackProxy;->mWebView:Landroid/webkit/WebViewClassic;
-
-    invoke-virtual {v9}, Landroid/webkit/WebViewClassic;->getWebView()Landroid/webkit/WebView;
-
-    move-result-object v9
-
-    invoke-virtual {v4, v9}, Landroid/webkit/WebViewClient;->onMainFrameFinishParsing(Landroid/webkit/WebView;)V
-
-    goto :goto_0
-
-    :pswitch_4
-    move-object/from16 v0, p0
-
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebChromeClient:Landroid/webkit/WebChromeClient;
 
     if-eqz v4, :cond_0
@@ -885,10 +856,10 @@
 
     invoke-virtual {v9, v10, v4}, Landroid/webkit/WebChromeClient;->onReceivedIcon(Landroid/webkit/WebView;Landroid/graphics/Bitmap;)V
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 338
-    :pswitch_5
+    :pswitch_4
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebChromeClient:Landroid/webkit/WebChromeClient;
@@ -939,7 +910,7 @@
     goto :goto_1
 
     .line 345
-    :pswitch_6
+    :pswitch_5
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebChromeClient:Landroid/webkit/WebChromeClient;
@@ -970,7 +941,7 @@
     goto/16 :goto_0
 
     .line 352
-    :pswitch_7
+    :pswitch_6
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebViewClient:Landroid/webkit/WebViewClient;
@@ -1036,7 +1007,7 @@
     .end local v34           #description:Ljava/lang/String;
     .end local v37           #failUrl:Ljava/lang/String;
     .end local v54           #reasonCode:I
-    :pswitch_8
+    :pswitch_7
     invoke-virtual/range {p1 .. p1}, Landroid/os/Message;->getData()Landroid/os/Bundle;
 
     move-result-object v4
@@ -1101,7 +1072,7 @@
     .line 375
     .end local v35           #dontResend:Landroid/os/Message;
     .end local v56           #resend:Landroid/os/Message;
-    :pswitch_9
+    :pswitch_8
     invoke-virtual/range {p1 .. p1}, Landroid/os/Message;->getData()Landroid/os/Bundle;
 
     move-result-object v4
@@ -1167,7 +1138,7 @@
     .end local v50           #override:Z
     .end local v51           #overrideUrl:Ljava/lang/String;
     .end local v57           #result:Landroid/webkit/CallbackProxy$ResultTransport;,"Landroid/webkit/CallbackProxy$ResultTransport<Ljava/lang/Boolean;>;"
-    :pswitch_a
+    :pswitch_9
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebViewClient:Landroid/webkit/WebViewClient;
@@ -1235,7 +1206,7 @@
     .end local v39           #handler:Landroid/webkit/HttpAuthHandler;
     .end local v40           #host:Ljava/lang/String;
     .end local v53           #realm:Ljava/lang/String;
-    :pswitch_b
+    :pswitch_a
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebViewClient:Landroid/webkit/WebViewClient;
@@ -1293,7 +1264,7 @@
 
     .line 406
     .end local v45           #map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;"
-    :pswitch_c
+    :pswitch_b
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebViewClient:Landroid/webkit/WebViewClient;
@@ -1324,7 +1295,7 @@
     goto/16 :goto_0
 
     .line 413
-    :pswitch_d
+    :pswitch_c
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebViewClient:Landroid/webkit/WebViewClient;
@@ -1382,7 +1353,7 @@
 
     .line 426
     .end local v45           #map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;"
-    :pswitch_e
+    :pswitch_d
     monitor-enter p0
 
     .line 427
@@ -1435,7 +1406,7 @@
     throw v4
 
     .line 436
-    :pswitch_f
+    :pswitch_e
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebViewClient:Landroid/webkit/WebViewClient;
@@ -1482,7 +1453,7 @@
     goto :goto_2
 
     .line 443
-    :pswitch_10
+    :pswitch_f
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebViewClient:Landroid/webkit/WebViewClient;
@@ -1513,7 +1484,7 @@
     goto/16 :goto_0
 
     .line 449
-    :pswitch_11
+    :pswitch_10
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mDownloadListener:Landroid/webkit/DownloadListener;
@@ -1603,7 +1574,7 @@
     .end local v7           #contentDisposition:Ljava/lang/String;
     .end local v8           #mimetype:Ljava/lang/String;
     .end local v32           #contentLength:Ljava/lang/Long;
-    :pswitch_12
+    :pswitch_11
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebChromeClient:Landroid/webkit/WebChromeClient;
@@ -1716,7 +1687,7 @@
     throw v4
 
     .line 476
-    :pswitch_13
+    :pswitch_12
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebChromeClient:Landroid/webkit/WebChromeClient;
@@ -1741,7 +1712,7 @@
     goto/16 :goto_0
 
     .line 482
-    :pswitch_14
+    :pswitch_13
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebChromeClient:Landroid/webkit/WebChromeClient;
@@ -1768,7 +1739,7 @@
     goto/16 :goto_0
 
     .line 488
-    :pswitch_15
+    :pswitch_14
     invoke-virtual/range {p1 .. p1}, Landroid/os/Message;->getData()Landroid/os/Bundle;
 
     move-result-object v30
@@ -1853,7 +1824,7 @@
     .end local v52           #password:Ljava/lang/String;
     .end local v58           #schemePlusHost:Ljava/lang/String;
     .end local v65           #username:Ljava/lang/String;
-    :pswitch_16
+    :pswitch_15
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebViewClient:Landroid/webkit/WebViewClient;
@@ -1884,7 +1855,7 @@
     goto/16 :goto_0
 
     .line 510
-    :pswitch_17
+    :pswitch_16
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebChromeClient:Landroid/webkit/WebChromeClient;
@@ -2004,7 +1975,7 @@
     .end local v16           #totalQuota:J
     .end local v18           #quotaUpdater:Landroid/webkit/WebStorage$QuotaUpdater;
     .end local v45           #map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;"
-    :pswitch_18
+    :pswitch_17
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebChromeClient:Landroid/webkit/WebChromeClient;
@@ -2085,7 +2056,7 @@
     .end local v18           #quotaUpdater:Landroid/webkit/WebStorage$QuotaUpdater;
     .end local v20           #requiredStorage:J
     .end local v45           #map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;"
-    :pswitch_19
+    :pswitch_18
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebChromeClient:Landroid/webkit/WebChromeClient;
@@ -2143,7 +2114,7 @@
     .end local v31           #callback:Landroid/webkit/GeolocationPermissions$Callback;
     .end local v45           #map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;"
     .end local v49           #origin:Ljava/lang/String;
-    :pswitch_1a
+    :pswitch_19
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebChromeClient:Landroid/webkit/WebChromeClient;
@@ -2160,7 +2131,7 @@
     goto/16 :goto_0
 
     .line 567
-    :pswitch_1b
+    :pswitch_1a
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebChromeClient:Landroid/webkit/WebChromeClient;
@@ -2312,7 +2283,7 @@
     .end local v25           #message:Ljava/lang/String;
     .end local v27           #res:Landroid/webkit/JsResult;
     .end local v55           #receiver:Landroid/webkit/CallbackProxy$JsResultReceiver;
-    :pswitch_1c
+    :pswitch_1b
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebChromeClient:Landroid/webkit/WebChromeClient;
@@ -2478,7 +2449,7 @@
     .end local v25           #message:Ljava/lang/String;
     .end local v27           #res:Landroid/webkit/JsResult;
     .end local v55           #receiver:Landroid/webkit/CallbackProxy$JsResultReceiver;
-    :pswitch_1d
+    :pswitch_1c
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebChromeClient:Landroid/webkit/WebChromeClient;
@@ -2718,7 +2689,7 @@
     .end local v26           #defaultVal:Ljava/lang/String;
     .end local v27           #res:Landroid/webkit/JsPromptResult;
     .end local v55           #receiver:Landroid/webkit/CallbackProxy$JsResultReceiver;
-    :pswitch_1e
+    :pswitch_1d
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebChromeClient:Landroid/webkit/WebChromeClient;
@@ -2883,7 +2854,7 @@
     .end local v25           #message:Ljava/lang/String;
     .end local v27           #res:Landroid/webkit/JsResult;
     .end local v55           #receiver:Landroid/webkit/CallbackProxy$JsResultReceiver;
-    :pswitch_1f
+    :pswitch_1e
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebChromeClient:Landroid/webkit/WebChromeClient;
@@ -2937,7 +2908,7 @@
     .line 759
     .end local v27           #res:Landroid/webkit/JsResult;
     .end local v55           #receiver:Landroid/webkit/CallbackProxy$JsResultReceiver;
-    :pswitch_20
+    :pswitch_1f
     move-object/from16 v0, p0
 
     iget-object v9, v0, Landroid/webkit/CallbackProxy;->mWebView:Landroid/webkit/WebViewClassic;
@@ -2953,7 +2924,7 @@
     goto/16 :goto_0
 
     .line 763
-    :pswitch_21
+    :pswitch_20
     monitor-enter p0
 
     .line 764
@@ -2975,7 +2946,7 @@
     throw v4
 
     .line 769
-    :pswitch_22
+    :pswitch_21
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebViewClient:Landroid/webkit/WebViewClient;
@@ -3028,7 +2999,7 @@
     goto/16 :goto_0
 
     .line 776
-    :pswitch_23
+    :pswitch_22
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebView:Landroid/webkit/WebViewClassic;
@@ -3038,7 +3009,7 @@
     goto/16 :goto_0
 
     .line 780
-    :pswitch_24
+    :pswitch_23
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebChromeClient:Landroid/webkit/WebChromeClient;
@@ -3206,7 +3177,7 @@
     goto/16 :goto_0
 
     .line 805
-    :pswitch_25
+    :pswitch_24
     move-object/from16 v0, v43
 
     move-object/from16 v1, v42
@@ -3216,7 +3187,7 @@
     goto/16 :goto_0
 
     .line 808
-    :pswitch_26
+    :pswitch_25
     move-object/from16 v0, v43
 
     move-object/from16 v1, v42
@@ -3226,7 +3197,7 @@
     goto/16 :goto_0
 
     .line 811
-    :pswitch_27
+    :pswitch_26
     move-object/from16 v0, v43
 
     move-object/from16 v1, v42
@@ -3236,7 +3207,7 @@
     goto/16 :goto_0
 
     .line 814
-    :pswitch_28
+    :pswitch_27
     move-object/from16 v0, v43
 
     move-object/from16 v1, v42
@@ -3246,7 +3217,7 @@
     goto/16 :goto_0
 
     .line 817
-    :pswitch_29
+    :pswitch_28
     move-object/from16 v0, v43
 
     move-object/from16 v1, v42
@@ -3264,7 +3235,7 @@
     .end local v47           #msgLevel:I
     .end local v48           #numberOfMessageLevels:I
     .end local v60           #sourceID:Ljava/lang/String;
-    :pswitch_2a
+    :pswitch_29
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebChromeClient:Landroid/webkit/WebChromeClient;
@@ -3287,7 +3258,7 @@
     goto/16 :goto_0
 
     .line 831
-    :pswitch_2b
+    :pswitch_2a
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebChromeClient:Landroid/webkit/WebChromeClient;
@@ -3329,7 +3300,7 @@
 
     .line 839
     .end local v33           #data:Landroid/webkit/CallbackProxy$UploadFileMessageData;
-    :pswitch_2c
+    :pswitch_2b
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebBackForwardListClient:Landroid/webkit/WebBackForwardListClient;
@@ -3352,7 +3323,7 @@
     goto/16 :goto_0
 
     .line 846
-    :pswitch_2d
+    :pswitch_2c
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebBackForwardListClient:Landroid/webkit/WebBackForwardListClient;
@@ -3379,7 +3350,7 @@
     goto/16 :goto_0
 
     .line 852
-    :pswitch_2e
+    :pswitch_2d
     invoke-virtual/range {p1 .. p1}, Landroid/os/Message;->getData()Landroid/os/Bundle;
 
     move-result-object v4
@@ -3449,7 +3420,7 @@
     .end local v52           #password:Ljava/lang/String;
     .end local v53           #realm:Ljava/lang/String;
     .end local v65           #username:Ljava/lang/String;
-    :pswitch_2f
+    :pswitch_2e
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebChromeClient:Landroid/webkit/WebChromeClient;
@@ -3466,7 +3437,7 @@
     goto/16 :goto_0
 
     .line 866
-    :pswitch_30
+    :pswitch_2f
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebView:Landroid/webkit/WebViewClassic;
@@ -3510,7 +3481,7 @@
     .line 874
     .end local v59           #searchBox:Landroid/webkit/SearchBoxImpl;
     .end local v63           #suggestions:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
-    :pswitch_31
+    :pswitch_30
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebViewClient:Landroid/webkit/WebViewClient;
@@ -3580,7 +3551,7 @@
     .end local v28           #account:Ljava/lang/String;
     .end local v29           #args:Ljava/lang/String;
     .end local v53           #realm:Ljava/lang/String;
-    :pswitch_32
+    :pswitch_31
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebView:Landroid/webkit/WebViewClassic;
@@ -3616,7 +3587,7 @@
     .line 890
     .end local v59           #searchBox:Landroid/webkit/SearchBoxImpl;
     .end local v64           #supported:Ljava/lang/Boolean;
-    :pswitch_33
+    :pswitch_32
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebView:Landroid/webkit/WebViewClassic;
@@ -3675,38 +3646,39 @@
     :pswitch_data_0
     .packed-switch 0x64
         :pswitch_1
-        :pswitch_4
-        :pswitch_6
+        :pswitch_3
+        :pswitch_5
+        :pswitch_8
         :pswitch_9
         :pswitch_a
-        :pswitch_b
+        :pswitch_d
         :pswitch_e
         :pswitch_f
-        :pswitch_10
-        :pswitch_12
+        :pswitch_11
+        :pswitch_13
         :pswitch_14
-        :pswitch_15
+        :pswitch_1a
         :pswitch_1b
         :pswitch_1c
         :pswitch_1d
-        :pswitch_1e
-        :pswitch_16
+        :pswitch_15
         :pswitch_0
-        :pswitch_11
+        :pswitch_10
+        :pswitch_6
         :pswitch_7
-        :pswitch_8
         :pswitch_2
-        :pswitch_13
-        :pswitch_22
-        :pswitch_20
-        :pswitch_23
-        :pswitch_17
-        :pswitch_18
+        :pswitch_12
+        :pswitch_21
         :pswitch_1f
-        :pswitch_24
+        :pswitch_22
+        :pswitch_16
+        :pswitch_17
+        :pswitch_1e
+        :pswitch_23
+        :pswitch_18
         :pswitch_19
-        :pswitch_1a
-        :pswitch_5
+        :pswitch_4
+        :pswitch_29
         :pswitch_2a
         :pswitch_2b
         :pswitch_2c
@@ -3714,11 +3686,10 @@
         :pswitch_2e
         :pswitch_2f
         :pswitch_30
-        :pswitch_31
-        :pswitch_d
-        :pswitch_32
-        :pswitch_33
         :pswitch_c
+        :pswitch_31
+        :pswitch_32
+        :pswitch_b
         :pswitch_0
         :pswitch_0
         :pswitch_0
@@ -3774,27 +3745,17 @@
         :pswitch_0
         :pswitch_0
         :pswitch_0
-        :pswitch_21
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_3
+        :pswitch_20
     .end packed-switch
 
     .line 803
     :pswitch_data_1
     .packed-switch 0x1
+        :pswitch_24
         :pswitch_25
         :pswitch_26
         :pswitch_27
         :pswitch_28
-        :pswitch_29
     .end packed-switch
 .end method
 
@@ -4497,25 +4458,6 @@
     move-result v2
 
     goto :goto_0
-.end method
-
-.method public onMainFrameFinishParsing()V
-    .locals 2
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
-
-    .prologue
-    const/16 v1, 0xd2
-
-    invoke-virtual {p0, v1}, Landroid/webkit/CallbackProxy;->obtainMessage(I)Landroid/os/Message;
-
-    move-result-object v0
-
-    .local v0, msg:Landroid/os/Message;
-    invoke-virtual {p0, v0}, Landroid/webkit/CallbackProxy;->sendMessage(Landroid/os/Message;)Z
-
-    return-void
 .end method
 
 .method onNewHistoryItem(Landroid/webkit/WebHistoryItem;)V
