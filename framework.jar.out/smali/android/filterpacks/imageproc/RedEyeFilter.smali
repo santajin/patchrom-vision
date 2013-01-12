@@ -363,6 +363,9 @@
 
     .line 103
     nop
+
+    nop
+
     :pswitch_data_0
     .packed-switch 0x3
         :pswitch_0

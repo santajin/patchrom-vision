@@ -295,6 +295,7 @@
     return-void
 
     .line 105
+    nop
 
     :pswitch_data_0
     .packed-switch 0x3

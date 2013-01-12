@@ -265,7 +265,7 @@
     .line 162
     aput v6, v1, v8
 
-    goto :goto_0
+    goto/16 :goto_0
 .end method
 
 
@@ -345,6 +345,9 @@
 
     .line 140
     nop
+
+    nop
+
     :pswitch_data_0
     .packed-switch 0x3
         :pswitch_0

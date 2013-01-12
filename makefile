@@ -19,7 +19,7 @@ local-modified-jars :=
 # All apks from MIUI
 local-miui-removed-apps := MediaProvider Stk
 
-local-miui-modified-apps := MiuiHome Settings Phone Mms ThemeManager
+local-miui-modified-apps := MiuiHome Settings Phone Mms ThemeManager MiuiSystemUI
 
 include phoneapps.mk
 
@@ -46,11 +46,12 @@ updater := $(ZIP_DIR)/META-INF/com/google/android/updater-script
 pre_install_data_packages := out/pre_install_apk_pkgname.txt
 local-pre-zip-misc:
 	cp other/spn-conf.xml $(ZIP_DIR)/system/etc/spn-conf.xml
-	#cp other/98setinstalllocation $(ZIP_DIR)/system/etc/init.d/98setinstalllocation
 	cp other/build.prop $(ZIP_DIR)/system/build.prop
 	#cp other/Camera.apk $(ZIP_DIR)/system/app/Camera.apk
 	cp other/module/*.* -rf $(ZIP_DIR)/system/lib/modules/
 	cp other/boot.img $(ZIP_DIR)/
+	cp other/media/*.* -rf $(ZIP_DIR)/system/media/
+	#cp other/vold.fstab $(ZIP_DIR)/system/etc/vold.fstab
 	rm -rf $(ZIP_DIR)/system/addon.d
 	rm -rf $(ZIP_DIR)/system/media/video
 	rm -rf $(ZIP_DIR)/system/bin/*_test
