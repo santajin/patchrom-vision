@@ -115,7 +115,6 @@
     return-void
 
     .line 145
-    nop
 
     :array_0
     .array-data 0x4

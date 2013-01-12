@@ -128,7 +128,7 @@
 
 .field private mPluralRule:Llibcore/icu/NativePluralRules;
 
-.field mPreloading:Z
+.field private mPreloading:Z
 
 .field final mTmpConfig:Landroid/content/res/Configuration;
 

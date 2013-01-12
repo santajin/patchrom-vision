@@ -70,9 +70,6 @@
 
     .line 106
     nop
-
-    nop
-
     :array_0
     .array-data 0x4
         0x0t 0x40t 0xc9t 0x3et
@@ -164,9 +161,6 @@
 
     .line 66
     nop
-
-    nop
-
     :pswitch_data_0
     .packed-switch 0x3
         :pswitch_0

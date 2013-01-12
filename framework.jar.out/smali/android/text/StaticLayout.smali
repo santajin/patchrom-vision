@@ -1103,23 +1103,6 @@
     goto/16 :goto_3
 .end method
 
-.method static callIsIdeographic(CZ)Z
-    .locals 1
-    .parameter "c"
-    .parameter "includeNonStarters"
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
-
-    .prologue
-    .line 44
-    invoke-static {p0, p1}, Landroid/text/StaticLayout;->isIdeographic(CZ)Z
-
-    move-result v0
-
-    return v0
-.end method
-
 .method private static final isIdeographic(CZ)Z
     .locals 3
     .parameter "c"
@@ -1276,8 +1259,6 @@
     goto :goto_0
 
     .line 529
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x3041 -> :sswitch_0
@@ -4160,4 +4141,21 @@
 
     .line 939
     return-void
+.end method
+
+.method static callIsIdeographic(CZ)Z
+    .locals 1
+    .parameter "c"
+    .parameter "includeNonStarters"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    .line 44
+    invoke-static {p0, p1}, Landroid/text/StaticLayout;->isIdeographic(CZ)Z
+
+    move-result v0
+
+    return v0
 .end method

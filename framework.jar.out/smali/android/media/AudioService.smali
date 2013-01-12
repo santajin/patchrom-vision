@@ -1138,8 +1138,6 @@
     .line 207
     nop
 
-    nop
-
     :array_0
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
@@ -8972,7 +8970,6 @@
     iget-object v1, p0, Landroid/media/AudioService;->mVolumePanel:Lmiui/view/VolumePanel;
 
     invoke-virtual {v1, p1, p4}, Lmiui/view/VolumePanel;->postVolumeChanged(II)V
-
     .line 972
     add-int/lit8 v1, p2, 0x5
 
