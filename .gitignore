@@ -1,6 +1,6 @@
 out/
 *.zip
 *.pyc
-*.txt
+log*.txt
 test/
 *delete-zip-file-when-clean

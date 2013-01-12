@@ -8,15 +8,12 @@ private-phone-apps := ApplicationsProvider \
 					  DrmProvider \
 					  KeyChain \
 					  Gallery2 \
-					  LiveWallpapers \
-					  MagicSmokeWallpapers \
 					  MediaProvider \
 					  NoiseField \
 					  PhaseBeam \
 					  SharedStorageBackup \
 					  Stk \
 					  UserDictionaryProvider \
-					  VisualizationWallpapers \
 					  WAPPushManager
 
 private-lockscreen-apps := 
