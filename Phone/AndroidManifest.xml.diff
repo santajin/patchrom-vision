@@ -1,5 +1,14 @@
 --- Phone/AndroidManifest.xml	2013-01-10 23:56:50.526338683 +0800
 +++ AndroidManifest.xml	2013-01-10 23:56:21.000000000 +0800
+@@ -75,7 +75,7 @@
+     <uses-permission android:name="android.permission.STOP_APP_SWITCHES" />
+     <application android:label="@string/phoneAppLabel" android:icon="@drawable/ic_launcher_phone" android:name="MiuiPhoneApp" android:persistent="true">
+         <provider android:name="MiuiIccProvider" android:readPermission="android.permission.READ_CONTACTS" android:writePermission="android.permission.WRITE_CONTACTS" android:multiprocess="true" android:authorities="icc" />
+-        <activity android:theme="@style/Miui.Theme.EmergencyDialer.Alternative" android:label="@string/emergencyDialerIconLabel" android:name="EmergencyDialer" android:screenOrientation="nosensor">
++        <activity android:theme="@style/Miui.Theme.EmergencyDialer.Alternative" android:label="@string/emergencyDialerIconLabel" android:name="EmergencyDialer">
+             <intent-filter>
+                 <action android:name="com.android.phone.EmergencyDialer.DIAL" />
+                 <category android:name="android.intent.category.DEFAULT" />
 @@ -87,7 +87,7 @@
              </intent-filter>
          </activity>

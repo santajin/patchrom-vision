@@ -14,6 +14,7 @@ delete_recursive("/sdcard/.data/mail");
 delete_recursive("/sdcard/Android/data/com.android.providers.media");
 delete_recursive("/sdcard/Bugreports");
 delete_recursive("/sdcard/.android_secure");
+delete_recursive("/mnt/asec");
 delete_recursive("/sdcard/.bookmark_thumb1");
 delete_recursive("/sdcard/.data");
 ui_print("Creating system links...");"""
