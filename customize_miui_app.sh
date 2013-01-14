@@ -11,6 +11,7 @@ if [ $1 = "Settings" ];then
 fi
 
 if [ $1 = "Mms" ];then
+    $XMLMERGYTOOL $1/res/values $2/res/values
     patch $2/AndroidManifest.xml < $1/AndroidManifest.xml.diff
 	cd ..
     for file in `find $2 -name *.rej`
@@ -18,7 +19,6 @@ if [ $1 = "Mms" ];then
 	echo "MMS patch fail"
         exit 1
 	done	
-    $XMLMERGYTOOL $1/res/values $2/res/values
 fi
 
 if [ $1 = "Phone" ];then
