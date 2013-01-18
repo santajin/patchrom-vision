@@ -174,6 +174,8 @@
 
 .field public compatSmallestScreenWidthDp:I
 
+.field public customTheme:Landroid/content/res/CustomTheme;
+
 .field public extraConfig:Lmiui/content/res/ExtraConfiguration;
     .annotation build Landroid/annotation/MiuiHook;
         value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_FIELD:Landroid/annotation/MiuiHook$MiuiHookType;
