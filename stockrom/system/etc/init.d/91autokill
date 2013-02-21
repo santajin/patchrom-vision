@@ -1,0 +1,17 @@
+#!/system/bin/sh
+# DZ lowmemorykiller tweak 
+# E.g., 2048*4/1024 = 8 MB
+
+chmod 777 /sys/module/lowmemorykiller/parameters/adj
+chmod 777 /sys/module/lowmemorykiller/parameters/minfree
+
+echo "0,1,2,4,7,15" > /sys/module/lowmemorykiller/parameters/adj
+
+# size: 8M  12M  20M   60M   80M  100M from hd2
+# echo "2048,3072,5120,15360,20480,25600" > /sys/module/lowmemorykiller/parameters/minfree
+
+# size: 4M  8M  16M   32M   48M  90M
+echo "1024,2048,4096,8192,12288,23040" > /sys/module/lowmemorykiller/parameters/minfree
+
+chmod 0444 /sys/module/lowmemorykiller/parameters/adj
+chmod 0444 /sys/module/lowmemorykiller/parameters/minfree

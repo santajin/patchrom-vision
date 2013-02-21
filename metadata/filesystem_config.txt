@@ -3321,9 +3321,6 @@ system/etc/init.goldfish.sh 0 2000 550
 system/etc/NOTICE.html.gz 0 0 644
 system/etc/media_profiles.xml 0 0 644
 system/etc/init.d 0 0 755
-system/etc/init.d/00banner 0 2000 755
-system/etc/init.d/90userinit 0 2000 755
-system/etc/init.d/98setinstalllocation 0 2000 755
 system/etc/voicemail-conf.xml 0 0 644
 system/etc/bash 0 0 755
 system/etc/bash/bashrc 0 0 644
