@@ -709,14 +709,17 @@
 
     move-result-object v2
 
+    .line 174
     .local v2, dr:Landroid/graphics/drawable/Drawable;
     if-eqz v2, :cond_1
 
+    .line 186
     .end local v2           #dr:Landroid/graphics/drawable/Drawable;
     :cond_0
     :goto_0
     return-object v2
 
+    .line 178
     :cond_1
     iget-object v3, p0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
@@ -724,10 +727,12 @@
 
     iget-object v1, p0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
+    .line 179
     .local v1, ci:Landroid/content/pm/ComponentInfo;
     :goto_1
     iget-object v0, v1, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
+    .line 180
     .local v0, ai:Landroid/content/pm/ApplicationInfo;
     iget v3, p0, Landroid/content/pm/ResolveInfo;->icon:I
 
@@ -746,6 +751,7 @@
     .restart local v2       #dr:Landroid/graphics/drawable/Drawable;
     if-nez v2, :cond_0
 
+    .line 186
     .end local v2           #dr:Landroid/graphics/drawable/Drawable;
     :cond_2
     invoke-virtual {v1, p1}, Landroid/content/pm/ComponentInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
@@ -802,6 +808,7 @@
 
     move-result-object v3
 
+    .line 140
     .local v3, label:Ljava/lang/CharSequence;
     if-eqz v3, :cond_2
 
@@ -836,6 +843,7 @@
 
     if-eqz v4, :cond_4
 
+    .line 147
     iget-object v4, v1, Landroid/content/pm/ComponentInfo;->packageName:Ljava/lang/String;
 
     iget v5, p0, Landroid/content/pm/ResolveInfo;->labelRes:I
@@ -844,6 +852,7 @@
 
     move-result-object v3
 
+    .line 148
     .restart local v3       #label:Ljava/lang/CharSequence;
     if-eqz v3, :cond_4
 
@@ -978,7 +987,7 @@
 
     move-result-object v1
 
-    const-string v2, "}"
+    const-string/jumbo v2, "}"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

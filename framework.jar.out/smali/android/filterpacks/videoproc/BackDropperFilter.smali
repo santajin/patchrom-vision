@@ -439,10 +439,6 @@
     return-void
 
     .line 180
-    nop
-
-    nop
-
     :array_0
     .array-data 0x4
         0x0t 0x0t 0x80t 0x3ft

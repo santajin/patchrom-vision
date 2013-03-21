@@ -45,7 +45,7 @@
     iget-object v0, p0, Landroid/widget/AbsListView$AdapterDataSetObserver;->this$0:Landroid/widget/AbsListView;
 
     #getter for: Landroid/widget/AbsListView;->mFastScroller:Landroid/widget/FastScroller;
-    invoke-static {v0}, Landroid/widget/AbsListView;->access$3500(Landroid/widget/AbsListView;)Landroid/widget/FastScroller;
+    invoke-static {v0}, Landroid/widget/AbsListView;->access$3600(Landroid/widget/AbsListView;)Landroid/widget/FastScroller;
 
     move-result-object v0
 
@@ -55,7 +55,7 @@
     iget-object v0, p0, Landroid/widget/AbsListView$AdapterDataSetObserver;->this$0:Landroid/widget/AbsListView;
 
     #getter for: Landroid/widget/AbsListView;->mFastScroller:Landroid/widget/FastScroller;
-    invoke-static {v0}, Landroid/widget/AbsListView;->access$3500(Landroid/widget/AbsListView;)Landroid/widget/FastScroller;
+    invoke-static {v0}, Landroid/widget/AbsListView;->access$3600(Landroid/widget/AbsListView;)Landroid/widget/FastScroller;
 
     move-result-object v0
 
@@ -77,7 +77,7 @@
     iget-object v0, p0, Landroid/widget/AbsListView$AdapterDataSetObserver;->this$0:Landroid/widget/AbsListView;
 
     #getter for: Landroid/widget/AbsListView;->mFastScroller:Landroid/widget/FastScroller;
-    invoke-static {v0}, Landroid/widget/AbsListView;->access$3500(Landroid/widget/AbsListView;)Landroid/widget/FastScroller;
+    invoke-static {v0}, Landroid/widget/AbsListView;->access$3600(Landroid/widget/AbsListView;)Landroid/widget/FastScroller;
 
     move-result-object v0
 
@@ -87,7 +87,7 @@
     iget-object v0, p0, Landroid/widget/AbsListView$AdapterDataSetObserver;->this$0:Landroid/widget/AbsListView;
 
     #getter for: Landroid/widget/AbsListView;->mFastScroller:Landroid/widget/FastScroller;
-    invoke-static {v0}, Landroid/widget/AbsListView;->access$3500(Landroid/widget/AbsListView;)Landroid/widget/FastScroller;
+    invoke-static {v0}, Landroid/widget/AbsListView;->access$3600(Landroid/widget/AbsListView;)Landroid/widget/FastScroller;
 
     move-result-object v0
 

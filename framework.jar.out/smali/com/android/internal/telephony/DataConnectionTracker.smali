@@ -2719,7 +2719,6 @@
 
     const/4 v0, 0x1
 
-    .line 804
     .local v0, result:Z
     :goto_0
     invoke-static {p0, v0}, Lcom/android/internal/telephony/DataConnectionTracker$Injector;->getAnyDataEnabled(Lcom/android/internal/telephony/DataConnectionTracker;Z)Z
@@ -2730,7 +2729,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 805
     if-nez v0, :cond_0
 
     new-instance v1, Ljava/lang/StringBuilder;

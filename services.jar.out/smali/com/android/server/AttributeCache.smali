@@ -7,8 +7,7 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/android/server/AttributeCache$Entry;,
-        Lcom/android/server/AttributeCache$Package;,
-        Lcom/android/server/AttributeCache$Injector;
+        Lcom/android/server/AttributeCache$Package;
     }
 .end annotation
 
@@ -23,19 +22,13 @@
 .field private final mContext:Landroid/content/Context;
 
 .field private final mPackages:Ljava/util/WeakHashMap;
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/WeakHashMap",
             "<",
             "Ljava/lang/String;",
-            "Ljava/lang/ref/WeakReference",
-            "<",
             "Lcom/android/server/AttributeCache$Package;",
-            ">;>;"
+            ">;"
         }
     .end annotation
 .end field
@@ -137,6 +130,7 @@
 
     move-result-object v5
 
+    .line 100
     .local v5, pkg:Lcom/android/server/AttributeCache$Package;
     const/4 v4, 0x0
 

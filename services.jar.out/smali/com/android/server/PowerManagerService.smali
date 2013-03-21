@@ -2555,22 +2555,18 @@
 
     invoke-virtual {v2, v3, v4, v5}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
 
-    .line 3620
     const/4 v2, 0x1
 
     iput-boolean v2, p0, Lcom/android/server/PowerManagerService;->mProximitySensorEnabled:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3622
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3625
     .end local v0           #identity:J
     :goto_0
     return-void
 
-    .line 3622
     .restart local v0       #identity:J
     :catchall_0
     move-exception v2
@@ -4860,6 +4856,9 @@
     .parameter "newState"
     .parameter "noChangeLights"
     .parameter "reason"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
 
     .prologue
     .line 1867
@@ -4880,13 +4879,11 @@
 
     or-int p1, v9, v11
 
-    .line 1880
     :cond_0
     iget-boolean v9, p0, Lcom/android/server/PowerManagerService;->mProximitySensorActive:Z
 
     if-eqz v9, :cond_1
 
-    .line 1882
     :cond_1
     invoke-direct {p0}, Lcom/android/server/PowerManagerService;->batteryIsLow()Z
 
@@ -8054,6 +8051,8 @@
 
     goto/16 :goto_3
 
+    nop
+
     .line 918
     :sswitch_data_0
     .sparse-switch
@@ -10313,12 +10312,41 @@
     return-object v0
 .end method
 
+.method public getRawLightSensorValue()I
+    .locals 2
+
+    .prologue
+    .line 2903
+    iget-boolean v0, p0, Lcom/android/server/PowerManagerService;->mLightFilterEnabled:Z
+
+    if-eqz v0, :cond_0
+
+    iget v0, p0, Lcom/android/server/PowerManagerService;->mLightFilterSample:I
+
+    const/4 v1, -0x1
+
+    if-eq v0, v1, :cond_0
+
+    .line 2904
+    iget v0, p0, Lcom/android/server/PowerManagerService;->mLightFilterSample:I
+
+    .line 2906
+    :goto_0
+    return v0
+
+    :cond_0
+    invoke-virtual {p0}, Lcom/android/server/PowerManagerService;->getLightSensorValue()I
+
+    move-result v0
+
+    goto :goto_0
+.end method
+
 .method getPowerState()I
     .locals 1
     .annotation build Landroid/annotation/MiuiHook;
         value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
     .end annotation
-
 
     .prologue
     iget v0, p0, Lcom/android/server/PowerManagerService;->mPowerState:I
@@ -10348,35 +10376,6 @@
     iget-object v0, p0, Lcom/android/server/PowerManagerService;->mScreenBrightnessHandler:Landroid/os/Handler;
 
     return-object v0
-.end method
-.method public getRawLightSensorValue()I
-    .locals 2
-
-    .prologue
-    .line 2903
-    iget-boolean v0, p0, Lcom/android/server/PowerManagerService;->mLightFilterEnabled:Z
-
-    if-eqz v0, :cond_0
-
-    iget v0, p0, Lcom/android/server/PowerManagerService;->mLightFilterSample:I
-
-    const/4 v1, -0x1
-
-    if-eq v0, v1, :cond_0
-
-    .line 2904
-    iget v0, p0, Lcom/android/server/PowerManagerService;->mLightFilterSample:I
-
-    .line 2906
-    :goto_0
-    return v0
-
-    :cond_0
-    invoke-virtual {p0}, Lcom/android/server/PowerManagerService;->getLightSensorValue()I
-
-    move-result v0
-
-    goto :goto_0
 .end method
 
 .method getStayOnConditionsLocked()I
@@ -11545,25 +11544,20 @@
 
     invoke-virtual {v1, v3, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 1711
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/server/PowerManagerService;->mPreventScreenOn:Z
 
-    .line 1738
     :goto_0
     monitor-exit v2
 
-    .line 1739
     return-void
 
-    .line 1714
     :cond_0
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/server/PowerManagerService;->mPreventScreenOn:Z
 
-    .line 1718
     iget-object v1, p0, Lcom/android/server/PowerManagerService;->mHandler:Landroid/os/Handler;
 
     iget-object v3, p0, Lcom/android/server/PowerManagerService;->mForceReenableScreenTask:Ljava/lang/Runnable;

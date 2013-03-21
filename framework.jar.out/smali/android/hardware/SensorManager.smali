@@ -6,8 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/hardware/SensorManager$SensorEventPool;,
-        Landroid/hardware/SensorManager$Injector;
+        Landroid/hardware/SensorManager$SensorEventPool;
     }
 .end annotation
 
@@ -240,9 +239,6 @@
     .locals 7
     .parameter "p0"
     .parameter "p"
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
 
     .prologue
     .line 1119

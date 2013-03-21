@@ -134,7 +134,7 @@
     iput v3, p0, Landroid/widget/SuggestionsAdapter;->mFlagsCol:I
 
     .line 104
-    iget-object v1, p0, Landroid/widget/CursorAdapter;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/widget/SuggestionsAdapter;->mContext:Landroid/content/Context;
 
     const-string/jumbo v2, "search"
 
@@ -155,7 +155,7 @@
     .line 108
     iget-object v1, p0, Landroid/widget/SuggestionsAdapter;->mSearchable:Landroid/app/SearchableInfo;
 
-    iget-object v2, p0, Landroid/widget/CursorAdapter;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Landroid/widget/SuggestionsAdapter;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v2}, Landroid/app/SearchableInfo;->getActivityContext(Landroid/content/Context;)Landroid/content/Context;
 
@@ -165,7 +165,7 @@
     .local v0, activityContext:Landroid/content/Context;
     iget-object v1, p0, Landroid/widget/SuggestionsAdapter;->mSearchable:Landroid/app/SearchableInfo;
 
-    iget-object v2, p0, Landroid/widget/CursorAdapter;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Landroid/widget/SuggestionsAdapter;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v2, v0}, Landroid/app/SearchableInfo;->getProviderContext(Landroid/content/Context;Landroid/content/Context;)Landroid/content/Context;
 
@@ -245,7 +245,7 @@
 
     .line 372
     .local v6, colorValue:Landroid/util/TypedValue;
-    iget-object v0, p0, Landroid/widget/CursorAdapter;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/widget/SuggestionsAdapter;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
@@ -258,7 +258,7 @@
     invoke-virtual {v0, v3, v6, v4}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
     .line 373
-    iget-object v0, p0, Landroid/widget/CursorAdapter;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/widget/SuggestionsAdapter;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -314,7 +314,7 @@
     const/4 v6, 0x0
 
     .line 657
-    iget-object v7, p0, Landroid/widget/CursorAdapter;->mContext:Landroid/content/Context;
+    iget-object v7, p0, Landroid/widget/SuggestionsAdapter;->mContext:Landroid/content/Context;
 
     invoke-virtual {v7}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -568,7 +568,7 @@
 
     .restart local v0       #drawable:Landroid/graphics/drawable/Drawable;
     :cond_0
-    iget-object v1, p0, Landroid/widget/CursorAdapter;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/widget/SuggestionsAdapter;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -1786,9 +1786,9 @@
     invoke-static {v4, v5, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     .line 487
-    iget-object v4, p0, Landroid/widget/CursorAdapter;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Landroid/widget/SuggestionsAdapter;->mContext:Landroid/content/Context;
 
-    iget-object v5, p0, Landroid/widget/CursorAdapter;->mCursor:Landroid/database/Cursor;
+    iget-object v5, p0, Landroid/widget/SuggestionsAdapter;->mCursor:Landroid/database/Cursor;
 
     invoke-virtual {p0, v4, v5, p3}, Landroid/widget/SuggestionsAdapter;->newView(Landroid/content/Context;Landroid/database/Cursor;Landroid/view/ViewGroup;)Landroid/view/View;
 

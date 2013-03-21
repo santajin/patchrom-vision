@@ -1472,9 +1472,6 @@
     .parameter "info"
     .parameter "installerPackage"
     .parameter "instream"
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
 
     .prologue
     .line 3527
@@ -1565,7 +1562,7 @@
 
     cmp-long v18, v13, v18
 
-    if-lez v18, :cond_1
+    if-lez v18, :cond_2
 
     .line 3539
     array-length v0, v6
@@ -1580,7 +1577,7 @@
 
     cmp-long v18, v18, v13
 
-    if-gez v18, :cond_0
+    if-gez v18, :cond_1
 
     array-length v0, v6
 
@@ -1611,7 +1608,7 @@
 
     .line 3541
     .local v7, didRead:I
-    if-ltz v7, :cond_1
+    if-ltz v7, :cond_2
 
     move-object/from16 v0, p0
 
@@ -1632,6 +1629,7 @@
     iput-wide v0, v2, Lcom/android/server/BackupManagerService$PerformFullRestoreTask;->mBytes:J
 
     .line 3542
+    :cond_0
     const/16 v18, 0x0
 
     move/from16 v0, v18
@@ -1650,14 +1648,14 @@
 
     .end local v7           #didRead:I
     .end local v15           #toRead:J
-    :cond_0
+    :cond_1
     move-wide v15, v13
 
     .line 3539
     goto :goto_1
 
     .line 3545
-    :cond_1
+    :cond_2
     invoke-virtual {v5}, Ljava/io/FileOutputStream;->close()V
 
     .line 3548
@@ -1742,7 +1740,7 @@
 
     move/from16 v1, v19
 
-    if-eq v0, v1, :cond_3
+    if-eq v0, v1, :cond_4
 
     .line 3562
     move-object/from16 v0, p0
@@ -1770,7 +1768,7 @@
 
     move-object/from16 v1, v19
 
-    if-eq v0, v1, :cond_2
+    if-eq v0, v1, :cond_3
 
     .line 3563
     const/4 v9, 0x0
@@ -1780,7 +1778,7 @@
     .end local v6           #buffer:[B
     .end local v10           #packageUri:Landroid/net/Uri;
     .end local v13           #size:J
-    :cond_2
+    :cond_3
     :goto_2
     invoke-virtual {v4}, Ljava/io/File;->delete()Z
 
@@ -1792,7 +1790,7 @@
     .restart local v6       #buffer:[B
     .restart local v10       #packageUri:Landroid/net/Uri;
     .restart local v13       #size:J
-    :cond_3
+    :cond_4
     const/16 v17, 0x0
 
     .line 3568
@@ -1820,7 +1818,7 @@
 
     move-result v18
 
-    if-nez v18, :cond_5
+    if-nez v18, :cond_6
 
     .line 3569
     const-string v18, "BackupManagerService"
@@ -1880,9 +1878,9 @@
     const/16 v17, 0x1
 
     .line 3602
-    :cond_4
+    :cond_5
     :goto_3
-    if-eqz v17, :cond_2
+    if-eqz v17, :cond_3
 
     .line 3603
     move-object/from16 v0, p0
@@ -1973,7 +1971,7 @@
     .restart local v10       #packageUri:Landroid/net/Uri;
     .restart local v13       #size:J
     .restart local v17       #uninstall:Z
-    :cond_5
+    :cond_6
     :try_start_3
     move-object/from16 v0, p0
 
@@ -2014,7 +2012,7 @@
 
     and-int v18, v18, v19
 
-    if-nez v18, :cond_6
+    if-nez v18, :cond_7
 
     .line 3580
     const-string v18, "BackupManagerService"
@@ -2057,7 +2055,7 @@
     goto/16 :goto_3
 
     .line 3585
-    :cond_6
+    :cond_7
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/BackupManagerService$PerformFullRestoreTask;->mManifestSignatures:Ljava/util/HashMap;
@@ -2091,7 +2089,7 @@
 
     move-result v18
 
-    if-nez v18, :cond_4
+    if-nez v18, :cond_5
 
     .line 3587
     const-string v18, "BackupManagerService"

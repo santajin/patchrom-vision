@@ -2849,8 +2849,7 @@
 
     if-eqz v34, :cond_18
 
-    .line 861
-    const-string/jumbo v34, "operatorNumeric is null"
+    const-string v34, "operatorNumeric is null"
 
     move-object/from16 v0, p0
 

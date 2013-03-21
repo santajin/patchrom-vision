@@ -152,19 +152,45 @@
 
 
 # virtual methods
-.method getActionBarBackground()Landroid/graphics/drawable/Drawable;
-    .locals 1
+.method private shouldPutTabsOnTop()Z
+    .locals 2
     .annotation build Landroid/annotation/MiuiHook;
         value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
     .end annotation
 
     .prologue
-    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mBackground:Landroid/graphics/drawable/Drawable;
+    const/4 v0, 0x0
 
-    return-object v0
+    iget-object v1, p0, Lcom/android/internal/widget/ActionBarContainer;->mContext:Landroid/content/Context;
+
+    invoke-static {v1}, Lmiui/util/UiUtils;->isV5Ui(Landroid/content/Context;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    :cond_0
+    :goto_0
+    return v0
+
+    :cond_1
+    iget-object v1, p0, Lcom/android/internal/widget/ActionBarContainer;->mActionBarView:Lcom/android/internal/widget/ActionBarView;
+
+    invoke-virtual {v1}, Lcom/android/internal/widget/ActionBarView;->getDisplayOptions()I
+
+    move-result v1
+
+    and-int/lit8 v1, v1, 0x2
+
+    if-nez v1, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
 .end method
 
-.method getActionBarView()Lcom/android/internal/widget/ActionBarView;
+
+.method public getActionBarView()Lcom/android/internal/widget/ActionBarView;
     .locals 1
     .annotation build Landroid/annotation/MiuiHook;
         value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
@@ -172,18 +198,6 @@
 
     .prologue
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mActionBarView:Lcom/android/internal/widget/ActionBarView;
-
-    return-object v0
-.end method
-
-.method getStackedBackground()Landroid/graphics/drawable/Drawable;
-    .locals 1
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
-
-    .prologue
-    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mStackedBackground:Landroid/graphics/drawable/Drawable;
 
     return-object v0
 .end method
@@ -196,6 +210,18 @@
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mTabContainer:Landroid/view/View;
 
     return-object v0
+.end method
+
+.method protected isSplit()Z
+    .locals 1
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    iget-boolean v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mIsSplit:Z
+
+    return v0
 .end method
 
 .method public onDraw(Landroid/graphics/Canvas;)V
@@ -395,15 +421,11 @@
 
     .line 202
     .local v7, tabHeight:I
-    iget-object v8, p0, Lcom/android/internal/widget/ActionBarContainer;->mActionBarView:Lcom/android/internal/widget/ActionBarView;
-
-    invoke-virtual {v8}, Lcom/android/internal/widget/ActionBarView;->getDisplayOptions()I
+    invoke-direct {p0}, Lcom/android/internal/widget/ActionBarContainer;->shouldPutTabsOnTop()Z
 
     move-result v8
 
-    and-int/lit8 v8, v8, 0x2
-
-    if-nez v8, :cond_7
+    if-eqz v8, :cond_7
 
     .line 204
     invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarContainer;->getChildCount()I
@@ -604,31 +626,33 @@
     if-eqz v8, :cond_5
 
     .line 233
-    iget-object v8, p0, Lcom/android/internal/widget/ActionBarContainer;->mTabContainer:Landroid/view/View;
-
-    invoke-virtual {v8}, Landroid/view/View;->getLeft()I
-
-    move-result v8
+    iget-object v8, p0, Lcom/android/internal/widget/ActionBarContainer;->mStackedBackground:Landroid/graphics/drawable/Drawable;
 
     iget-object v9, p0, Lcom/android/internal/widget/ActionBarContainer;->mTabContainer:Landroid/view/View;
 
-    invoke-virtual {v9}, Landroid/view/View;->getTop()I
+    invoke-virtual {v9}, Landroid/view/View;->getLeft()I
 
     move-result v9
 
     iget-object v10, p0, Lcom/android/internal/widget/ActionBarContainer;->mTabContainer:Landroid/view/View;
 
-    invoke-virtual {v10}, Landroid/view/View;->getRight()I
+    invoke-virtual {v10}, Landroid/view/View;->getTop()I
 
     move-result v10
 
     iget-object v11, p0, Lcom/android/internal/widget/ActionBarContainer;->mTabContainer:Landroid/view/View;
 
-    invoke-virtual {v11}, Landroid/view/View;->getBottom()I
+    invoke-virtual {v11}, Landroid/view/View;->getRight()I
 
     move-result v11
 
-    invoke-static {p0, v8, v9, v10, v11}, Lcom/android/internal/widget/ActionBarContainer$Injector;->setBounds(Lcom/android/internal/widget/ActionBarContainer;IIII)V
+    iget-object v12, p0, Lcom/android/internal/widget/ActionBarContainer;->mTabContainer:Landroid/view/View;
+
+    invoke-virtual {v12}, Landroid/view/View;->getBottom()I
+
+    move-result v12
+
+    invoke-virtual {v8, v9, v10, v11, v12}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     .line 235
     const/4 v6, 0x1
@@ -772,19 +796,6 @@
     const/4 v0, 0x1
 
     return v0
-.end method
-
-.method setIsStacked(Z)V
-    .locals 0
-    .parameter "value"
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
-
-    .prologue
-    iput-boolean p1, p0, Lcom/android/internal/widget/ActionBarContainer;->mIsStacked:Z
-
-    return-void
 .end method
 
 .method public setPrimaryBackground(Landroid/graphics/drawable/Drawable;)V

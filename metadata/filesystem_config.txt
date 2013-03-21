@@ -3540,6 +3540,7 @@ system/app/Galaxy4.apk 0 0 644
 system/app/ThemeManager.apk 0 0 644
 system/app/BackupRestoreConfirmation.apk 0 0 644
 system/app/HoloSpiralWallpaper.apk 0 0 644
+system/app/EnableDebug.apk 0 0 644
 system/addon.d 0 0 755
 system/addon.d/50-cm.sh 0 0 755
 system/framework 0 0 755

@@ -80,6 +80,7 @@
     .end annotation
 .end field
 
+
 # direct methods
 .method static constructor <clinit>()V
     .locals 3
@@ -186,12 +187,11 @@
 
     invoke-direct {v2, v3}, Landroid/content/ContentValues;-><init>(I)V
 
-    .line 284
-    
     invoke-static {v2}, Landroid/provider/CallLog$Injector;->getExtraCallLogValues(Landroid/content/ContentValues;)Landroid/content/ContentValues;
 
     move-result-object v12
 
+    .line 284
     .local v12, values:Landroid/content/ContentValues;
     const-string/jumbo v2, "number"
 
@@ -425,14 +425,11 @@
 
     move-result-object v11
 
-    .line 343
     .local v11, result:Landroid/net/Uri;
     invoke-static/range {p1 .. p1}, Landroid/provider/CallLog$Injector;->removeExpiredEntries(Landroid/content/Context;)V
 
-    .line 345
     return-object v11
 
-    .line 273
     .end local v11           #result:Landroid/net/Uri;
     .end local v12           #values:Landroid/content/ContentValues;
     :cond_5
@@ -668,6 +665,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
+    .line 378
     return-void
 .end method
 

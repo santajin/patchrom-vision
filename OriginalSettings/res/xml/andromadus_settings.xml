@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/andromadus_settings" android:key="pref_category_button_settings"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.OriginalSettings">
+    <PreferenceCategory android:title="@string/andromadus_general" />
+    <Preference android:title="Quick Launch" android:key="pref_quick_launch" android:summary="Edit the shortcut keys on your keyboard">
+        <intent android:action="android.settings.QUICK_LAUNCH_SETTINGS" />
+    </Preference>
+    <CheckBoxPreference android:title="@string/pref_trackball_unlock_toggle_title" android:key="pref_trackball_unlock_toggle" android:summary="@string/pref_trackball_unlock_toggle_summary" />
+    <CheckBoxPreference android:title="@string/pref_trackball_wake_toggle_title" android:key="pref_trackball_wake_toggle" android:summary="@string/pref_trackball_wake_toggle_summary" />
+    <ListPreference android:entries="@array/sweep2wake_menu_entries" android:title="@string/sweep2wake_title" android:key="sweep2wake_setting" android:defaultValue="0" android:dialogTitle="@string/sweep2wake_title" android:entryValues="@array/sweep2wake_menu_values" />
+    <PreferenceCategory android:title="@string/andromadus_statusbar" />
+    <CheckBoxPreference android:title="@string/pref_statusbar_sixbar_signal_title" android:key="pref_statusbar_sixbar_signal" android:summary="@string/pref_statusbar_sixbar_signal_summary" />
+</PreferenceScreen>

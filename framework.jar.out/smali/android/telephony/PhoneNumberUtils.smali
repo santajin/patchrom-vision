@@ -1857,14 +1857,12 @@
 
     if-ge v6, v10, :cond_b
 
-    .line 497
     invoke-static {p0}, Landroid/telephony/PhoneNumberUtils$Injector;->getEffectiveLength(Ljava/lang/String;)I
 
     move-result v10
 
     sub-int v2, v10, v7
 
-    .line 498
     .local v2, effectiveALen:I
     invoke-static {p1}, Landroid/telephony/PhoneNumberUtils$Injector;->getEffectiveLength(Ljava/lang/String;)I
 
@@ -2385,7 +2383,7 @@
     :cond_14
     move-object/from16 v0, p1
 
-    invoke-static {v0, v10, v4}, Landroid/telephony/PhoneNumberUtils;->checkPrefixIsIgnorable(Ljava/lang/String;II)Z
+    invoke-static {v0, v11, v4}, Landroid/telephony/PhoneNumberUtils;->checkPrefixIsIgnorable(Ljava/lang/String;II)Z
 
     move-result v18
 
@@ -3528,13 +3526,13 @@
 
     .prologue
     invoke-static {p0}, Lmiui/telephony/PhoneNumberUtils;->removeDashesAndBlanks(Ljava/lang/String;)Ljava/lang/String;
-    .line 1449
+
     move-result-object p0
+
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v1
 
-    .line 1450
     .local v1, len:I
     const/4 v0, 0x0
 
@@ -4650,7 +4648,6 @@
 
     if-nez v8, :cond_0
 
-    .line 1691
     invoke-static {p0}, Landroid/telephony/PhoneNumberUtils;->extractNetworkPortionAlt(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
@@ -4663,26 +4660,25 @@
 
     move-result v8
 
-    if-eqz v8, :cond_2
+    if-eqz v8, :cond_ff
 
     move v6, v7
 
     goto :goto_0
 
-    :cond_2
+    :cond_ff
     const-string v8, "ril.ecclist"
 
     invoke-static {v8}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 1696
     .local v4, numbers:Ljava/lang/String;
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_3
+    if-eqz v8, :cond_2
 
     .line 1698
     const-string/jumbo v8, "ro.ril.ecclist"
@@ -4692,12 +4688,12 @@
     move-result-object v4
 
     .line 1701
-    :cond_3
+    :cond_2
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v8
 
-    if-nez v8, :cond_7
+    if-nez v8, :cond_6
 
     .line 1704
     const-string v8, ","
@@ -4720,7 +4716,7 @@
 
     .line 1707
     .local v1, emergencyNum:Ljava/lang/String;
-    if-nez p2, :cond_4
+    if-nez p2, :cond_3
 
     const-string v8, "BR"
 
@@ -4728,15 +4724,15 @@
 
     move-result v8
 
-    if-eqz v8, :cond_5
+    if-eqz v8, :cond_4
 
     .line 1708
-    :cond_4
+    :cond_3
     invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_6
+    if-eqz v8, :cond_5
 
     move v6, v7
 
@@ -4744,12 +4740,12 @@
     goto :goto_0
 
     .line 1712
-    :cond_5
+    :cond_4
     invoke-virtual {p0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_6
+    if-eqz v8, :cond_5
 
     move v6, v7
 
@@ -4757,7 +4753,7 @@
     goto :goto_0
 
     .line 1704
-    :cond_6
+    :cond_5
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
@@ -4767,7 +4763,7 @@
     .end local v1           #emergencyNum:Ljava/lang/String;
     .end local v2           #i$:I
     .end local v3           #len$:I
-    :cond_7
+    :cond_6
     const-string v8, "PhoneNumberUtils"
 
     const-string v9, "System property doesn\'t provide any emergency numbers. Use embedded logic for determining ones."
@@ -4775,7 +4771,7 @@
     invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1725
-    if-eqz p1, :cond_9
+    if-eqz p1, :cond_8
 
     .line 1726
     new-instance v5, Lcom/android/i18n/phonenumbers/ShortNumberUtil;
@@ -4784,7 +4780,7 @@
 
     .line 1727
     .local v5, util:Lcom/android/i18n/phonenumbers/ShortNumberUtil;
-    if-eqz p2, :cond_8
+    if-eqz p2, :cond_7
 
     .line 1728
     invoke-virtual {v5, p0, p1}, Lcom/android/i18n/phonenumbers/ShortNumberUtil;->isEmergencyNumber(Ljava/lang/String;Ljava/lang/String;)Z
@@ -4794,7 +4790,7 @@
     goto :goto_0
 
     .line 1730
-    :cond_8
+    :cond_7
     invoke-virtual {v5, p0, p1}, Lcom/android/i18n/phonenumbers/ShortNumberUtil;->connectsToEmergencyNumber(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v6
@@ -4803,8 +4799,8 @@
 
     .line 1733
     .end local v5           #util:Lcom/android/i18n/phonenumbers/ShortNumberUtil;
-    :cond_9
-    if-eqz p2, :cond_b
+    :cond_8
+    if-eqz p2, :cond_a
 
     .line 1734
     const-string v8, "112"
@@ -4813,7 +4809,7 @@
 
     move-result v8
 
-    if-nez v8, :cond_a
+    if-nez v8, :cond_9
 
     const-string v8, "911"
 
@@ -4823,20 +4819,20 @@
 
     if-eqz v8, :cond_0
 
-    :cond_a
+    :cond_9
     move v6, v7
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 1736
-    :cond_b
+    :cond_a
     const-string v8, "112"
 
     invoke-virtual {p0, v8}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v8
 
-    if-nez v8, :cond_c
+    if-nez v8, :cond_b
 
     const-string v8, "911"
 
@@ -4846,7 +4842,7 @@
 
     if-eqz v8, :cond_0
 
-    :cond_c
+    :cond_b
     move v6, v7
 
     goto/16 :goto_0

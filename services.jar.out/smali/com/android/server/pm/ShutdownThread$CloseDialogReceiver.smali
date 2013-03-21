@@ -60,13 +60,12 @@
     .end annotation
 
     .prologue
-    .line 213
     iget-object v0, p0, Lcom/android/server/pm/ShutdownThread$CloseDialogReceiver;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, p0}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
     invoke-static {p1}, Lcom/android/server/pm/ShutdownThread$Injector;->onDismiss(Landroid/content/DialogInterface;)V
-    .line 214
+
     return-void
 .end method
 

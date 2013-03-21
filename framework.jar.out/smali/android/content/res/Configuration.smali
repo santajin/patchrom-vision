@@ -243,7 +243,6 @@
     .end annotation
 
     .prologue
-    .line 450
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     new-instance v0, Lmiui/content/res/ExtraConfiguration;
@@ -254,7 +253,6 @@
 
     invoke-virtual {p0}, Landroid/content/res/Configuration;->setToDefaults()V
 
-    .line 452
     return-void
 .end method
 
@@ -266,7 +264,6 @@
     .end annotation
 
     .prologue
-    .line 457
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     new-instance v0, Lmiui/content/res/ExtraConfiguration;
@@ -277,7 +274,6 @@
 
     invoke-virtual {p0, p1}, Landroid/content/res/Configuration;->setTo(Landroid/content/res/Configuration;)V
 
-    .line 459
     return-void
 .end method
 
@@ -289,7 +285,6 @@
     .end annotation
 
     .prologue
-    .line 1011
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     new-instance v0, Lmiui/content/res/ExtraConfiguration;
@@ -300,7 +295,6 @@
 
     invoke-virtual {p0, p1}, Landroid/content/res/Configuration;->readFromParcel(Landroid/os/Parcel;)V
 
-    .line 1013
     return-void
 .end method
 
@@ -1540,8 +1534,8 @@
     .line 485
     iget v0, p1, Landroid/content/res/Configuration;->seq:I
 
-    iput v0, p0, Landroid/content/res/Configuration;->seq:I
-
+    iput v0, p0, Landroid/content/res/Configuration;->seq:I    
+    
     iget-object v0, p0, Landroid/content/res/Configuration;->extraConfig:Lmiui/content/res/ExtraConfiguration;
 
     iget-object v1, p1, Landroid/content/res/Configuration;->extraConfig:Lmiui/content/res/ExtraConfiguration;
@@ -2336,8 +2330,6 @@
 
     goto/16 :goto_f
 
-    .line 506
-
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -3054,7 +3046,6 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 954
     iget-object v0, p0, Landroid/content/res/Configuration;->extraConfig:Lmiui/content/res/ExtraConfiguration;
 
     invoke-virtual {v0, p1, p2}, Lmiui/content/res/ExtraConfiguration;->writeToParcel(Landroid/os/Parcel;I)V
@@ -3092,7 +3083,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    goto :goto_0
+    goto/16 :goto_0
 
     .line 934
     :cond_1

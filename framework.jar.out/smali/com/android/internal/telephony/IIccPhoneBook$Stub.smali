@@ -320,22 +320,18 @@
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 110
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 111
     .restart local v1       #_arg0:I
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/IIccPhoneBook$Stub;->getAdnRecordsSize(I)[I
 
     move-result-object v7
 
-    .line 112
     .local v7, _result:[I
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 113
     invoke-virtual {p3, v7}, Landroid/os/Parcel;->writeIntArray([I)V
 
     goto/16 :goto_0

@@ -667,24 +667,21 @@
 
     move-result v7
 
-    if-eqz v7, :cond_1
+    if-eqz v7, :cond_ff
 
-    :cond_0
-    :goto_0
     return-void
 
-    :cond_1
+    :cond_ff
     invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->hasText()Z
 
     move-result v3
 
-    .line 225
     .local v3, textVisible:Z
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_0
 
     iget v7, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mSavedPaddingLeft:I
 
-    if-ltz v7, :cond_2
+    if-ltz v7, :cond_0
 
     .line 226
     iget v7, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mSavedPaddingLeft:I
@@ -704,7 +701,7 @@
     invoke-super {p0, v7, v8, v9, v10}, Landroid/widget/TextView;->setPadding(IIII)V
 
     .line 230
-    :cond_2
+    :cond_0
     invoke-super {p0, p1, p2}, Landroid/widget/TextView;->onMeasure(II)V
 
     .line 232
@@ -728,7 +725,7 @@
     .local v1, oldMeasuredWidth:I
     const/high16 v7, -0x8000
 
-    if-ne v5, v7, :cond_4
+    if-ne v5, v7, :cond_3
 
     iget v7, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mMinWidth:I
 
@@ -738,14 +735,14 @@
 
     .line 238
     .local v2, targetWidth:I
-    :goto_1
-    if-eq v5, v11, :cond_3
+    :goto_0
+    if-eq v5, v11, :cond_1
 
     iget v7, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mMinWidth:I
 
-    if-lez v7, :cond_3
+    if-lez v7, :cond_1
 
-    if-ge v1, v2, :cond_3
+    if-ge v1, v2, :cond_1
 
     .line 240
     invoke-static {v2, v11}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
@@ -755,12 +752,12 @@
     invoke-super {p0, v7, p2}, Landroid/widget/TextView;->onMeasure(II)V
 
     .line 244
-    :cond_3
-    if-nez v3, :cond_0
+    :cond_1
+    if-nez v3, :cond_2
 
     iget-object v7, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mIcon:Landroid/graphics/drawable/Drawable;
 
-    if-eqz v7, :cond_0
+    if-eqz v7, :cond_2
 
     .line 247
     invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->getMeasuredWidth()I
@@ -795,15 +792,18 @@
 
     invoke-super {p0, v7, v8, v9, v10}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    goto :goto_0
     .line 251
     .end local v0           #dw:I
-    .end local v2           #targetWidth:I
     .end local v4           #w:I
-    :cond_4
+    :cond_2
+    return-void
+
+    .line 235
+    .end local v2           #targetWidth:I
+    :cond_3
     iget v2, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mMinWidth:I
 
-    goto :goto_1
+    goto :goto_0
 .end method
 
 .method public onPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
@@ -938,14 +938,12 @@
     .end annotation
 
     .prologue
-    .line 78
     iput p1, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mSavedPaddingLeft:I
 
     iput p3, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mSavedPaddingRight:I
-    .line 79
+
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 80
     return-void
 .end method
 

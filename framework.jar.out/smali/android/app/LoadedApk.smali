@@ -43,7 +43,7 @@
 
 .field private final mLibDir:Ljava/lang/String;
 
-.field public final mPackageName:Ljava/lang/String;
+.field final mPackageName:Ljava/lang/String;
 
 .field private final mReceivers:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
@@ -1975,13 +1975,12 @@
     .end annotation
 
     .prologue
-    .line 473
     iget-object v0, p0, Landroid/app/LoadedApk;->mResources:Landroid/content/res/Resources;
 
     if-nez v0, :cond_0
 
     iget-object v0, p0, Landroid/app/LoadedApk;->mPackageName:Ljava/lang/String;
-    .line 474
+
     iget-object v1, p0, Landroid/app/LoadedApk;->mResDir:Ljava/lang/String;
 
     invoke-virtual {p1, v0, v1, p0}, Landroid/app/ActivityThread;->getTopLevelResources(Ljava/lang/String;Ljava/lang/String;Landroid/app/LoadedApk;)Landroid/content/res/Resources;

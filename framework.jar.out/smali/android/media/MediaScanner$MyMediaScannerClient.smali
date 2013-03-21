@@ -776,29 +776,23 @@
 
     move-result-object v19
 
-    .line 950
     :goto_4
     if-eqz v19, :cond_f
 
-    .line 951
     invoke-static/range {v19 .. v19}, Landroid/content/ContentUris;->parseId(Landroid/net/Uri;)J
 
     move-result-wide v20
 
-    .line 952
     move-wide/from16 v0, v20
 
     move-object/from16 v2, p1
 
     iput-wide v0, v2, Landroid/media/MediaScanner$FileEntry;->mRowId:J
 
-    .line 979
     :cond_f
     :goto_5
     if-eqz v16, :cond_10
 
-    .line 980
-    
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/media/MediaScanner$MyMediaScannerClient;->this$0:Landroid/media/MediaScanner;
@@ -819,8 +813,7 @@
 
     if-eqz p3, :cond_24
 
-    .line 981
-    const-string/jumbo v27, "notification_sound"
+    const-string v27, "notification_sound"
 
     move-object/from16 v0, p0
 
@@ -1559,7 +1552,6 @@
     goto/16 :goto_7
 
     .line 872
-    nop
     :pswitch_data_0
     .packed-switch 0x3
         :pswitch_2

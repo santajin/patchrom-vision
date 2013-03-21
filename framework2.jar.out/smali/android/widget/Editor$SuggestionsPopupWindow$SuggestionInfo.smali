@@ -39,7 +39,7 @@
     .line 2245
     iput-object p1, p0, Landroid/widget/Editor$SuggestionsPopupWindow$SuggestionInfo;->this$1:Landroid/widget/Editor$SuggestionsPopupWindow;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2249
     new-instance v0, Landroid/text/SpannableStringBuilder;
@@ -56,7 +56,7 @@
     iget-object v1, v1, Landroid/widget/Editor$SuggestionsPopupWindow;->this$0:Landroid/widget/Editor;
 
     #getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
-    invoke-static {v1}, Landroid/widget/Editor;->access$500(Landroid/widget/Editor;)Landroid/widget/TextView;
+    invoke-static {v1}, Landroid/widget/Editor;->access$600(Landroid/widget/Editor;)Landroid/widget/TextView;
 
     move-result-object v1
 

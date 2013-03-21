@@ -229,7 +229,7 @@
     if-eqz v2, :cond_2
 
     .line 261
-    const v2, 0x60c0191
+    const v2, 0x60c0026
 
     invoke-virtual {p0, v2}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -238,7 +238,7 @@
     invoke-virtual {v1, v2}, Landroid/app/ProgressDialog;->setTitle(Ljava/lang/CharSequence;)V
 
     .line 262
-    const v2, 0x60c01aa
+    const v2, 0x60c002c
 
     invoke-virtual {p0, v2}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -264,12 +264,10 @@
 
     invoke-static {p0}, Lcom/android/server/pm/ShutdownThread$Injector;->createShutDownDialog(Landroid/content/Context;)V
 
-    .line 277
     sget-object v2, Lcom/android/server/pm/ShutdownThread;->sInstance:Lcom/android/server/pm/ShutdownThread;
 
     iput-object p0, v2, Lcom/android/server/pm/ShutdownThread;->mContext:Landroid/content/Context;
 
-    .line 278
     sget-object v3, Lcom/android/server/pm/ShutdownThread;->sInstance:Lcom/android/server/pm/ShutdownThread;
 
     const-string v2, "power"
@@ -726,19 +724,16 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 241
     sput-boolean v0, Lcom/android/server/pm/ShutdownThread;->mReboot:Z
 
     const/4 v0, 0x0
-    .line 242
+
     sput-boolean v0, Lcom/android/server/pm/ShutdownThread;->mRebootSafeMode:Z
 
-    .line 243
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/server/pm/ShutdownThread;->mRebootReason:Ljava/lang/String;
 
-    .line 244
     invoke-static {p0, p1}, Lcom/android/server/pm/ShutdownThread;->shutdownInner(Landroid/content/Context;Z)V
 
     return-void
@@ -946,11 +941,13 @@
 
     .line 162
     .local v1, dialog:Landroid/app/AlertDialog;
+    invoke-static {v1}, Lcom/android/server/pm/ShutdownThread$Injector;->setDialogTitle(Landroid/app/Dialog;)V
+
     new-instance v4, Lcom/android/server/pm/ShutdownThread$4;
 
     invoke-direct {v4}, Lcom/android/server/pm/ShutdownThread$4;-><init>()V
 
-    invoke-static {v1}, Lcom/android/server/pm/ShutdownThread$Injector;->setDialogTitle(Landroid/app/Dialog;)V
+    invoke-virtual {v1, v4}, Landroid/app/AlertDialog;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
 
     .line 186
     :goto_2

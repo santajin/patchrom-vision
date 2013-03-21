@@ -928,7 +928,7 @@
     .line 153
     const/4 v1, -0x2
 
-    iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iput v1, v0, Landroid/view/WindowManager$LayoutParams;->height:I
 
     .line 154
     iput v3, v0, Landroid/view/WindowManager$LayoutParams;->x:I
@@ -1285,7 +1285,7 @@
 
     move-result v2
 
-    iput v2, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v2, v1, Landroid/view/WindowManager$LayoutParams;->width:I
 
     .line 172
     const/4 v2, 0x1

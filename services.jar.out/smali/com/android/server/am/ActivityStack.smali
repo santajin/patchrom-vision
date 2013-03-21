@@ -7117,10 +7117,11 @@
     .end annotation
 
     .prologue
-    const/4 v4, 0x0
-
     const/4 v3, 0x1
 
+    const/4 v4, 0x0
+
+    .line 4460
     iget-boolean v5, p0, Lcom/android/server/am/ActivityStack;->mConfigWillChange:Z
 
     if-eqz v5, :cond_1

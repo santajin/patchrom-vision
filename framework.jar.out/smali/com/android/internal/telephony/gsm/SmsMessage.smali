@@ -1327,29 +1327,24 @@
 
     iput-object v2, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->scAddress:Ljava/lang/String;
 
-    .line 900
     iget-object v2, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->scAddress:Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 908
     :cond_0
     invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getByte()I
 
     move-result v0
 
-    .line 910
     .local v0, firstByte:I
     and-int/lit8 v2, v0, 0x3
 
     iput v2, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->mti:I
 
-    .line 911
     iget v2, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->mti:I
 
     packed-switch v2, :pswitch_data_0
 
-    .line 924
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string v3, "Unsupported message type"
@@ -1358,11 +1353,9 @@
 
     throw v2
 
-    .line 917
     :pswitch_0
     invoke-direct {p0, v1, v0}, Lcom/android/internal/telephony/gsm/SmsMessage;->parseSmsDeliver(Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;I)V
 
-    .line 926
     :goto_0
     return-void
 
@@ -1376,7 +1369,6 @@
 
     goto :goto_0
 
-    .line 911
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

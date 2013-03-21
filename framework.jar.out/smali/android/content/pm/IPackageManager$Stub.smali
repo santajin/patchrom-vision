@@ -26,13 +26,13 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.content.pm.IPackageManager"
 
-.field static final TRANSACTION_addPackageToPreferred:I = 0x2e
+.field static final TRANSACTION_addPackageToPreferred:I = 0x2f
 
 .field static final TRANSACTION_addPermission:I = 0x11
 
-.field static final TRANSACTION_addPermissionAsync:I = 0x4b
+.field static final TRANSACTION_addPermissionAsync:I = 0x4c
 
-.field static final TRANSACTION_addPreferredActivity:I = 0x31
+.field static final TRANSACTION_addPreferredActivity:I = 0x32
 
 .field static final TRANSACTION_canonicalToCurrentPackageNames:I = 0x5
 
@@ -44,45 +44,47 @@
 
 .field static final TRANSACTION_checkUidSignatures:I = 0x17
 
-.field static final TRANSACTION_clearApplicationUserData:I = 0x3d
+.field static final TRANSACTION_clearApplicationUserData:I = 0x3e
 
-.field static final TRANSACTION_clearPackagePreferredActivities:I = 0x33
+.field static final TRANSACTION_clearPackagePreferredActivities:I = 0x34
 
-.field static final TRANSACTION_createUser:I = 0x4e
+.field static final TRANSACTION_createUser:I = 0x4f
 
 .field static final TRANSACTION_currentToCanonicalPackageNames:I = 0x4
 
-.field static final TRANSACTION_deleteApplicationCacheFiles:I = 0x3c
+.field static final TRANSACTION_deleteApplicationCacheFiles:I = 0x3d
 
-.field static final TRANSACTION_deletePackage:I = 0x2c
+.field static final TRANSACTION_deletePackage:I = 0x2d
 
-.field static final TRANSACTION_enterSafeMode:I = 0x42
+.field static final TRANSACTION_enterSafeMode:I = 0x43
 
-.field static final TRANSACTION_finishPackageInstall:I = 0x2a
+.field static final TRANSACTION_finishPackageInstall:I = 0x2b
 
-.field static final TRANSACTION_freeStorage:I = 0x3b
+.field static final TRANSACTION_freeStorage:I = 0x3c
 
-.field static final TRANSACTION_freeStorageAndNotify:I = 0x3a
+.field static final TRANSACTION_freeStorageAndNotify:I = 0x3b
 
 .field static final TRANSACTION_getActivityInfo:I = 0xb
 
 .field static final TRANSACTION_getAllPermissionGroups:I = 0x9
 
-.field static final TRANSACTION_getApplicationEnabledSetting:I = 0x38
+.field static final TRANSACTION_getApplicationEnabledSetting:I = 0x39
 
 .field static final TRANSACTION_getApplicationInfo:I = 0xa
 
-.field static final TRANSACTION_getComponentEnabledSetting:I = 0x36
+.field static final TRANSACTION_getComponentEnabledSetting:I = 0x37
 
-.field static final TRANSACTION_getInstallLocation:I = 0x4d
+.field static final TRANSACTION_getInstallLocation:I = 0x4e
 
-.field static final TRANSACTION_getInstalledApplications:I = 0x22
+.field static final TRANSACTION_getInstalledApplications:I = 0x23
 
 .field static final TRANSACTION_getInstalledPackages:I = 0x21
 
-.field static final TRANSACTION_getInstallerPackageName:I = 0x2d
+.field static final TRANSACTION_getInstalledThemePackages:I = 0x22
 
-.field static final TRANSACTION_getInstrumentationInfo:I = 0x27
+.field static final TRANSACTION_getInstallerPackageName:I = 0x2e
+
+.field static final TRANSACTION_getInstrumentationInfo:I = 0x28
 
 .field static final TRANSACTION_getNameForUid:I = 0x19
 
@@ -90,7 +92,7 @@
 
 .field static final TRANSACTION_getPackageInfo:I = 0x1
 
-.field static final TRANSACTION_getPackageSizeInfo:I = 0x3e
+.field static final TRANSACTION_getPackageSizeInfo:I = 0x3f
 
 .field static final TRANSACTION_getPackageUid:I = 0x2
 
@@ -100,11 +102,11 @@
 
 .field static final TRANSACTION_getPermissionInfo:I = 0x6
 
-.field static final TRANSACTION_getPersistentApplications:I = 0x23
+.field static final TRANSACTION_getPersistentApplications:I = 0x24
 
-.field static final TRANSACTION_getPreferredActivities:I = 0x34
+.field static final TRANSACTION_getPreferredActivities:I = 0x35
 
-.field static final TRANSACTION_getPreferredPackages:I = 0x30
+.field static final TRANSACTION_getPreferredPackages:I = 0x31
 
 .field static final TRANSACTION_getProviderInfo:I = 0xe
 
@@ -112,49 +114,49 @@
 
 .field static final TRANSACTION_getServiceInfo:I = 0xd
 
-.field static final TRANSACTION_getSystemAvailableFeatures:I = 0x40
+.field static final TRANSACTION_getSystemAvailableFeatures:I = 0x41
 
-.field static final TRANSACTION_getSystemSharedLibraryNames:I = 0x3f
+.field static final TRANSACTION_getSystemSharedLibraryNames:I = 0x40
 
 .field static final TRANSACTION_getUidForSharedUser:I = 0x1a
 
-.field static final TRANSACTION_getUser:I = 0x56
+.field static final TRANSACTION_getUser:I = 0x57
 
-.field static final TRANSACTION_getUsers:I = 0x55
+.field static final TRANSACTION_getUsers:I = 0x56
 
-.field static final TRANSACTION_getVerifierDeviceIdentity:I = 0x53
+.field static final TRANSACTION_getVerifierDeviceIdentity:I = 0x54
 
 .field static final TRANSACTION_grantPermission:I = 0x13
 
-.field static final TRANSACTION_hasSystemFeature:I = 0x41
+.field static final TRANSACTION_hasSystemFeature:I = 0x42
 
-.field static final TRANSACTION_hasSystemUidErrors:I = 0x45
+.field static final TRANSACTION_hasSystemUidErrors:I = 0x46
 
-.field static final TRANSACTION_installPackage:I = 0x29
+.field static final TRANSACTION_installPackage:I = 0x2a
 
-.field static final TRANSACTION_installPackageWithVerification:I = 0x51
+.field static final TRANSACTION_installPackageWithVerification:I = 0x52
 
-.field static final TRANSACTION_isFirstBoot:I = 0x54
+.field static final TRANSACTION_isFirstBoot:I = 0x55
 
-.field static final TRANSACTION_isPermissionEnforced:I = 0x58
+.field static final TRANSACTION_isPermissionEnforced:I = 0x59
 
 .field static final TRANSACTION_isProtectedBroadcast:I = 0x15
 
-.field static final TRANSACTION_isSafeMode:I = 0x43
+.field static final TRANSACTION_isSafeMode:I = 0x44
 
-.field static final TRANSACTION_isStorageLow:I = 0x59
+.field static final TRANSACTION_isStorageLow:I = 0x5a
 
-.field static final TRANSACTION_movePackage:I = 0x4a
+.field static final TRANSACTION_movePackage:I = 0x4b
 
-.field static final TRANSACTION_nextPackageToClean:I = 0x49
+.field static final TRANSACTION_nextPackageToClean:I = 0x4a
 
-.field static final TRANSACTION_performBootDexOpt:I = 0x46
+.field static final TRANSACTION_performBootDexOpt:I = 0x47
 
-.field static final TRANSACTION_performDexOpt:I = 0x47
+.field static final TRANSACTION_performDexOpt:I = 0x48
 
-.field static final TRANSACTION_queryContentProviders:I = 0x26
+.field static final TRANSACTION_queryContentProviders:I = 0x27
 
-.field static final TRANSACTION_queryInstrumentation:I = 0x28
+.field static final TRANSACTION_queryInstrumentation:I = 0x29
 
 .field static final TRANSACTION_queryIntentActivities:I = 0x1c
 
@@ -166,17 +168,17 @@
 
 .field static final TRANSACTION_queryPermissionsByGroup:I = 0x7
 
-.field static final TRANSACTION_querySyncProviders:I = 0x25
+.field static final TRANSACTION_querySyncProviders:I = 0x26
 
-.field static final TRANSACTION_removePackageFromPreferred:I = 0x2f
+.field static final TRANSACTION_removePackageFromPreferred:I = 0x30
 
 .field static final TRANSACTION_removePermission:I = 0x12
 
-.field static final TRANSACTION_removeUser:I = 0x4f
+.field static final TRANSACTION_removeUser:I = 0x50
 
-.field static final TRANSACTION_replacePreferredActivity:I = 0x32
+.field static final TRANSACTION_replacePreferredActivity:I = 0x33
 
-.field static final TRANSACTION_resolveContentProvider:I = 0x24
+.field static final TRANSACTION_resolveContentProvider:I = 0x25
 
 .field static final TRANSACTION_resolveIntent:I = 0x1b
 
@@ -184,25 +186,25 @@
 
 .field static final TRANSACTION_revokePermission:I = 0x14
 
-.field static final TRANSACTION_setApplicationEnabledSetting:I = 0x37
+.field static final TRANSACTION_setApplicationEnabledSetting:I = 0x38
 
-.field static final TRANSACTION_setComponentEnabledSetting:I = 0x35
+.field static final TRANSACTION_setComponentEnabledSetting:I = 0x36
 
-.field static final TRANSACTION_setInstallLocation:I = 0x4c
+.field static final TRANSACTION_setInstallLocation:I = 0x4d
 
-.field static final TRANSACTION_setInstallerPackageName:I = 0x2b
+.field static final TRANSACTION_setInstallerPackageName:I = 0x2c
 
-.field static final TRANSACTION_setPackageStoppedState:I = 0x39
+.field static final TRANSACTION_setPackageStoppedState:I = 0x3a
 
-.field static final TRANSACTION_setPermissionEnforced:I = 0x57
+.field static final TRANSACTION_setPermissionEnforced:I = 0x58
 
-.field static final TRANSACTION_systemReady:I = 0x44
+.field static final TRANSACTION_systemReady:I = 0x45
 
-.field static final TRANSACTION_updateExternalMediaStatus:I = 0x48
+.field static final TRANSACTION_updateExternalMediaStatus:I = 0x49
 
-.field static final TRANSACTION_updateUserName:I = 0x50
+.field static final TRANSACTION_updateUserName:I = 0x51
 
-.field static final TRANSACTION_verifyPendingInstall:I = 0x52
+.field static final TRANSACTION_verifyPendingInstall:I = 0x53
 
 
 # direct methods
@@ -2472,6 +2474,37 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 595
+    invoke-virtual/range {p0 .. p0}, Landroid/content/pm/IPackageManager$Stub;->getInstalledThemePackages()Ljava/util/List;
+
+    move-result-object v19
+
+    .line 596
+    .local v19, _result:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/PackageInfo;>;"
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 597
+    move-object/from16 v0, p3
+
+    move-object/from16 v1, v19
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
+
+    .line 598
+    const/4 v2, 0x1
+
+    goto/16 :goto_0
+
+    .line 602
+    .end local v19           #_result:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/PackageInfo;>;"
+    :sswitch_23
+    const-string v2, "android.content.pm.IPackageManager"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 604
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
@@ -2540,7 +2573,7 @@
     .end local v4           #_arg1:Ljava/lang/String;
     .end local v5           #_arg2:I
     .end local v16           #_result:Landroid/content/pm/ParceledListSlice;
-    :sswitch_23
+    :sswitch_24
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2579,7 +2612,7 @@
     .line 632
     .end local v3           #_arg0:I
     .end local v17           #_result:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ApplicationInfo;>;"
-    :sswitch_24
+    :sswitch_25
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2655,7 +2688,7 @@
     .end local v4           #_arg1:I
     .end local v5           #_arg2:I
     .end local v16           #_result:Landroid/content/pm/ProviderInfo;
-    :sswitch_25
+    :sswitch_26
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2704,7 +2737,7 @@
     .line 665
     .end local v13           #_arg0:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     .end local v15           #_arg1:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ProviderInfo;>;"
-    :sswitch_26
+    :sswitch_27
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2757,7 +2790,7 @@
     .end local v4           #_arg1:I
     .end local v5           #_arg2:I
     .end local v22           #_result:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ProviderInfo;>;"
-    :sswitch_27
+    :sswitch_28
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2852,7 +2885,7 @@
     .end local v3           #_arg0:Landroid/content/ComponentName;
     .end local v4           #_arg1:I
     .end local v16           #_result:Landroid/content/pm/InstrumentationInfo;
-    :sswitch_28
+    :sswitch_29
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2898,7 +2931,7 @@
     .end local v3           #_arg0:Ljava/lang/String;
     .end local v4           #_arg1:I
     .end local v18           #_result:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/InstrumentationInfo;>;"
-    :sswitch_29
+    :sswitch_2a
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2973,7 +3006,7 @@
 
     .line 734
     .end local v3           #_arg0:Landroid/net/Uri;
-    :sswitch_2a
+    :sswitch_2b
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3001,7 +3034,7 @@
 
     .line 743
     .end local v3           #_arg0:I
-    :sswitch_2b
+    :sswitch_2c
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3036,7 +3069,7 @@
     .line 754
     .end local v3           #_arg0:Ljava/lang/String;
     .end local v4           #_arg1:Ljava/lang/String;
-    :sswitch_2c
+    :sswitch_2d
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3082,7 +3115,7 @@
     .end local v3           #_arg0:Ljava/lang/String;
     .end local v4           #_arg1:Landroid/content/pm/IPackageDeleteObserver;
     .end local v5           #_arg2:I
-    :sswitch_2d
+    :sswitch_2e
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3121,7 +3154,7 @@
     .line 777
     .end local v3           #_arg0:Ljava/lang/String;
     .end local v16           #_result:Ljava/lang/String;
-    :sswitch_2e
+    :sswitch_2f
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3149,7 +3182,7 @@
 
     .line 786
     .end local v3           #_arg0:Ljava/lang/String;
-    :sswitch_2f
+    :sswitch_30
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3177,7 +3210,7 @@
 
     .line 795
     .end local v3           #_arg0:Ljava/lang/String;
-    :sswitch_30
+    :sswitch_31
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3198,7 +3231,7 @@
     move-result-object v19
 
     .line 799
-    .local v19, _result:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/PackageInfo;>;"
+    .restart local v19       #_result:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/PackageInfo;>;"
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 800
@@ -3216,7 +3249,7 @@
     .line 805
     .end local v3           #_arg0:I
     .end local v19           #_result:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/PackageInfo;>;"
-    :sswitch_31
+    :sswitch_32
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3314,97 +3347,7 @@
     .restart local v6       #_arg3:Landroid/content/ComponentName;
     goto :goto_20
 
-    .end local v3           #_arg0:Landroid/content/IntentFilter;
-    .end local v4           #_arg1:I
-    .end local v5           #_arg2:[Landroid/content/ComponentName;
-    .end local v6           #_arg3:Landroid/content/ComponentName;
-    :sswitch_32
-    const-string v2, "android.content.pm.IPackageManager"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v2
-
-    if-eqz v2, :cond_20
-
-    sget-object v2, Landroid/content/IntentFilter;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    move-object/from16 v0, p2
-
-    invoke-interface {v2, v0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Landroid/content/IntentFilter;
-
-    .restart local v3       #_arg0:Landroid/content/IntentFilter;
-    :goto_21
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v4
-
-    .restart local v4       #_arg1:I
-    sget-object v2, Landroid/content/ComponentName;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v2}, Landroid/os/Parcel;->createTypedArray(Landroid/os/Parcelable$Creator;)[Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, [Landroid/content/ComponentName;
-
-    .restart local v5       #_arg2:[Landroid/content/ComponentName;
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v2
-
-    if-eqz v2, :cond_21
-
-    sget-object v2, Landroid/content/ComponentName;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    move-object/from16 v0, p2
-
-    invoke-interface {v2, v0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Landroid/content/ComponentName;
-
-    .restart local v6       #_arg3:Landroid/content/ComponentName;
-    :goto_22
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v3, v4, v5, v6}, Landroid/content/pm/IPackageManager$Stub;->replacePreferredActivity(Landroid/content/IntentFilter;I[Landroid/content/ComponentName;Landroid/content/ComponentName;)V
-
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    const/4 v2, 0x1
-
-    goto/16 :goto_0
-
-    .end local v3           #_arg0:Landroid/content/IntentFilter;
-    .end local v4           #_arg1:I
-    .end local v5           #_arg2:[Landroid/content/ComponentName;
-    .end local v6           #_arg3:Landroid/content/ComponentName;
-    :cond_20
-    const/4 v3, 0x0
-
-    .restart local v3       #_arg0:Landroid/content/IntentFilter;
-    goto :goto_21
-
-    .restart local v4       #_arg1:I
-    .restart local v5       #_arg2:[Landroid/content/ComponentName;
-    :cond_21
-    const/4 v6, 0x0
-
-    .restart local v6       #_arg3:Landroid/content/ComponentName;
-    goto :goto_22
-
+    .line 830
     .end local v3           #_arg0:Landroid/content/IntentFilter;
     .end local v4           #_arg1:I
     .end local v5           #_arg2:[Landroid/content/ComponentName;
@@ -3416,6 +3359,110 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 832
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v2
+
+    if-eqz v2, :cond_20
+
+    .line 833
+    sget-object v2, Landroid/content/IntentFilter;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    move-object/from16 v0, p2
+
+    invoke-interface {v2, v0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/content/IntentFilter;
+
+    .line 839
+    .restart local v3       #_arg0:Landroid/content/IntentFilter;
+    :goto_21
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v4
+
+    .line 841
+    .restart local v4       #_arg1:I
+    sget-object v2, Landroid/content/ComponentName;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->createTypedArray(Landroid/os/Parcelable$Creator;)[Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, [Landroid/content/ComponentName;
+
+    .line 843
+    .restart local v5       #_arg2:[Landroid/content/ComponentName;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v2
+
+    if-eqz v2, :cond_21
+
+    .line 844
+    sget-object v2, Landroid/content/ComponentName;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    move-object/from16 v0, p2
+
+    invoke-interface {v2, v0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Landroid/content/ComponentName;
+
+    .line 849
+    .restart local v6       #_arg3:Landroid/content/ComponentName;
+    :goto_22
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v3, v4, v5, v6}, Landroid/content/pm/IPackageManager$Stub;->replacePreferredActivity(Landroid/content/IntentFilter;I[Landroid/content/ComponentName;Landroid/content/ComponentName;)V
+
+    .line 850
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 851
+    const/4 v2, 0x1
+
+    goto/16 :goto_0
+
+    .line 836
+    .end local v3           #_arg0:Landroid/content/IntentFilter;
+    .end local v4           #_arg1:I
+    .end local v5           #_arg2:[Landroid/content/ComponentName;
+    .end local v6           #_arg3:Landroid/content/ComponentName;
+    :cond_20
+    const/4 v3, 0x0
+
+    .restart local v3       #_arg0:Landroid/content/IntentFilter;
+    goto :goto_21
+
+    .line 847
+    .restart local v4       #_arg1:I
+    .restart local v5       #_arg2:[Landroid/content/ComponentName;
+    :cond_21
+    const/4 v6, 0x0
+
+    .restart local v6       #_arg3:Landroid/content/ComponentName;
+    goto :goto_22
+
+    .line 855
+    .end local v3           #_arg0:Landroid/content/IntentFilter;
+    .end local v4           #_arg1:I
+    .end local v5           #_arg2:[Landroid/content/ComponentName;
+    .end local v6           #_arg3:Landroid/content/ComponentName;
+    :sswitch_34
+    const-string v2, "android.content.pm.IPackageManager"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 857
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v3
@@ -3436,7 +3483,7 @@
 
     .line 864
     .end local v3           #_arg0:Ljava/lang/String;
-    :sswitch_34
+    :sswitch_35
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3499,7 +3546,7 @@
     .end local v12           #_arg0:Ljava/util/List;,"Ljava/util/List<Landroid/content/IntentFilter;>;"
     .end local v14           #_arg1:Ljava/util/List;,"Ljava/util/List<Landroid/content/ComponentName;>;"
     .end local v16           #_result:I
-    :sswitch_35
+    :sswitch_36
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3570,7 +3617,7 @@
 
     .line 900
     .end local v3           #_arg0:Landroid/content/ComponentName;
-    :sswitch_36
+    :sswitch_37
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3638,7 +3685,7 @@
 
     .line 917
     .end local v3           #_arg0:Landroid/content/ComponentName;
-    :sswitch_37
+    :sswitch_38
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3687,7 +3734,7 @@
     .end local v4           #_arg1:I
     .end local v5           #_arg2:I
     .end local v6           #_arg3:I
-    :sswitch_38
+    :sswitch_39
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3733,7 +3780,7 @@
     .end local v3           #_arg0:Ljava/lang/String;
     .end local v4           #_arg1:I
     .end local v16           #_result:I
-    :sswitch_39
+    :sswitch_3a
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3786,7 +3833,7 @@
 
     .line 957
     .end local v3           #_arg0:Ljava/lang/String;
-    :sswitch_3a
+    :sswitch_3b
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3825,7 +3872,7 @@
     .line 968
     .end local v4           #_arg1:Landroid/content/pm/IPackageDataObserver;
     .end local v10           #_arg0:J
-    :sswitch_3b
+    :sswitch_3c
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3882,7 +3929,7 @@
     .line 984
     .end local v4           #_arg1:Landroid/content/IntentSender;
     .end local v10           #_arg0:J
-    :sswitch_3c
+    :sswitch_3d
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3921,7 +3968,7 @@
     .line 995
     .end local v3           #_arg0:Ljava/lang/String;
     .end local v4           #_arg1:Landroid/content/pm/IPackageDataObserver;
-    :sswitch_3d
+    :sswitch_3e
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3967,7 +4014,7 @@
     .end local v3           #_arg0:Ljava/lang/String;
     .end local v4           #_arg1:Landroid/content/pm/IPackageDataObserver;
     .end local v5           #_arg2:I
-    :sswitch_3e
+    :sswitch_3f
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4006,7 +4053,7 @@
     .line 1019
     .end local v3           #_arg0:Ljava/lang/String;
     .end local v4           #_arg1:Landroid/content/pm/IPackageStatsObserver;
-    :sswitch_3f
+    :sswitch_40
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4036,7 +4083,7 @@
 
     .line 1027
     .end local v16           #_result:[Ljava/lang/String;
-    :sswitch_40
+    :sswitch_41
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4068,7 +4115,7 @@
 
     .line 1035
     .end local v16           #_result:[Landroid/content/pm/FeatureInfo;
-    :sswitch_41
+    :sswitch_42
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4116,7 +4163,7 @@
     .line 1045
     .end local v3           #_arg0:Ljava/lang/String;
     .end local v16           #_result:Z
-    :sswitch_42
+    :sswitch_43
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4135,7 +4182,7 @@
     goto/16 :goto_0
 
     .line 1052
-    :sswitch_43
+    :sswitch_44
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4174,7 +4221,7 @@
 
     .line 1060
     .end local v16           #_result:Z
-    :sswitch_44
+    :sswitch_45
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4193,7 +4240,7 @@
     goto/16 :goto_0
 
     .line 1067
-    :sswitch_45
+    :sswitch_46
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4232,7 +4279,7 @@
 
     .line 1075
     .end local v16           #_result:Z
-    :sswitch_46
+    :sswitch_47
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4251,7 +4298,7 @@
     goto/16 :goto_0
 
     .line 1082
-    :sswitch_47
+    :sswitch_48
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4299,7 +4346,7 @@
     .line 1092
     .end local v3           #_arg0:Ljava/lang/String;
     .end local v16           #_result:Z
-    :sswitch_48
+    :sswitch_49
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4358,7 +4405,7 @@
 
     .line 1103
     .end local v3           #_arg0:Z
-    :sswitch_49
+    :sswitch_4a
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4397,7 +4444,7 @@
     .line 1113
     .end local v3           #_arg0:Ljava/lang/String;
     .end local v16           #_result:Ljava/lang/String;
-    :sswitch_4a
+    :sswitch_4b
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4443,7 +4490,7 @@
     .end local v3           #_arg0:Ljava/lang/String;
     .end local v4           #_arg1:Landroid/content/pm/IPackageMoveObserver;
     .end local v5           #_arg2:I
-    :sswitch_4b
+    :sswitch_4c
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4515,7 +4562,7 @@
     .line 1141
     .end local v3           #_arg0:Landroid/content/pm/PermissionInfo;
     .end local v16           #_result:Z
-    :sswitch_4c
+    :sswitch_4d
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4563,7 +4610,7 @@
     .line 1151
     .end local v3           #_arg0:I
     .end local v16           #_result:Z
-    :sswitch_4d
+    :sswitch_4e
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4593,7 +4640,7 @@
 
     .line 1159
     .end local v16           #_result:I
-    :sswitch_4e
+    :sswitch_4f
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4662,7 +4709,7 @@
     .end local v3           #_arg0:Ljava/lang/String;
     .end local v4           #_arg1:I
     .end local v16           #_result:Landroid/content/pm/UserInfo;
-    :sswitch_4f
+    :sswitch_50
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4710,7 +4757,7 @@
     .line 1187
     .end local v3           #_arg0:I
     .end local v16           #_result:Z
-    :sswitch_50
+    :sswitch_51
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4745,7 +4792,7 @@
     .line 1198
     .end local v3           #_arg0:I
     .end local v4           #_arg1:Ljava/lang/String;
-    :sswitch_51
+    :sswitch_52
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4913,7 +4960,7 @@
     .end local v7           #_arg4:Landroid/net/Uri;
     .end local v8           #_arg5:Landroid/content/pm/ManifestDigest;
     .end local v9           #_arg6:Landroid/content/pm/ContainerEncryptionParams;
-    :sswitch_52
+    :sswitch_53
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4948,7 +4995,7 @@
     .line 1250
     .end local v3           #_arg0:I
     .end local v4           #_arg1:I
-    :sswitch_53
+    :sswitch_54
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5001,7 +5048,7 @@
 
     .line 1264
     .end local v16           #_result:Landroid/content/pm/VerifierDeviceIdentity;
-    :sswitch_54
+    :sswitch_55
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5040,7 +5087,7 @@
 
     .line 1272
     .end local v16           #_result:Z
-    :sswitch_55
+    :sswitch_56
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5070,7 +5117,7 @@
 
     .line 1280
     .end local v24           #_result:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/UserInfo;>;"
-    :sswitch_56
+    :sswitch_57
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5132,7 +5179,7 @@
     .line 1296
     .end local v3           #_arg0:I
     .end local v16           #_result:Landroid/content/pm/UserInfo;
-    :sswitch_57
+    :sswitch_58
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5178,7 +5225,7 @@
 
     .line 1307
     .end local v3           #_arg0:Ljava/lang/String;
-    :sswitch_58
+    :sswitch_59
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5226,7 +5273,7 @@
     .line 1317
     .end local v3           #_arg0:Ljava/lang/String;
     .end local v16           #_result:Z
-    :sswitch_59
+    :sswitch_5a
     const-string v2, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5357,6 +5404,7 @@
         0x57 -> :sswitch_57
         0x58 -> :sswitch_58
         0x59 -> :sswitch_59
+        0x5a -> :sswitch_5a
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

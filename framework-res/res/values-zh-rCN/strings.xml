@@ -280,8 +280,8 @@
     <string name="me">我</string>
     <string name="power_dialog">手机选项</string>
     <string name="silent_mode">静音模式</string>
-    <string name="turn_on_radio">打开收音机</string>
-    <string name="turn_off_radio">关闭收音机</string>
+    <string name="turn_on_radio">打开无线电</string>
+    <string name="turn_off_radio">关闭无线电</string>
     <string name="screen_lock">屏幕锁定</string>
     <string name="power_off">关机</string>
     <string name="reboot_system">重启手机</string>

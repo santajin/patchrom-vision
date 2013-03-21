@@ -1250,7 +1250,6 @@
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->acceptCall()V
 
-    .line 428
     return-void
 .end method
 

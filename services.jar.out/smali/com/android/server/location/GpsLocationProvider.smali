@@ -3704,6 +3704,7 @@
 
     invoke-static {p0, v2}, Lcom/android/server/location/GpsLocationProvider$Injector;->appendUidExtra(Lcom/android/server/location/GpsLocationProvider;Landroid/content/Intent;)V
 
+    .line 1218
     iget-object v7, p0, Lcom/android/server/location/GpsLocationProvider;->mContext:Landroid/content/Context;
 
     invoke-virtual {v7, v2}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
@@ -3719,6 +3720,9 @@
 
     .line 1221
     return-void
+
+    .line 1166
+    nop
 
     :pswitch_data_0
     .packed-switch 0x1

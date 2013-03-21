@@ -17,6 +17,7 @@
 # instance fields
 .field private final mHash:I
 
+
 .field private final mResDir:Ljava/lang/String;
 
 .field private final mScale:F
@@ -29,20 +30,27 @@
     .parameter "scale"
 
     .prologue
-    .line 1487
+    .line 1473
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1488
+    .line 1474
     iput-object p1, p0, Landroid/app/ActivityThread$ResourcesKey;->mResDir:Ljava/lang/String;
 
-    .line 1489
+    .line 1475
     iput p2, p0, Landroid/app/ActivityThread$ResourcesKey;->mScale:F
+
+    .line 1476
 
     iget-object v0, p0, Landroid/app/ActivityThread$ResourcesKey;->mResDir:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
+
+
+
+
+
 
     iget v1, p0, Landroid/app/ActivityThread$ResourcesKey;->mScale:F
 
@@ -58,8 +66,10 @@
 
     iput v0, p0, Landroid/app/ActivityThread$ResourcesKey;->mHash:I
 
-    .line 1492
+    .line 1477
     return-void
+
+
 .end method
 
 
@@ -71,12 +81,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1501
+    .line 1486
     instance-of v2, p1, Landroid/app/ActivityThread$ResourcesKey;
 
     if-nez v2, :cond_1
 
-    .line 1505
+    .line 1490
     :cond_0
     :goto_0
     return v1
@@ -84,10 +94,10 @@
     :cond_1
     move-object v0, p1
 
-    .line 1504
+    .line 1489
     check-cast v0, Landroid/app/ActivityThread$ResourcesKey;
 
-    .line 1505
+    .line 1490
     .local v0, peer:Landroid/app/ActivityThread$ResourcesKey;
     iget-object v2, p0, Landroid/app/ActivityThread$ResourcesKey;->mResDir:Ljava/lang/String;
 
@@ -107,6 +117,9 @@
 
     if-nez v2, :cond_0
 
+
+
+
     const/4 v1, 0x1
 
     goto :goto_0
@@ -116,7 +129,7 @@
     .locals 1
 
     .prologue
-    .line 1496
+    .line 1481
     iget v0, p0, Landroid/app/ActivityThread$ResourcesKey;->mHash:I
 
     return v0

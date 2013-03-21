@@ -1741,11 +1741,10 @@
 
     invoke-virtual {p0, p1, v0, p2}, Landroid/widget/RemoteViews;->setCharSequence(ILjava/lang/String;Ljava/lang/CharSequence;)V
 
+    .line 2084
     return-void
 .end method
 
-
-    
 .method public setDefaultTheme(I)V
     .locals 0
     .parameter "id"

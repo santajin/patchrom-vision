@@ -30,6 +30,7 @@
     .end annotation
 .end field
 
+
 # direct methods
 .method private constructor <init>()V
     .locals 0

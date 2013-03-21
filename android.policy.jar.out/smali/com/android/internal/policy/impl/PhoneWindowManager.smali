@@ -5123,6 +5123,7 @@
 
     if-eqz v3, :cond_6
 
+    .line 3060
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mStatusBar:Landroid/view/WindowManagerPolicy$WindowState;
@@ -5133,6 +5134,7 @@
 
     if-nez v3, :cond_6
 
+    .line 3063
     :cond_6
     return-void
 
@@ -12546,6 +12548,8 @@
 
     invoke-virtual {v2, v0, v3, v4}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
+    invoke-static/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindowManager$Injector;->sendPowerUpBroadcast(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
+
     goto/16 :goto_3
 
     .line 4194
@@ -12864,8 +12868,6 @@
     move-object/from16 v0, p0
 
     iput-boolean v2, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mPendingPowerKeyUpCanceled:Z
-
-    invoke-static {v0}, Lcom/android/internal/policy/impl/PhoneWindowManager$Injector;->sendPowerUpBroadcast(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
 
     goto/16 :goto_3
 
@@ -17963,7 +17965,39 @@
     .line 5296
     iput-object p2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mLastInputMethodTargetWindow:Landroid/view/WindowManagerPolicy$WindowState;
 
+    .line 5297
     return-void
+.end method
+
+.method setMaxBacklightBrightness()V
+    .locals 2
+
+    .prologue
+    const-string v1, "power"
+
+    invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/os/IPowerManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/IPowerManager;
+
+    move-result-object v0
+
+    .local v0, power:Landroid/os/IPowerManager;
+    const/16 v1, 0xff
+
+    :try_start_0
+    invoke-interface {v0, v1}, Landroid/os/IPowerManager;->setBacklightBrightness(I)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
+    return-void
+
+    :catch_0
+    move-exception v1
+
+    goto :goto_0
 .end method
 
 .method setPowerLongPress(Ljava/lang/Runnable;)V
@@ -18102,12 +18136,10 @@
     .end annotation
 
     .prologue
-    .line 1079
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mGlobalActions:Lcom/android/internal/policy/impl/MiuiGlobalActions;
 
     if-nez v1, :cond_0
 
-    .line 1080
     new-instance v1, Lcom/android/internal/policy/impl/MiuiGlobalActions;
 
     iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
@@ -19622,4 +19654,35 @@
         :pswitch_18
         :pswitch_15
     .end packed-switch
+.end method
+
+.method setMaxBacklightBrightness()V
+    .locals 2
+
+    .prologue
+    const-string v1, "power"
+
+    invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/os/IPowerManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/IPowerManager;
+
+    move-result-object v0
+
+    .local v0, power:Landroid/os/IPowerManager;
+    const/16 v1, 0xff
+
+    :try_start_0
+    invoke-interface {v0, v1}, Landroid/os/IPowerManager;->setBacklightBrightness(I)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
+    return-void
+
+    :catch_0
+    move-exception v1
+
+    goto :goto_0
 .end method

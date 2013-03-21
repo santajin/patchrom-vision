@@ -86,6 +86,9 @@
 
     sget v1, Landroid/util/DisplayMetrics;->DENSITY_DEVICE:I
 
+
+
+
     invoke-direct {p0, v0, v1, v2, v2}, Landroid/content/res/CompatibilityInfo;-><init>(IIFF)V
 
     .line 264
@@ -115,6 +118,7 @@
     .line 255
     iput p4, p0, Landroid/content/res/CompatibilityInfo;->applicationInvertedScale:F
 
+
     return-void
 .end method
 
@@ -134,6 +138,8 @@
 
     .line 103
     .local v5, compatFlags:I
+
+
     iget v9, p1, Landroid/content/pm/ApplicationInfo;->requiresSmallestWidthDp:I
 
     if-nez v9, :cond_0
@@ -516,6 +522,7 @@
     .parameter "source"
 
     .prologue
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 598
@@ -546,7 +553,13 @@
 
     iput v0, p0, Landroid/content/res/CompatibilityInfo;->applicationInvertedScale:F
 
+
+
+
+
     return-void
+
+
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/content/res/CompatibilityInfo$1;)V
@@ -978,11 +991,14 @@
     iget v4, p0, Landroid/content/res/CompatibilityInfo;->applicationInvertedScale:F
 
     iget v5, v2, Landroid/content/res/CompatibilityInfo;->applicationInvertedScale:F
+
+
+
+
     :try_end_0
     .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
 
     cmpl-float v4, v4, v5
-
     if-nez v4, :cond_0
 
     .line 531
@@ -1066,7 +1082,14 @@
 
     add-int v0, v1, v2
 
+
+
+
+
+
     return v0
+
+
 .end method
 
 .method public isScalingRequired()Z
@@ -1263,5 +1286,11 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeFloat(F)V
 
+
+
+
+
     return-void
+
+
 .end method

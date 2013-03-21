@@ -3505,7 +3505,7 @@
     .line 1121
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mEmergencyCallButton:Landroid/widget/Button;
 
-    if-ne p1, v0, :cond_0
+    if-ne p1, v0, :cond_1
 
     .line 1122
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
@@ -3514,7 +3514,46 @@
 
     .line 1134
     :cond_0
+    :goto_0
     return-void
+
+    .line 1123
+    :cond_1
+    iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mWeatherPanel:Landroid/widget/RelativeLayout;
+
+    if-ne p1, v0, :cond_0
+
+    .line 1125
+    iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mWeatherCondition:Landroid/widget/TextView;
+
+    if-eqz v0, :cond_2
+
+    .line 1126
+    iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mWeatherCondition:Landroid/widget/TextView;
+
+    const v1, 0x104056f
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
+
+    .line 1129
+    :cond_2
+    iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+
+    invoke-interface {v0}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock()V
+
+    .line 1130
+    iget-boolean v0, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mWeatherRefreshing:Z
+
+    if-nez v0, :cond_0
+
+    .line 1131
+    iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mHandler:Landroid/os/Handler;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+
+    goto :goto_0
 .end method
 
 .method public onPause()V

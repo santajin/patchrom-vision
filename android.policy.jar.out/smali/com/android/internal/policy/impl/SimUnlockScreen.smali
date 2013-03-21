@@ -865,7 +865,40 @@
     goto :goto_0
 .end method
 
+.method public onKeyLongPress(ILandroid/view/KeyEvent;)Z
+    .locals 1
+    .parameter "keyCode"
+    .parameter "event"
 
+    .prologue
+    .line 313
+    invoke-virtual {p0}, Lcom/android/internal/policy/impl/SimUnlockScreen;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0, p1}, Lcom/android/internal/policy/impl/LockScreen;->handleKeyLongPress(Landroid/content/Context;I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 314
+    iget-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+
+    invoke-interface {v0}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock()V
+
+    .line 315
+    const/4 v0, 0x1
+
+    .line 317
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
 
 .method public onPause()V
     .locals 2

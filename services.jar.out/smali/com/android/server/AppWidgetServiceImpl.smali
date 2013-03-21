@@ -5895,6 +5895,7 @@
 
     iput v0, v9, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->appWidgetId:I
 
+    .line 1546
     iget v0, v9, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->appWidgetId:I
 
     move/from16 v23, v0

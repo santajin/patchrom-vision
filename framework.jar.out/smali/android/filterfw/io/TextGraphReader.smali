@@ -1939,10 +1939,7 @@
     :cond_9
     return-object v13
 
-    nop
-
-    nop
-
+    .line 373
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

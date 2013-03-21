@@ -218,6 +218,7 @@
     .line 402
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 106
     new-instance v5, Landroid/net/wifi/WifiConfiguration$EnterpriseField;
 
     const-string v6, "private_key"
@@ -226,8 +227,6 @@
 
     iput-object v5, p0, Landroid/net/wifi/WifiConfiguration;->private_key:Landroid/net/wifi/WifiConfiguration$EnterpriseField;
 
-    .line 106
-    
     new-instance v5, Landroid/net/wifi/WifiConfiguration$EnterpriseField;
 
     const-string v6, "eap"
@@ -522,7 +521,6 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 106
-    
     new-instance v1, Landroid/net/wifi/WifiConfiguration$EnterpriseField;
 
     const-string v2, "private_key"

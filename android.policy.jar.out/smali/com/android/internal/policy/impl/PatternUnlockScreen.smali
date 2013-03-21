@@ -750,6 +750,77 @@
     return-void
 .end method
 
+.method public onKeyDown(ILandroid/view/KeyEvent;)Z
+    .locals 1
+    .parameter "keyCode"
+    .parameter "event"
+
+    .prologue
+    .line 218
+    const/4 v0, 0x4
+
+    if-eq p1, v0, :cond_0
+
+    const/4 v0, 0x3
+
+    if-eq p1, v0, :cond_0
+
+    const/16 v0, 0x52
+
+    if-ne p1, v0, :cond_1
+
+    .line 221
+    :cond_0
+    invoke-virtual {p2}, Landroid/view/KeyEvent;->startTracking()V
+
+    .line 222
+    const/4 v0, 0x1
+
+    .line 224
+    :goto_0
+    return v0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public onKeyLongPress(ILandroid/view/KeyEvent;)Z
+    .locals 1
+    .parameter "keyCode"
+    .parameter "event"
+
+    .prologue
+    .line 229
+    invoke-virtual {p0}, Lcom/android/internal/policy/impl/PatternUnlockScreen;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0, p1}, Lcom/android/internal/policy/impl/LockScreen;->handleKeyLongPress(Landroid/content/Context;I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 230
+    iget-object v0, p0, Lcom/android/internal/policy/impl/PatternUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+
+    invoke-interface {v0}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock()V
+
+    .line 231
+    const/4 v0, 0x1
+
+    .line 233
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method public onKeyboardChange(Z)V
     .locals 0
     .parameter "isKeyboardOpen"

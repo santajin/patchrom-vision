@@ -3909,19 +3909,17 @@
     .line 1610
     iget-object v0, p0, Landroid/app/ContextImpl;->mPackageInfo:Landroid/app/LoadedApk;
 
-    iget-object v0, v0, Landroid/app/LoadedApk;->mPackageName:Ljava/lang/String;
+    invoke-virtual {v0}, Landroid/app/LoadedApk;->getResDir()Ljava/lang/String;
 
-    iget-object v1, p0, Landroid/app/ContextImpl;->mPackageInfo:Landroid/app/LoadedApk;
-
-    invoke-virtual {v1}, Landroid/app/LoadedApk;->getResDir()Ljava/lang/String;
-
-    move-result-object v1
+    move-result-object v0
 
     invoke-virtual {p4}, Landroid/content/res/Resources;->getCompatibilityInfo()Landroid/content/res/CompatibilityInfo;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {p3, v0, v1, v2}, Landroid/app/ActivityThread;->getTopLevelResources(Ljava/lang/String;Ljava/lang/String;Landroid/content/res/CompatibilityInfo;)Landroid/content/res/Resources;
+    iget-object v2, p0, Landroid/app/LoadedApk;->mPackageName:Ljava/lang/String;
+
+    invoke-virtual {p3, v2, v0, v1}, Landroid/app/ActivityThread;->getTopLevelResources(Ljava/lang/String;Ljava/lang/String;Landroid/content/res/CompatibilityInfo;)Landroid/content/res/Resources;
 
     move-result-object v0
 

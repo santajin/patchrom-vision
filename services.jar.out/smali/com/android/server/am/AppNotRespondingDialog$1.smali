@@ -52,8 +52,7 @@
 
     iget-object v4, p0, Lcom/android/server/am/AppNotRespondingDialog$1;->this$0:Lcom/android/server/am/AppNotRespondingDialog;
 
-    #getter for: Lcom/android/server/am/AppNotRespondingDialog;->mProc:Lcom/android/server/am/ProcessRecord;
-    invoke-static {v4}, Lcom/android/server/am/AppNotRespondingDialog;->access$000(Lcom/android/server/am/AppNotRespondingDialog;)Lcom/android/server/am/ProcessRecord;
+    invoke-virtual {v4}, Lcom/android/server/am/AppNotRespondingDialog;->getProc()Lcom/android/server/am/ProcessRecord;
 
     move-result-object v4
 
@@ -61,17 +60,14 @@
 
     const/4 v1, 0x0
 
-    .line 104
     .local v1, appErrorIntent:Landroid/content/Intent;
     iget v3, p1, Landroid/os/Message;->what:I
 
     packed-switch v3, :pswitch_data_0
 
-    .line 129
     :goto_0
     if-eqz v1, :cond_0
 
-    .line 131
     :try_start_0
     iget-object v3, p0, Lcom/android/server/am/AppNotRespondingDialog$1;->this$0:Lcom/android/server/am/AppNotRespondingDialog;
 

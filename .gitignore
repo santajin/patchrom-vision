@@ -1,4 +1,6 @@
 out/
+temp/
+updater/
 *.zip
 *.pyc
 log*.txt

@@ -1824,7 +1824,116 @@
     goto :goto_0
 .end method
 
+.method public onKeyLongPress(ILandroid/view/KeyEvent;)Z
+    .locals 1
+    .parameter "keyCode"
+    .parameter "event"
 
+    .prologue
+    .line 775
+    iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreen;->mContext:Landroid/content/Context;
+
+    invoke-static {v0, p1}, Lcom/android/internal/policy/impl/LockScreen;->handleKeyLongPress(Landroid/content/Context;I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 776
+    iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+
+    invoke-interface {v0}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock()V
+
+    .line 777
+    const/4 v0, 0x1
+
+    .line 779
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public onKeyUp(ILandroid/view/KeyEvent;)Z
+    .locals 4
+    .parameter "keyCode"
+    .parameter "event"
+
+    .prologue
+    const/4 v2, 0x0
+
+    .line 759
+    invoke-virtual {p2}, Landroid/view/KeyEvent;->getFlags()I
+
+    move-result v0
+
+    .line 761
+    .local v0, flags:I
+    iget-boolean v3, p0, Lcom/android/internal/policy/impl/LockScreen;->mUnlockKeyDown:Z
+
+    if-eqz v3, :cond_3
+
+    .line 762
+    iput-boolean v2, p0, Lcom/android/internal/policy/impl/LockScreen;->mUnlockKeyDown:Z
+
+    .line 763
+    and-int/lit16 v3, v0, 0x100
+
+    if-nez v3, :cond_4
+
+    const/4 v1, 0x1
+
+    .line 764
+    .local v1, mNotLongPress:Z
+    :goto_0
+    if-eqz v1, :cond_3
+
+    const/16 v3, 0x52
+
+    if-ne p1, v3, :cond_0
+
+    iget-boolean v3, p0, Lcom/android/internal/policy/impl/LockScreen;->mEnableMenuKeyInLockScreen:Z
+
+    if-nez v3, :cond_2
+
+    :cond_0
+    const/16 v3, 0x17
+
+    if-ne p1, v3, :cond_1
+
+    iget-boolean v3, p0, Lcom/android/internal/policy/impl/LockScreen;->mTrackballUnlockScreen:Z
+
+    if-nez v3, :cond_2
+
+    :cond_1
+    const/4 v3, 0x3
+
+    if-ne p1, v3, :cond_3
+
+    iget-boolean v3, p0, Lcom/android/internal/policy/impl/LockScreen;->mHomeUnlockScreen:Z
+
+    if-eqz v3, :cond_3
+
+    .line 767
+    :cond_2
+    iget-object v3, p0, Lcom/android/internal/policy/impl/LockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+
+    invoke-interface {v3}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->goToUnlockScreen()V
+
+    .line 770
+    .end local v1           #mNotLongPress:Z
+    :cond_3
+    return v2
+
+    :cond_4
+    move v1, v2
+
+    .line 763
+    goto :goto_0
+.end method
 
 .method public onPause()V
     .locals 2

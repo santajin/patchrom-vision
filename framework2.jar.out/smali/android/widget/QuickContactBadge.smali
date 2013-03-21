@@ -138,7 +138,7 @@
     iput-object v1, p0, Landroid/widget/QuickContactBadge;->mExcludeMimes:[Ljava/lang/String;
 
     .line 86
-    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/widget/QuickContactBadge;->mContext:Landroid/content/Context;
 
     sget-object v2, Lcom/android/internal/R$styleable;->Theme:[I
 
@@ -162,7 +162,7 @@
     .line 91
     new-instance v1, Landroid/widget/QuickContactBadge$QueryHandler;
 
-    iget-object v2, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Landroid/widget/QuickContactBadge;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -563,7 +563,11 @@
 
     move-result v2
 
-    iget v3, p0, Landroid/view/View;->mPaddingRight:I
+    iget v3, p0, Landroid/widget/QuickContactBadge;->mPaddingLeft:I
+
+    sub-int/2addr v2, v3
+
+    iget v3, p0, Landroid/widget/QuickContactBadge;->mPaddingRight:I
 
     sub-int/2addr v2, v3
 
@@ -571,18 +575,22 @@
 
     move-result v3
 
-    iget v4, p0, Landroid/view/View;->mPaddingBottom:I
+    iget v0, p0, Landroid/widget/QuickContactBadge;->mPaddingTop:I
+
+    sub-int/2addr v3, v0
+
+    iget v4, p0, Landroid/widget/QuickContactBadge;->mPaddingBottom:I
 
     sub-int/2addr v3, v4
 
     invoke-virtual {v1, v5, v5, v2, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     .line 126
-    iget v1, p0, Landroid/view/View;->mPaddingTop:I
+    iget v1, p0, Landroid/widget/QuickContactBadge;->mPaddingTop:I
 
     if-nez v1, :cond_2
 
-    iget v1, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v1, p0, Landroid/widget/QuickContactBadge;->mPaddingLeft:I
 
     if-nez v1, :cond_2
 
@@ -604,11 +612,11 @@
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     .line 131
-    iget v1, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v1, p0, Landroid/widget/QuickContactBadge;->mPaddingLeft:I
 
     int-to-float v1, v1
 
-    iget v2, p0, Landroid/view/View;->mPaddingTop:I
+    iget v2, p0, Landroid/widget/QuickContactBadge;->mPaddingTop:I
 
     int-to-float v2, v2
 

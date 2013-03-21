@@ -95,7 +95,7 @@
     iget-object v0, p0, Landroid/widget/AbsListView$3;->this$0:Landroid/widget/AbsListView;
 
     #getter for: Landroid/widget/AbsListView;->mDefInputConnection:Landroid/view/inputmethod/InputConnection;
-    invoke-static {v0}, Landroid/widget/AbsListView;->access$3300(Landroid/widget/AbsListView;)Landroid/view/inputmethod/InputConnection;
+    invoke-static {v0}, Landroid/widget/AbsListView;->access$3400(Landroid/widget/AbsListView;)Landroid/view/inputmethod/InputConnection;
 
     move-result-object v0
 
@@ -115,7 +115,7 @@
     iget-object v0, p0, Landroid/widget/AbsListView$3;->this$0:Landroid/widget/AbsListView;
 
     #getter for: Landroid/widget/AbsListView;->mDefInputConnection:Landroid/view/inputmethod/InputConnection;
-    invoke-static {v0}, Landroid/widget/AbsListView;->access$3300(Landroid/widget/AbsListView;)Landroid/view/inputmethod/InputConnection;
+    invoke-static {v0}, Landroid/widget/AbsListView;->access$3400(Landroid/widget/AbsListView;)Landroid/view/inputmethod/InputConnection;
 
     move-result-object v0
 

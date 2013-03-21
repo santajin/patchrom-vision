@@ -12,14 +12,14 @@ local-out-zip-file := MIUI_vision.zip
 local-previous-target-dir := ~/workspace/ota_base/i9300_4.1
 
 # All apps from original ZIP, but has smali files chanded
-local-modified-apps := Gallery2
+local-modified-apps := Gallery2 OriginalSettings
 
 local-modified-jars :=
 
 # All apks from MIUI
 local-miui-removed-apps := MediaProvider Stk
-
-local-miui-modified-apps := MiuiHome Settings Phone Mms ThemeManager MiuiSystemUI Provision
+#local-miui-modified-apps := MiuiHome Settings Phone Mms ThemeManager
+local-miui-modified-apps := MiuiHome Settings Phone Mms ThemeManager Backup Contacts DeskClock FileExplorer MiuiGallery Music Notes PackageInstaller SoundRecorder Weather
 
 include phoneapps.mk
 
@@ -35,33 +35,23 @@ local-after-zip:= local-put-to-phone
 
 include $(PORT_BUILD)/porting.mk
 
-# Target to test if full ota package will be generate
-myota: target_files
-	@echo ">>> To build out target file: myota.zip ..."
-	$(BUILD_TARGET_FILES) $(INCLUDE_THIRDPART_APP) Miui_DesireZ_$(BUILD_NUMBER).zip
-	@echo "<<< build target file completed!"
-
 # To define any local-target
-updater := $(ZIP_DIR)/META-INF/com/google/android/updater-script
-pre_install_data_packages := out/pre_install_apk_pkgname.txt
+#updater := $(ZIP_DIR)/META-INF/com/google/android/updater-script
+#pre_install_data_packages := out/pre_install_apk_pkgname.txt
 local-pre-zip-misc:
 	cp other/spn-conf.xml $(ZIP_DIR)/system/etc/spn-conf.xml
 	cp other/build.prop $(ZIP_DIR)/system/build.prop
 	#cp other/Camera.apk $(ZIP_DIR)/system/app/Camera.apk
+	rm -rf $(ZIP_DIR)/system/lib/modules/*.ko
 	cp other/module/*.* -rf $(ZIP_DIR)/system/lib/modules/
 	cp other/boot.img $(ZIP_DIR)/
-	cp other/media/*.* -rf $(ZIP_DIR)/system/media/
+	#cp other/EnableDebug.apk $(ZIP_DIR)/system/app/
 	#cp other/vold.fstab $(ZIP_DIR)/system/etc/vold.fstab
 	rm -rf $(ZIP_DIR)/system/addon.d
 	rm -rf $(ZIP_DIR)/system/media/video
 	rm -rf $(ZIP_DIR)/system/bin/*_test
 	rm -rf $(ZIP_DIR)/system/xbin/*test
 	rm -rf $(pre_install_data_packages)
-	for apk in $(ZIP_DIR)/data/media/preinstall_apps/*.apk; do\
-		$(AAPT) d --values resources $$apk | grep 'id=127 packageCount' | sed -e "s/^.*name=//" >> $(pre_install_data_packages);\
-	done
-	more $(pre_install_data_packages) | wc -l > $(ZIP_DIR)/system/etc/enforcecopyinglibpackages.txt
-	more $(pre_install_data_packages) >> $(ZIP_DIR)/system/etc/enforcecopyinglibpackages.txt
 
 out/framework2.jar : out/framework.jar
 
@@ -75,7 +65,6 @@ out/framework2.jar : out/framework.jar
 	#adb reboot
 
 %.sign-plat : out/%
-#%.sign-plat : /home/gexudong/libra.jbmiui/out/target/product/maguro/system/app/%
 	java -jar $(TOOL_DIR)/signapk.jar $(PORT_ROOT)/build/security/platform.x509.pem $(PORT_ROOT)/build/security/platform.pk8  $< $<.signed
 	@echo push -- to --- phone
 	adb remount

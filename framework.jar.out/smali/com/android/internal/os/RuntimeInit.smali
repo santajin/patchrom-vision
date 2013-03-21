@@ -335,15 +335,12 @@
 
     if-lez v4, :cond_0
 
-    .line 162
     const-string v4, "; "
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 163
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 166
     .end local v1           #model:Ljava/lang/String;
     :cond_0
     sget-object v4, Landroid/os/Build;->ID:Ljava/lang/String;

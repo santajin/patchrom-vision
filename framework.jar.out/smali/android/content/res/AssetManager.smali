@@ -47,6 +47,8 @@
 
 
 # instance fields
+
+
 .field private mNObject:I
 
 .field private mNumRefs:I
@@ -56,6 +58,7 @@
 .field private final mOffsets:[J
 
 .field private mOpen:Z
+
 
 .field private mRefStacks:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
@@ -70,6 +73,9 @@
 .end field
 
 .field private mStringBlocks:[Landroid/content/res/StringBlock;
+
+
+
 
 .field private final mValue:Landroid/util/TypedValue;
 
@@ -103,52 +109,41 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 103
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 69
     new-instance v0, Landroid/util/TypedValue;
 
     invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
 
     iput-object v0, p0, Landroid/content/res/AssetManager;->mValue:Landroid/util/TypedValue;
 
-    .line 70
     const/4 v0, 0x2
 
     new-array v0, v0, [J
 
     iput-object v0, p0, Landroid/content/res/AssetManager;->mOffsets:[J
 
-    .line 76
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/content/res/AssetManager;->mStringBlocks:[Landroid/content/res/StringBlock;
 
-    .line 78
     iput v1, p0, Landroid/content/res/AssetManager;->mNumRefs:I
 
-    .line 79
     iput-boolean v1, p0, Landroid/content/res/AssetManager;->mOpen:Z
 
-    .line 104
     monitor-enter p0
 
-    .line 109
     :try_start_0
     invoke-direct {p0}, Landroid/content/res/AssetManager;->init()V
 
-    .line 111
     invoke-static {}, Landroid/content/res/AssetManager;->ensureSystemAssets()V
 
     invoke-static {p0}, Landroid/app/MiuiThemeHelper;->addExtraAssetPaths(Landroid/content/res/AssetManager;)V
-    .line 112
+
     monitor-exit p0
 
-    .line 113
     return-void
 
-    .line 112
     :catchall_0
     move-exception v0
 
@@ -169,39 +164,33 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 125
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 69
     new-instance v0, Landroid/util/TypedValue;
 
     invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
 
     iput-object v0, p0, Landroid/content/res/AssetManager;->mValue:Landroid/util/TypedValue;
 
-    .line 70
     const/4 v0, 0x2
 
     new-array v0, v0, [J
 
     iput-object v0, p0, Landroid/content/res/AssetManager;->mOffsets:[J
 
-    .line 76
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/content/res/AssetManager;->mStringBlocks:[Landroid/content/res/StringBlock;
 
-    .line 78
     iput v1, p0, Landroid/content/res/AssetManager;->mNumRefs:I
 
     .line 79
     iput-boolean v1, p0, Landroid/content/res/AssetManager;->mOpen:Z
 
-    .line 132
     invoke-direct {p0}, Landroid/content/res/AssetManager;->init()V
 
     invoke-static {p0}, Landroid/app/MiuiThemeHelper;->addExtraAssetPaths(Landroid/content/res/AssetManager;)V
-    .line 134
+
     return-void
 .end method
 
@@ -563,8 +552,30 @@
 
     goto :goto_0
 .end method
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .method public final native attachThemePath(Ljava/lang/String;)I
 .end method
+
+
+
+
+
+
 
 
 .method public close()V
@@ -1113,6 +1124,12 @@
     goto :goto_0
 .end method
 
+
+
+
+
+
+
 .method final getThemeValue(IILandroid/util/TypedValue;Z)Z
     .locals 5
     .parameter "theme"
@@ -1177,6 +1194,9 @@
     const/4 v2, 0x0
 
     goto :goto_0
+
+
+
 .end method
 
 .method public final native isUpToDate()Z
@@ -1970,6 +1990,15 @@
     return-object v0
 .end method
 
+
+
+
+
+
+
+
+
+
 .method final releaseTheme(I)V
     .locals 1
     .parameter "theme"
@@ -2013,6 +2042,19 @@
 
 .method public final native setLocale(Ljava/lang/String;)V
 .end method
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .method xmlBlockGone(I)V
     .locals 1

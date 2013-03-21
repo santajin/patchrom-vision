@@ -784,8 +784,6 @@
 
     goto :goto_0
 
-    nop
-    
     .line 193
     :sswitch_data_0
     .sparse-switch

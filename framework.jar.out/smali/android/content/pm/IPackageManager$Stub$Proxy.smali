@@ -73,7 +73,7 @@
     .line 2409
     iget-object v2, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x2e
+    const/16 v3, 0x2f
 
     const/4 v4, 0x0
 
@@ -262,7 +262,7 @@
     :goto_0
     iget-object v4, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v5, 0x4b
+    const/16 v5, 0x4c
 
     const/4 v6, 0x0
 
@@ -391,7 +391,7 @@
     :goto_1
     iget-object v2, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x31
+    const/16 v3, 0x32
 
     const/4 v4, 0x0
 
@@ -885,7 +885,7 @@
     .line 2780
     iget-object v2, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x3d
+    const/16 v3, 0x3e
 
     const/4 v4, 0x0
 
@@ -957,7 +957,7 @@
     .line 2517
     iget-object v2, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x33
+    const/16 v3, 0x34
 
     const/4 v4, 0x0
 
@@ -1027,7 +1027,7 @@
     .line 3099
     iget-object v3, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x4e
+    const/16 v4, 0x4f
 
     const/4 v5, 0x0
 
@@ -1204,7 +1204,7 @@
     .line 2757
     iget-object v2, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x3c
+    const/16 v3, 0x3d
 
     const/4 v4, 0x0
 
@@ -1291,7 +1291,7 @@
     .line 2376
     iget-object v2, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x2c
+    const/16 v3, 0x2d
 
     const/4 v4, 0x0
 
@@ -1359,7 +1359,7 @@
     .line 2877
     iget-object v2, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x42
+    const/16 v3, 0x43
 
     const/4 v4, 0x0
 
@@ -1425,7 +1425,7 @@
     .line 2336
     iget-object v2, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x2a
+    const/16 v3, 0x2b
 
     const/4 v4, 0x0
 
@@ -1506,7 +1506,7 @@
     :goto_0
     iget-object v2, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x3b
+    const/16 v3, 0x3c
 
     const/4 v4, 0x0
 
@@ -1594,7 +1594,7 @@
     .line 2692
     iget-object v2, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x3a
+    const/16 v3, 0x3b
 
     const/4 v4, 0x0
 
@@ -1877,7 +1877,7 @@
     .line 2633
     iget-object v3, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x38
+    const/16 v4, 0x39
 
     const/4 v5, 0x0
 
@@ -2066,7 +2066,7 @@
     .line 2590
     iget-object v3, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x36
+    const/16 v4, 0x37
 
     const/4 v5, 0x0
 
@@ -2146,7 +2146,7 @@
     .line 3080
     iget-object v3, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x4d
+    const/16 v4, 0x4e
 
     const/4 v5, 0x0
 
@@ -2227,7 +2227,7 @@
     .line 2136
     iget-object v3, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x22
+    const/16 v4, 0x23
 
     const/4 v5, 0x0
 
@@ -2377,6 +2377,88 @@
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
+    .line 2099
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    throw v3
+.end method
+
+.method public getInstalledThemePackages()Ljava/util/List;
+    .locals 6
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Landroid/content/pm/PackageInfo;",
+            ">;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 2105
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 2106
+    .local v0, _data:Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 2109
+    .local v1, _reply:Landroid/os/Parcel;
+    :try_start_0
+    const-string v3, "android.content.pm.IPackageManager"
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 2110
+    iget-object v3, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/16 v4, 0x22
+
+    const/4 v5, 0x0
+
+    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 2111
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+
+    .line 2112
+    sget-object v3, Landroid/content/pm/PackageInfo;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-virtual {v1, v3}, Landroid/os/Parcel;->createTypedArrayList(Landroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result-object v2
+
+    .line 2115
+    .local v2, _result:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/PackageInfo;>;"
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 2116
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 2118
+    return-object v2
+
+    .line 2115
+    .end local v2           #_result:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/PackageInfo;>;"
+    :catchall_0
+    move-exception v3
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 2116
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -2416,7 +2498,7 @@
     .line 2392
     iget-object v3, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x2d
+    const/16 v4, 0x2e
 
     const/4 v5, 0x0
 
@@ -2504,7 +2586,7 @@
     .line 2261
     iget-object v3, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x27
+    const/16 v4, 0x28
 
     const/4 v5, 0x0
 
@@ -2875,7 +2957,7 @@
     .line 2803
     iget-object v2, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x3e
+    const/16 v3, 0x3f
 
     const/4 v4, 0x0
 
@@ -3301,7 +3383,7 @@
     .line 2165
     iget-object v3, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x23
+    const/16 v4, 0x24
 
     const/4 v5, 0x0
 
@@ -3396,7 +3478,7 @@
     .line 2533
     iget-object v3, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x34
+    const/16 v4, 0x35
 
     const/4 v5, 0x0
 
@@ -3489,7 +3571,7 @@
     .line 2440
     iget-object v3, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x30
+    const/16 v4, 0x31
 
     const/4 v5, 0x0
 
@@ -3926,7 +4008,7 @@
     .line 2843
     iget-object v3, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x40
+    const/16 v4, 0x41
 
     const/4 v5, 0x0
 
@@ -3999,7 +4081,7 @@
     .line 2822
     iget-object v3, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x3f
+    const/16 v4, 0x40
 
     const/4 v5, 0x0
 
@@ -4145,7 +4227,7 @@
     .line 3273
     iget-object v3, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x56
+    const/16 v4, 0x57
 
     const/4 v5, 0x0
 
@@ -4244,7 +4326,7 @@
     .line 3255
     iget-object v3, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x55
+    const/16 v4, 0x56
 
     const/4 v5, 0x0
 
@@ -4315,7 +4397,7 @@
     .line 3216
     iget-object v3, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x53
+    const/16 v4, 0x54
 
     const/4 v5, 0x0
 
@@ -4480,7 +4562,7 @@
     .line 2861
     iget-object v3, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x41
+    const/16 v4, 0x42
 
     const/4 v5, 0x0
 
@@ -4556,7 +4638,7 @@
     .line 2923
     iget-object v3, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x45
+    const/16 v4, 0x46
 
     const/4 v5, 0x0
 
@@ -4664,7 +4746,7 @@
     .line 2321
     iget-object v2, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x29
+    const/16 v3, 0x2a
 
     const/4 v4, 0x0
 
@@ -4822,7 +4904,7 @@
     :goto_4
     iget-object v2, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x51
+    const/16 v3, 0x52
 
     const/4 v4, 0x0
 
@@ -4930,7 +5012,7 @@
     .line 3238
     iget-object v3, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x54
+    const/16 v4, 0x55
 
     const/4 v5, 0x0
 
@@ -5010,7 +5092,7 @@
     .line 3312
     iget-object v3, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x58
+    const/16 v4, 0x59
 
     const/4 v5, 0x0
 
@@ -5166,7 +5248,7 @@
     .line 2892
     iget-object v3, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x43
+    const/16 v4, 0x44
 
     const/4 v5, 0x0
 
@@ -5242,7 +5324,7 @@
     .line 3330
     iget-object v3, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x59
+    const/16 v4, 0x5a
 
     const/4 v5, 0x0
 
@@ -5335,7 +5417,7 @@
     .line 3023
     iget-object v2, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x4a
+    const/16 v3, 0x4b
 
     const/4 v4, 0x0
 
@@ -5407,7 +5489,7 @@
     .line 3004
     iget-object v3, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x49
+    const/16 v4, 0x4a
 
     const/4 v5, 0x0
 
@@ -5476,7 +5558,7 @@
     .line 2943
     iget-object v2, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x46
+    const/16 v3, 0x47
 
     const/4 v4, 0x0
 
@@ -5544,7 +5626,7 @@
     .line 2964
     iget-object v3, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x47
+    const/16 v4, 0x48
 
     const/4 v5, 0x0
 
@@ -5642,7 +5724,7 @@
     .line 2236
     iget-object v3, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x26
+    const/16 v4, 0x27
 
     const/4 v5, 0x0
 
@@ -5733,7 +5815,7 @@
     .line 2285
     iget-object v3, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x28
+    const/16 v4, 0x29
 
     const/4 v5, 0x0
 
@@ -6448,7 +6530,7 @@
     .line 2216
     iget-object v2, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x25
+    const/16 v3, 0x26
 
     const/4 v4, 0x0
 
@@ -6522,7 +6604,7 @@
     .line 2424
     iget-object v2, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x2f
+    const/16 v3, 0x30
 
     const/4 v4, 0x0
 
@@ -6656,7 +6738,7 @@
     .line 3122
     iget-object v3, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x4f
+    const/16 v4, 0x50
 
     const/4 v5, 0x0
 
@@ -6770,7 +6852,7 @@
     :goto_1
     iget-object v2, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x32
+    const/16 v3, 0x33
 
     const/4 v4, 0x0
 
@@ -6866,7 +6948,7 @@
     .line 2185
     iget-object v3, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x24
+    const/16 v4, 0x25
 
     const/4 v5, 0x0
 
@@ -7293,7 +7375,7 @@
     .line 2613
     iget-object v2, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x37
+    const/16 v3, 0x38
 
     const/4 v4, 0x0
 
@@ -7382,7 +7464,7 @@
     .line 2564
     iget-object v2, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x35
+    const/16 v3, 0x36
 
     const/4 v4, 0x0
 
@@ -7461,7 +7543,7 @@
     .line 3063
     iget-object v3, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x4c
+    const/16 v4, 0x4d
 
     const/4 v5, 0x0
 
@@ -7543,7 +7625,7 @@
     .line 2352
     iget-object v2, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x2b
+    const/16 v3, 0x2c
 
     const/4 v4, 0x0
 
@@ -7624,7 +7706,7 @@
     .line 2656
     iget-object v2, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x39
+    const/16 v3, 0x3a
 
     const/4 v4, 0x0
 
@@ -7701,7 +7783,7 @@
     .line 3296
     iget-object v2, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x57
+    const/16 v3, 0x58
 
     const/4 v4, 0x0
 
@@ -7763,7 +7845,7 @@
     .line 2908
     iget-object v2, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x44
+    const/16 v3, 0x45
 
     const/4 v4, 0x0
 
@@ -7845,7 +7927,7 @@
     .line 2988
     iget-object v2, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x48
+    const/16 v3, 0x49
 
     const/4 v4, 0x0
 
@@ -7927,7 +8009,7 @@
     .line 3140
     iget-object v2, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x50
+    const/16 v3, 0x51
 
     const/4 v4, 0x0
 
@@ -7997,7 +8079,7 @@
     .line 3201
     iget-object v2, p0, Landroid/content/pm/IPackageManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x52
+    const/16 v3, 0x53
 
     const/4 v4, 0x0
 

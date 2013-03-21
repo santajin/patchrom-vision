@@ -12596,7 +12596,7 @@
 .end method
 
 .method setPackageStoppedStateLPw(Ljava/lang/String;ZZII)Z
-    .locals 9
+    .locals 10
     .parameter "packageName"
     .parameter "stopped"
     .parameter "allowedByPermission"
@@ -12604,27 +12604,28 @@
     .parameter "userId"
 
     .prologue
+    const/4 v9, 0x0
+
     const/4 v2, 0x0
 
-    const/4 v8, 0x0
-
+    .line 2340
     invoke-static {p4}, Landroid/os/UserId;->getAppId(I)I
 
-    move-result v6
+    move-result v7
 
     .line 2341
-    .local v6, appId:I
+    .local v7, appId:I
     iget-object v0, p0, Lcom/android/server/pm/Settings;->mPackages:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v8
 
-    check-cast v7, Lcom/android/server/pm/PackageSetting;
+    check-cast v8, Lcom/android/server/pm/PackageSetting;
 
     .line 2342
-    .local v7, pkgSetting:Lcom/android/server/pm/PackageSetting;
-    if-nez v7, :cond_0
+    .local v8, pkgSetting:Lcom/android/server/pm/PackageSetting;
+    if-nez v8, :cond_0
 
     .line 2343
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -12655,9 +12656,9 @@
     :cond_0
     if-nez p3, :cond_1
 
-    iget v0, v7, Lcom/android/server/pm/PackageSetting;->appId:I
+    iget v0, v8, Lcom/android/server/pm/PackageSetting;->appId:I
 
-    if-eq v6, v0, :cond_1
+    if-eq v7, v0, :cond_1
 
     .line 2346
     new-instance v0, Ljava/lang/SecurityException;
@@ -12696,7 +12697,7 @@
 
     move-result-object v1
 
-    iget v2, v7, Lcom/android/server/pm/PackageSetting;->appId:I
+    iget v2, v8, Lcom/android/server/pm/PackageSetting;->appId:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -12712,43 +12713,45 @@
 
     .line 2358
     :cond_1
-    invoke-virtual {v7, p5}, Lcom/android/server/pm/PackageSetting;->getStopped(I)Z
+    invoke-virtual {v8, p5}, Lcom/android/server/pm/PackageSetting;->getStopped(I)Z
 
     move-result v0
 
     if-eq v0, p2, :cond_4
 
     .line 2359
-    invoke-virtual {v7, p2, p5}, Lcom/android/server/pm/PackageSetting;->setStopped(ZI)V
+    invoke-virtual {v8, p2, p5}, Lcom/android/server/pm/PackageSetting;->setStopped(ZI)V
 
     .line 2361
-    invoke-virtual {v7, p5}, Lcom/android/server/pm/PackageSetting;->getNotLaunched(I)Z
+    invoke-virtual {v8, p5}, Lcom/android/server/pm/PackageSetting;->getNotLaunched(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
     .line 2362
-    iget-object v0, v7, Lcom/android/server/pm/PackageSetting;->installerPackageName:Ljava/lang/String;
+    iget-object v0, v8, Lcom/android/server/pm/PackageSetting;->installerPackageName:Ljava/lang/String;
 
     if-eqz v0, :cond_2
 
     .line 2363
     const-string v0, "android.intent.action.PACKAGE_FIRST_LAUNCH"
 
-    iget-object v1, v7, Lcom/android/server/pm/PackageSetting;->name:Ljava/lang/String;
+    iget-object v1, v8, Lcom/android/server/pm/PackageSetting;->name:Ljava/lang/String;
 
-    iget-object v3, v7, Lcom/android/server/pm/PackageSetting;->installerPackageName:Ljava/lang/String;
+    iget-object v4, v8, Lcom/android/server/pm/PackageSetting;->installerPackageName:Ljava/lang/String;
 
-    move-object v4, v2
+    move-object v3, v2
 
-    move v5, p5
+    move-object v5, v2
 
-    invoke-static/range {v0 .. v5}, Lcom/android/server/pm/PackageManagerService;->sendPackageBroadcast(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/String;Landroid/content/IIntentReceiver;I)V
+    move v6, p5
+
+    invoke-static/range {v0 .. v6}, Lcom/android/server/pm/PackageManagerService;->sendPackageBroadcast(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/String;Landroid/content/IIntentReceiver;I)V
 
     .line 2367
     :cond_2
-    invoke-virtual {v7, v8, p5}, Lcom/android/server/pm/PackageSetting;->setNotLaunched(ZI)V
+    invoke-virtual {v8, v9, p5}, Lcom/android/server/pm/PackageSetting;->setNotLaunched(ZI)V
 
     .line 2369
     :cond_3
@@ -12759,7 +12762,7 @@
     return v0
 
     :cond_4
-    move v0, v8
+    move v0, v9
 
     goto :goto_0
 .end method

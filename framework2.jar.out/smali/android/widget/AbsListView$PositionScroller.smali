@@ -58,11 +58,11 @@
     .line 4297
     iput-object p1, p0, Landroid/widget/AbsListView$PositionScroller;->this$0:Landroid/widget/AbsListView;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 4298
-    #getter for: Landroid/view/View;->mContext:Landroid/content/Context;
-    invoke-static {p1}, Landroid/widget/AbsListView;->access$2900(Landroid/widget/AbsListView;)Landroid/content/Context;
+    #getter for: Landroid/widget/AbsListView;->mContext:Landroid/content/Context;
+    invoke-static {p1}, Landroid/widget/AbsListView;->access$3000(Landroid/widget/AbsListView;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -107,7 +107,7 @@
 
     move-object/from16 v0, v31
 
-    iget v9, v0, Landroid/widget/AdapterView;->mFirstPosition:I
+    iget v9, v0, Landroid/widget/AbsListView;->mFirstPosition:I
 
     .line 4544
     .local v9, firstPos:I
@@ -214,7 +214,7 @@
 
     move-object/from16 v0, v31
 
-    iget v0, v0, Landroid/widget/AdapterView;->mItemCount:I
+    iget v0, v0, Landroid/widget/AbsListView;->mItemCount:I
 
     move/from16 v31, v0
 
@@ -388,7 +388,7 @@
 
     move-object/from16 v0, v32
 
-    iget v0, v0, Landroid/widget/AdapterView;->mItemCount:I
+    iget v0, v0, Landroid/widget/AbsListView;->mItemCount:I
 
     move/from16 v32, v0
 
@@ -1359,7 +1359,7 @@
 
     iget-object v14, v0, Landroid/widget/AbsListView$PositionScroller;->this$0:Landroid/widget/AbsListView;
 
-    iget v6, v14, Landroid/widget/AdapterView;->mFirstPosition:I
+    iget v6, v14, Landroid/widget/AbsListView;->mFirstPosition:I
 
     .line 4488
     .local v6, firstPos:I
@@ -1639,7 +1639,7 @@
     .line 4304
     iget-object v5, p0, Landroid/widget/AbsListView$PositionScroller;->this$0:Landroid/widget/AbsListView;
 
-    iget-boolean v5, v5, Landroid/widget/AdapterView;->mDataChanged:Z
+    iget-boolean v5, v5, Landroid/widget/AbsListView;->mDataChanged:Z
 
     if-eqz v5, :cond_1
 
@@ -1672,7 +1672,7 @@
     .line 4320
     iget-object v5, p0, Landroid/widget/AbsListView$PositionScroller;->this$0:Landroid/widget/AbsListView;
 
-    iget v2, v5, Landroid/widget/AdapterView;->mFirstPosition:I
+    iget v2, v5, Landroid/widget/AbsListView;->mFirstPosition:I
 
     .line 4321
     .local v2, firstPos:I
@@ -1800,7 +1800,7 @@
     :cond_1
     iget-object v9, p0, Landroid/widget/AbsListView$PositionScroller;->this$0:Landroid/widget/AbsListView;
 
-    iget-boolean v9, v9, Landroid/widget/AdapterView;->mDataChanged:Z
+    iget-boolean v9, v9, Landroid/widget/AbsListView;->mDataChanged:Z
 
     if-eqz v9, :cond_2
 
@@ -1830,7 +1830,7 @@
     .line 4372
     iget-object v9, p0, Landroid/widget/AbsListView$PositionScroller;->this$0:Landroid/widget/AbsListView;
 
-    iget v5, v9, Landroid/widget/AdapterView;->mFirstPosition:I
+    iget v5, v9, Landroid/widget/AbsListView;->mFirstPosition:I
 
     .line 4373
     .local v5, firstPos:I
@@ -2046,7 +2046,7 @@
     .line 4433
     iget-object v7, p0, Landroid/widget/AbsListView$PositionScroller;->this$0:Landroid/widget/AbsListView;
 
-    iget-boolean v7, v7, Landroid/widget/AdapterView;->mDataChanged:Z
+    iget-boolean v7, v7, Landroid/widget/AbsListView;->mDataChanged:Z
 
     if-eqz v7, :cond_1
 
@@ -2130,7 +2130,7 @@
     .line 4458
     iget-object v7, p0, Landroid/widget/AbsListView$PositionScroller;->this$0:Landroid/widget/AbsListView;
 
-    iget v1, v7, Landroid/widget/AdapterView;->mFirstPosition:I
+    iget v1, v7, Landroid/widget/AbsListView;->mFirstPosition:I
 
     .line 4459
     .local v1, firstPos:I

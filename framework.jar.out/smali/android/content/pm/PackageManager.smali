@@ -27,11 +27,6 @@
 .field public static final COMPONENT_ENABLED_STATE_DISABLED_USER:I = 0x3
 
 .field public static final COMPONENT_ENABLED_STATE_DISABLE_AUTOSTART:I = 0x40000000
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_FIELD:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
-.end field
-
 .field public static final COMPONENT_ENABLED_STATE_ENABLED:I = 0x1
 
 .field public static final DELETE_FAILED_DEVICE_POLICY_MANAGER:I = -0x2
@@ -528,6 +523,18 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
+            "Ljava/util/List",
+            "<",
+            "Landroid/content/pm/PackageInfo;",
+            ">;"
+        }
+    .end annotation
+.end method
+
+.method public abstract getInstalledThemePackages()Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
             "Ljava/util/List",
             "<",
             "Landroid/content/pm/PackageInfo;",

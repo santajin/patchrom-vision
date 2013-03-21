@@ -300,7 +300,7 @@
     invoke-static {v0, v9, v7, v1, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 193
-    if-eqz v14, :cond_6
+    if-eqz v14, :cond_5
 
     const-string v22, "application/vnd.wap.coc"
 
@@ -310,14 +310,14 @@
 
     move-result v22
 
-    if-eqz v22, :cond_6
+    if-eqz v22, :cond_5
 
     .line 194
     move-object/from16 v13, p1
 
     .line 207
     .local v13, intentData:[B
-    :cond_3
+    :goto_1
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->pduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -336,7 +336,7 @@
 
     move-result v22
 
-    if-eqz v22, :cond_9
+    if-eqz v22, :cond_8
 
     .line 208
     move-object/from16 v0, p0
@@ -377,7 +377,7 @@
 
     .line 211
     .local v20, wapAppId:Ljava/lang/String;
-    if-nez v20, :cond_4
+    if-nez v20, :cond_3
 
     .line 212
     move-object/from16 v0, p0
@@ -401,8 +401,8 @@
     move-result-object v20
 
     .line 215
-    :cond_4
-    if-nez v14, :cond_7
+    :cond_3
+    if-nez v14, :cond_6
 
     invoke-static {v3, v4}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
@@ -410,7 +410,7 @@
 
     .line 220
     .local v5, contentType:Ljava/lang/String;
-    :goto_1
+    :goto_2
     const/16 v18, 0x1
 
     .line 221
@@ -430,12 +430,12 @@
 
     .line 223
     .local v21, wapPushMan:Lcom/android/internal/telephony/IWapPushManager;
-    if-nez v21, :cond_8
+    if-nez v21, :cond_7
 
     .line 241
-    :cond_5
-    :goto_2
-    if-nez v18, :cond_9
+    :cond_4
+    :goto_3
+    if-nez v18, :cond_8
 
     .line 242
     const/16 v22, 0x1
@@ -448,7 +448,7 @@
     .end local v18           #processFurther:Z
     .end local v20           #wapAppId:Ljava/lang/String;
     .end local v21           #wapPushMan:Lcom/android/internal/telephony/IWapPushManager;
-    :cond_6
+    :cond_5
     add-int v6, v9, v8
 
     .line 197
@@ -487,25 +487,29 @@
 
     move-result v22
 
-    if-eqz v22, :cond_3
+    if-eqz v22, :cond_miui_0
 
     const/16 v22, -0x1
 
-    goto/16 :goto_0
+    return v22
+    ########### method end
+
+    :cond_miui_0
+    goto :goto_1
 
     .end local v6           #dataIndex:I
     .restart local v20       #wapAppId:Ljava/lang/String;
-    :cond_7
+    :cond_6
     move-object v5, v14
 
     .line 215
-    goto :goto_1
+    goto :goto_2
 
     .line 226
     .restart local v5       #contentType:Ljava/lang/String;
     .restart local v18       #processFurther:Z
     .restart local v21       #wapPushMan:Lcom/android/internal/telephony/IWapPushManager;
-    :cond_8
+    :cond_7
     :try_start_1
     new-instance v12, Landroid/content/Intent;
 
@@ -576,18 +580,18 @@
     .local v17, procRet:I
     and-int/lit8 v22, v17, 0x1
 
-    if-lez v22, :cond_5
+    if-lez v22, :cond_4
 
     const v22, 0x8000
 
     and-int v22, v22, v17
 
-    if-nez v22, :cond_5
+    if-nez v22, :cond_4
 
     .line 238
     const/16 v18, 0x0
 
-    goto :goto_2
+    goto :goto_3
 
     .line 244
     .end local v12           #intent:Landroid/content/Intent;
@@ -600,8 +604,8 @@
     .end local v5           #contentType:Ljava/lang/String;
     .end local v18           #processFurther:Z
     .end local v20           #wapAppId:Ljava/lang/String;
-    :cond_9
-    if-nez v14, :cond_a
+    :cond_8
+    if-nez v14, :cond_9
 
     .line 252
     const/16 v22, 0x2
@@ -609,7 +613,7 @@
     goto/16 :goto_0
 
     .line 257
-    :cond_a
+    :cond_9
     const-string v22, "application/vnd.wap.mms-message"
 
     move-object/from16 v0, v22
@@ -618,14 +622,14 @@
 
     move-result v22
 
-    if-eqz v22, :cond_b
+    if-eqz v22, :cond_a
 
     .line 258
     const-string v16, "android.permission.RECEIVE_MMS"
 
     .line 263
     .local v16, permission:Ljava/lang/String;
-    :goto_3
+    :goto_4
     new-instance v12, Landroid/content/Intent;
 
     const-string v22, "android.provider.Telephony.WAP_PUSH_RECEIVED"
@@ -689,6 +693,7 @@
 
     const-string v22, "address"
 
+    .line 271
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->mAddress:Ljava/lang/String;
@@ -721,11 +726,11 @@
     .line 260
     .end local v12           #intent:Landroid/content/Intent;
     .end local v16           #permission:Ljava/lang/String;
-    :cond_b
+    :cond_a
     const-string v16, "android.permission.RECEIVE_WAP_PUSH"
 
     .restart local v16       #permission:Ljava/lang/String;
-    goto :goto_3
+    goto :goto_4
 .end method
 
 .method public dispatchWapPdu([BLjava/lang/String;)I

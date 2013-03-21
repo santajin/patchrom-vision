@@ -112,7 +112,7 @@
     .line 6129
     iget-object v0, p0, Landroid/widget/AbsListView$MultiChoiceModeWrapper;->this$0:Landroid/widget/AbsListView;
 
-    iput-boolean v2, v0, Landroid/widget/AdapterView;->mDataChanged:Z
+    iput-boolean v2, v0, Landroid/widget/AbsListView;->mDataChanged:Z
 
     .line 6130
     iget-object v0, p0, Landroid/widget/AbsListView$MultiChoiceModeWrapper;->this$0:Landroid/widget/AbsListView;

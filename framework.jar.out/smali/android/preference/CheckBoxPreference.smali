@@ -82,7 +82,6 @@
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 47
-    
     return-void
 .end method
 
@@ -107,7 +106,7 @@
     .local v0, slidingButton:Lmiui/widget/SlidingButton;
     new-instance v1, Landroid/preference/CheckBoxPreference$1;
 
-    invoke-direct {v1, p0, v0}, Landroid/preference/CheckBoxPreference$1;-><init>(Landroid/preference/CheckBoxPreference;Lmiui/widget/SlidingButton;)V
+    invoke-direct {v1, p0}, Landroid/preference/CheckBoxPreference$1;-><init>(Landroid/preference/CheckBoxPreference;)V
 
     invoke-virtual {v0, v1}, Lmiui/widget/SlidingButton;->setOnCheckedChangedListener(Lmiui/widget/SlidingButton$OnCheckedChangedListener;)V
 
@@ -146,22 +145,18 @@
 
     move-object v1, v0
 
-    .line 63
     check-cast v1, Landroid/widget/Checkable;
 
     iget-boolean v2, p0, Landroid/preference/CheckBoxPreference;->mChecked:Z
 
     invoke-interface {v1, v2}, Landroid/widget/Checkable;->setChecked(Z)V
 
-    .line 64
     invoke-virtual {p0, v0}, Landroid/preference/CheckBoxPreference;->sendAccessibilityEvent(Landroid/view/View;)V
 
-    .line 67
     :cond_0
     invoke-direct {p0, v0}, Landroid/preference/CheckBoxPreference;->setSlidingButtonListener(Landroid/view/View;)V
 
     invoke-virtual {p0, p1}, Landroid/preference/CheckBoxPreference;->syncSummaryView(Landroid/view/View;)V
 
-    .line 68
     return-void
 .end method

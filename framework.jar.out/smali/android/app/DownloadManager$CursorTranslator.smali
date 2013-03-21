@@ -284,35 +284,30 @@
     .end annotation
 
     .prologue
-    .line 1298
     packed-switch p1, :pswitch_data_0
 
     invoke-static {p1}, Landroid/app/DownloadManager$Injector;->getPausedReason(I)J
-    .line 1309
+
     move-result-wide v0
 
     :goto_0
     return-wide v0
 
-    .line 1300
     :pswitch_0
     const-wide/16 v0, 0x1
 
     goto :goto_0
 
-    .line 1303
     :pswitch_1
     const-wide/16 v0, 0x2
 
     goto :goto_0
 
-    .line 1306
     :pswitch_2
     const-wide/16 v0, 0x3
 
     goto :goto_0
 
-    .line 1298
     nop
 
     :pswitch_data_0
@@ -328,20 +323,17 @@
     .parameter "status"
 
     .prologue
-    .line 1285
     invoke-static {p1}, Landroid/app/DownloadManager$CursorTranslator;->translateStatus(I)I
 
     move-result v0
 
     sparse-switch v0, :sswitch_data_0
 
-    .line 1293
     const-wide/16 v0, 0x0
 
     :goto_0
     return-wide v0
 
-    .line 1287
     :sswitch_0
     invoke-direct {p0, p1}, Landroid/app/DownloadManager$CursorTranslator;->getErrorCode(I)J
 
@@ -373,10 +365,8 @@
     .end annotation
 
     .prologue
-    .line 1352
     packed-switch p0, :pswitch_data_0
 
-    .line 1369
     :pswitch_0
     sget-boolean v0, Landroid/app/DownloadManager$CursorTranslator;->$assertionsDisabled:Z
 

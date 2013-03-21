@@ -1112,7 +1112,6 @@
     .end annotation
 
     .prologue
-    .line 44
     invoke-static {p0, p1}, Landroid/text/StaticLayout;->isIdeographic(CZ)Z
 
     move-result v0
@@ -1276,8 +1275,6 @@
     goto :goto_0
 
     .line 529
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x3041 -> :sswitch_0

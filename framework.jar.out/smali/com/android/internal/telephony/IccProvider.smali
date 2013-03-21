@@ -525,17 +525,13 @@
 .end method
 
 .method private normalizeValue(Ljava/lang/String;)Ljava/lang/String;
-    .locals 6
+    .locals 4
     .parameter "inVal"
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
 
     .prologue
-    const/16 v5, 0x27
+    const/16 v3, 0x27
 
-    const/4 v4, 0x1
-
+    .line 166
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -546,47 +542,41 @@
 
     .line 169
     .local v1, retVal:Ljava/lang/String;
-    if-gt v0, v4, :cond_0
+	const/4 v2, 0x1
 
-    move-object v2, v1
+	if-gt v0, v2, :cond_ff
 
-    .end local v1           #retVal:Ljava/lang/String;
-    .local v2, retVal:Ljava/lang/String;
-    :goto_0
-    return-object v2
+	return-object v1
 
-    .end local v2           #retVal:Ljava/lang/String;
-    .restart local v1       #retVal:Ljava/lang/String;
-    :cond_0
-    const/4 v3, 0x0
+	:cond_ff
+    const/4 v2, 0x0
 
-    invoke-virtual {p1, v3}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p1, v2}, Ljava/lang/String;->charAt(I)C
 
-    move-result v3
+    move-result v2
 
-    if-ne v3, v5, :cond_1
+    if-ne v2, v3, :cond_0
 
-    add-int/lit8 v3, v0, -0x1
+    add-int/lit8 v2, v0, -0x1
 
-    invoke-virtual {p1, v3}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p1, v2}, Ljava/lang/String;->charAt(I)C
 
-    move-result v3
+    move-result v2
 
-    if-ne v3, v5, :cond_1
+    if-ne v2, v3, :cond_0
+
+    .line 170
+    const/4 v2, 0x1
 
     add-int/lit8 v3, v0, -0x1
 
-    invoke-virtual {p1, v4, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {p1, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v1
 
     .line 173
-    :cond_1
-    move-object v2, v1
-
-    .end local v1           #retVal:Ljava/lang/String;
-    .restart local v2       #retVal:Ljava/lang/String;
-    goto :goto_0
+    :cond_0
+    return-object v1
 .end method
 
 .method private updateIccRecordInEf(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z

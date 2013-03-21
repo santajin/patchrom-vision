@@ -69,6 +69,8 @@
 
 .field public mExtras:Ljava/lang/Object;
 
+.field public mIsThemeApk:Z
+
 .field public mOperationPending:Z
 
 .field public mOriginalPackages:Ljava/util/ArrayList;
@@ -95,6 +97,17 @@
 .field public mSharedUserLabel:I
 
 .field public mSignatures:[Landroid/content/pm/Signature;
+
+.field public final mThemeInfos:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Landroid/content/pm/ThemeInfo;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field public mVersionCode:I
 
@@ -335,6 +348,17 @@
     .line 3198
     iput v1, p0, Landroid/content/pm/PackageParser$Package;->mPreferredOrder:I
 
+    .line 3208
+    iput-boolean v1, p0, Landroid/content/pm/PackageParser$Package;->mIsThemeApk:Z
+
+    .line 3211
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
+
+    iput-object v0, p0, Landroid/content/pm/PackageParser$Package;->mThemeInfos:Ljava/util/ArrayList;
+
+    .line 3228
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
