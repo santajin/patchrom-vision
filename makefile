@@ -39,6 +39,8 @@ include $(PORT_BUILD)/porting.mk
 #updater := $(ZIP_DIR)/META-INF/com/google/android/updater-script
 #pre_install_data_packages := out/pre_install_apk_pkgname.txt
 local-pre-zip-misc:
+	cp other/platform.xml $(ZIP_DIR)/system/etc/permissions/platform.xml
+	cp other/javax.btobex.jar $(ZIP_DIR)/system/framework/javax.btobex.jar
 	cp other/spn-conf.xml $(ZIP_DIR)/system/etc/spn-conf.xml
 	cp other/build.prop $(ZIP_DIR)/system/build.prop
 	#cp other/Camera.apk $(ZIP_DIR)/system/app/Camera.apk
