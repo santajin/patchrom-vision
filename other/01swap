@@ -1,0 +1,10 @@
+#!/system/bin/sh
+
+if [ ! -e "/data/local/swap" ]
+then
+    busybox dd if=/dev/zero of=/data/local/swap bs=1M count=128
+    busybox mkswap /data/local/swap
+    busybox swapon /data/local/swap
+else
+    busybox swapon /data/local/swap
+fi
