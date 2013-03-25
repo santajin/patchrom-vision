@@ -899,7 +899,8 @@
     .line 133
     new-instance v4, Landroid/app/AlertDialog$Builder;
 
-    invoke-direct {v4, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+    const v5, 0x60d003e
+    invoke-direct {v4, p0, v5}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;I)V
 
     const v5, 0x1040143
 
@@ -1007,7 +1008,8 @@
     :cond_3
     new-instance v5, Landroid/app/AlertDialog$Builder;
 
-    invoke-direct {v5, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+    const v4, 0x60d003e
+    invoke-direct {v5, p0, v4}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;I)V
 
     sget-boolean v4, Lcom/android/server/pm/ShutdownThread;->mRebootSafeMode:Z
 
