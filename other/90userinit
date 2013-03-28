@@ -1,0 +1,6 @@
+mount -o remount,rw /data;
+losetup /dev/block/loop7 /data/swap.img;
+mkswap /dev/block/loop7;
+swapon /dev/block/loop7;
+echo 100 > /proc/sys/vm/swappiness;
+ 

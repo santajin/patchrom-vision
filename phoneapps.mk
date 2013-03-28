@@ -1,7 +1,7 @@
-local-phone-apps = $(private-phone-apps)
 
-private-phone-apps := ApplicationsProvider \
+local-phone-apps = ApplicationsProvider \
 					  BackupRestoreConfirmation \
+                   Bluetooth \
 					  CertInstaller \
 					  DefaultContainerService \
 					  DrmProvider \
@@ -15,7 +15,4 @@ private-phone-apps := ApplicationsProvider \
 					  UserDictionaryProvider \
 					  WAPPushManager
 
-private-lockscreen-apps := 
 
-private-phone-apps2 :=  
-#forVision
