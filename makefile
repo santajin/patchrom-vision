@@ -1,7 +1,7 @@
 #
 # Makefile for vision
 #
-
+local-density := HDPI
 # The original zip file, MUST be specified by each product
 local-zip-file     := stockrom.zip
 
@@ -18,8 +18,8 @@ local-modified-jars :=
 
 # All apks from MIUI
 local-miui-removed-apps := MediaProvider Stk AirkanPhoneService Bluetooth
-#local-miui-modified-apps := MiuiHome Settings Phone Mms ThemeManager
-local-miui-modified-apps := MiuiHome Settings Phone Mms ThemeManager Backup Contacts DeskClock FileExplorer MiuiGallery Music Notes PackageInstaller SoundRecorder Weather MiuiCompass
+local-miui-modified-apps := MiuiHome Settings Phone Mms ThemeManager DeskClock
+#local-miui-modified-apps := MiuiHome Settings Phone Mms ThemeManager Backup Contacts DeskClock FileExplorer MiuiGallery Music Notes PackageInstaller SoundRecorder Weather MiuiCompass
 
 include phoneapps.mk
 
