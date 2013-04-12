@@ -151,7 +151,6 @@
 .end method
 
 
-# virtual methods
 .method private shouldPutTabsOnTop()Z
     .locals 2
     .annotation build Landroid/annotation/MiuiHook;
@@ -190,7 +189,8 @@
 .end method
 
 
-.method public getActionBarView()Lcom/android/internal/widget/ActionBarView;
+# virtual methods
+.method protected getActionBarView()Lcom/android/internal/widget/ActionBarView;
     .locals 1
     .annotation build Landroid/annotation/MiuiHook;
         value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;

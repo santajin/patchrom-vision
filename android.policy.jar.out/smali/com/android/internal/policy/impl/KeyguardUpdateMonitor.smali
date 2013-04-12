@@ -1796,14 +1796,7 @@
     goto :goto_0
 .end method
 
-.method isSimPinSecure()Z
-    .locals 1
 
-    .prologue
 
-    invoke-virtual {p0}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->isSimLocked()Z
 
-    move-result v0
 
-    return v0
-.end method

@@ -57,6 +57,7 @@ local-pre-zip-misc:
 	rm -rf $(ZIP_DIR)/system/bin/*_test
 	rm -rf $(ZIP_DIR)/system/xbin/*test
 	rm -rf $(pre_install_data_packages)
+	cp other/baiduinput.apk $(ZIP_DIR)/data/media/preinstall_apps/
 
 out/framework2.jar : out/framework.jar
 

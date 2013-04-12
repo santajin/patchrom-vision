@@ -134,7 +134,7 @@ system/xbin/sqlite3 0 2000 755
 system/xbin/dirname 0 2000 755
 system/xbin/procmem 0 0 6755
 system/xbin/su 0 0 6755
-system/xbin/shelld 0 0 6755
+system/xbin/shelld 0 1000 6750
 system/xbin/powertop 0 2000 755
 system/xbin/tftp 0 2000 755
 system/xbin/nslookup 0 2000 755
