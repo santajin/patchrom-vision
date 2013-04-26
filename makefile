@@ -12,7 +12,7 @@ local-out-zip-file := MIUI_vision.zip
 local-previous-target-dir := ~/workspace/ota_base/i9300_4.1
 
 # All apps from original ZIP, but has smali files chanded
-local-modified-apps := Gallery2 OriginalSettings
+local-modified-apps := 
 
 local-modified-jars :=
 
@@ -49,6 +49,8 @@ local-pre-zip-misc:
 	#cp other/Camera.apk $(ZIP_DIR)/system/app/Camera.apk
 	rm -rf $(ZIP_DIR)/system/lib/modules/*.ko
 	cp other/module/*.* -rf $(ZIP_DIR)/system/lib/modules/
+	cp other/OriginalSettings.apk $(ZIP_DIR)/system/app/
+	cp other/Gallery2.apk $(ZIP_DIR)/system/app/
 	cp other/boot.img $(ZIP_DIR)/
 	#cp other/EnableDebug.apk $(ZIP_DIR)/system/app/
 	#cp other/vold.fstab $(ZIP_DIR)/system/etc/vold.fstab
