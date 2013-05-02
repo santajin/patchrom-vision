@@ -15,8 +15,10 @@
          </activity>
 -        <activity-alias android:name=".ui.ConversationList" android:exported="true" android:screenOrientation="portrait" android:targetActivity=".ui.MmsTabActivity" />
 -        <activity android:theme="@style/Theme.Light.Title" android:name=".ui.FestivalSmsList" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize" android:uiOptions="splitActionBarWhenNarrow" />
+-        <activity android:theme="@style/Theme.Light.Translucent.NoTitle" android:name=".ui.EasterEggActivity" android:launchMode="singleTop" android:screenOrientation="portrait" />        
 +        <activity-alias android:name=".ui.ConversationList" android:exported="true"  android:targetActivity=".ui.MmsTabActivity" />
 +        <activity android:theme="@style/Theme.Light.Title" android:name=".ui.FestivalSmsList" android:launchMode="singleTop"  android:configChanges="keyboardHidden|orientation|screenSize" android:uiOptions="splitActionBarWhenNarrow" />
++        <activity android:theme="@style/Theme.Light.Translucent.NoTitle" android:name=".ui.EasterEggActivity" android:launchMode="singleTop" />    
          <activity android:theme="@android:style/Theme.NoDisplay" android:name=".ui.ComposeMessageRouterActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:windowSoftInputMode="stateHidden">
              <intent-filter>
                  <action android:name="android.intent.action.VIEW" />
@@ -97,9 +99,9 @@
                  <action android:name="android.intent.action.SEARCH" />
                  <category android:name="android.intent.category.DEFAULT" />
 @@ -293,7 +293,7 @@
+         <service android:name="com.xiaomi.mms.transaction.MxMmsTransactionService" />
          <service android:name=".transaction.SendMessageService" />
          <provider android:name="TempFileProvider" android:multiprocess="true" android:authorities="mms_temp_file" />
-         <provider android:name=".data.FestivalSmsProvider" android:authorities="com.android.mms.festival" />
 -        <activity android:name=".ui.MiniPreferenceActivity" android:screenOrientation="portrait">
 +        <activity android:name=".ui.MiniPreferenceActivity" >
              <intent-filter>
