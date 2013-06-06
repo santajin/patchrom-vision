@@ -26,7 +26,7 @@ if [ $1 = "Settings" ];then
     $XMLMERGYTOOL $1/res/values-hdpi $2/res/values-hdpi
 	cp $1/Settings.part out/
 	cd out
-	patch -p1 < settings.part
+	patch -p1 < Settings.part
 	cd ..
 	for file in `find $2 -name *.rej`
 	do
